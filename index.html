@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Indoeasy Scent | Branding Atmosferik &amp; Signature Scent</title>
+    <meta name="description" content="Indoeasy Scent menghadirkan solusi commercial scenting dan scenting diffuser profesional untuk hotel, kantor, retail, dan hunian."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Indoeasy Scent — Solusi Commercial Scenting"/>
+    <meta property="og:description" content="Menciptakan wewangian berkesan dan suasana nyaman dengan teknologi Cold-Air Diffusion presisi."/>
+    <meta property="og:image" content="img/LOGO%20IDESY%20SCENT.png"/>
+    <meta name="theme-color" content="#0D2A1D"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Konfigurasi Tailwind -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "forest-green": "#0D2A1D",
+                "antique-gold": "#C9A24B",
+                "warm-ivory": "#F7F3EC",
+                "soft-stone": "#EDE6D8",
+                "charcoal": "#1F1F1D",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#241a0e",
+                "secondary-container": "#f4dfcb",
+                "on-surface-variant": "#424844",
+                "surface-tint": "#476555",
+                "tertiary": "#240600",
+                "on-tertiary-container": "#c5785a",
+                "on-background": "#1a1c1b",
+                "on-tertiary-fixed": "#370e00",
+                "tertiary-fixed-dim": "#ffb599",
+                "error-container": "#ffdad6",
+                "outline-variant": "#c2c8c2",
+                "tertiary-container": "#461501",
+                "surface-bright": "#faf9f6",
+                "error": "#ba1a1a",
+                "on-primary-fixed-variant": "#304d3e",
+                "background": "#faf9f6",
+                "on-primary-container": "#749381",
+                "surface-variant": "#e3e2e0",
+                "surface": "#faf9f6",
+                "secondary-fixed-dim": "#ebc166",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed-variant": "#5b4300",
+                "primary": "#00140a",
+                "surface-container": "#eeeeeb",
+                "primary-fixed": "#c9ead6",
+                "secondary": "#795902",
+                "surface-dim": "#dadad7",
+                "surface-container-highest": "#e3e2e0",
+                "inverse-primary": "#aeceba",
+                "secondary-fixed": "#ffdf9e",
+                "primary-container": "#0d2a1d",
+                "on-surface": "#1a1c1b",
+                "surface-container-low": "#f4f4f1",
+                "inverse-surface": "#2f312f",
+                "outline": "#727973",
+                "tertiary-fixed": "#ffdbce",
+                "inverse-on-surface": "#f1f1ee",
+                "on-error": "#ffffff",
+                "surface-container-high": "#e9e8e5",
+                "on-tertiary-fixed-variant": "#72361c",
+                "on-secondary-container": "#775800",
+                "surface-container-lowest": "#ffffff",
+                "on-error-container": "#93000a",
+                "primary-fixed-dim": "#aeceba",
+                "on-primary-fixed": "#032014"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "section-gap-sm": "80px",
+                "margin-desktop": "64px",
+                "section-gap-lg": "160px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "margin-mobile": "20px",
+                "unit": "8px"
+            },
+            "fontFamily": {
+                "sans": ["Inter", "sans-serif"],
+                "serif": ["Playfair Display", "Georgia", "serif"],
+                "body-md": ["Inter", "sans-serif"],
+                "display-lg-mobile": ["Playfair Display", "serif"],
+                "label-caps": ["Arial", "sans-serif"],
+                "display-lg": ["Playfair Display", "serif"],
+                "headline-sm": ["Playfair Display", "serif"],
+                "headline-md": ["Playfair Display", "serif"],
+                "body-lg": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .editorial-shadow {
+            box-shadow: 0 4px 20px -10px rgba(0,0,0,0.1);
+        }
+        body {
+            background-color: #F7F3EC;
+            color: #1A1C1B;
+            font-family: 'Inter', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.21, 0.6, 0.35, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-bottom-color: #C9A24B !important;
+            box-shadow: none !important;
+        }
+        .nav-dropdown {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+    <script src="js/transitions.js" defer></script>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+<!-- Navigasi Utama -->
+<nav class="w-full top-0 sticky z-50 bg-[#F7F3EC]/95 backdrop-blur-sm border-b border-charcoal/5 transition-all duration-500">
+    <div class="flex justify-between items-center w-full px-margin-desktop py-3 max-w-[1440px] mx-auto">
+        <div class="flex items-center gap-4">
+            <a href="index.html">
+                <!-- Local logo used with proper naming -->
+                <img alt="Indoeasy Scent" class="h-20 md:h-24 w-auto object-contain [mix-blend-mode:multiply]" src="img/LOGO%20IDESY%20SCENT.png"/>
+            </a>
+        </div>
+        <div class="hidden md:flex gap-gutter items-center">
+            <a class="font-label-caps text-charcoal font-bold border-b border-antique-gold pb-0.5" href="index.html">BERANDA</a>
+            <div class="relative group py-2">
+                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 uppercase" href="products.html">
+                    PRODUK
+                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <!-- Dropdown Menu -->
+                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a href="products.html#all" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Semua Produk</a>
+                    <a href="products.html#diffuser" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Scenting Diffuser</a>
+                    <a href="products.html#fragrance" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Fragrance Collection</a>
+                </div>
+            </div>
+                        <div class="relative group py-2">
+                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 uppercase" href="about.html">
+                    TENTANG KAMI
+                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a href="about.html#cerita-kami" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cerita Kami</a>
+                    <a href="about.html#filosofi" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Filosofi &amp; Nilai</a>
+                    <a href="about.html#keahlian" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Keahlian Kami</a>
+                    <a href="about.html#cara-bekerja" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cara Kami Bekerja</a>
+                    </div>
+            </div>
+            <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300" href="contact.html">KONTAK</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="md:hidden cursor-pointer text-charcoal">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section: HD Image -->
+    <section class="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center scale-105" style="background-image: url('img/hero_bg.webp')"></div>
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl px-margin-mobile">
+            <!-- Local logo used with proper brightness invert style for dark backgrounds -->
+            <img alt="Indoeasy Logo" class="h-32 md:h-40 w-auto mx-auto mb-8 filter brightness-0 invert sepia(1) saturate(5) hue-rotate(10deg)" src="img/LOGO%20IDESY%20SCENT.png"/>
+            
+            <h1 class="font-serif text-antique-gold italic text-3xl md:text-4xl mb-4 max-w-2xl mx-auto">Create Your Signature Scent</h1>
+            <p class="font-sans text-white/90 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10">
+                Hadirkan pengalaman aroma yang berkelas untuk rumah, kantor, hotel, showroom, restoran, dan berbagai ruang bisnis Anda.<br/>
+                Dengan teknologi professional scenting system, kami membantu menciptakan suasana yang nyaman, memorable, dan mencerminkan karakter brand Anda.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="contact.html" class="bg-antique-gold text-forest-green px-12 py-5 font-label-caps tracking-widest hover:bg-white hover:text-charcoal transition-all duration-500 font-bold block text-center min-w-[240px]">KONSULTASI GRATIS</a>
+                <a href="products.html" class="bg-transparent border border-white text-white px-12 py-5 font-label-caps tracking-widest hover:bg-white hover:text-forest-green transition-all duration-500 font-bold uppercase block text-center min-w-[240px]">LIHAT PRODUK</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+            <span class="material-symbols-outlined">expand_more</span>
+        </div>
+    </section>
+
+    <!-- Kelebihan Kami Section (Luxury 3-Card Layout) -->
+    <section class="text-warm-ivory py-16 md:py-24 px-margin-desktop overflow-hidden relative bg-[#0D2A1D]">
+        <!-- 4K Ultra HD Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('img/kelebihan_bg_hd.webp'); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"></div>
+        <!-- Luxury Emerald Vignette Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0D2A1D]/80 via-[#0D2A1D]/60 to-[#0D2A1D]/85 pointer-events-none"></div>
+        <div class="max-w-[1280px] mx-auto relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16 reveal">
+                <span class="font-label-caps text-antique-gold font-bold text-xs md:text-sm uppercase tracking-[0.25em] block mb-3">KELEBIHAN KAMI</span>
+                
+                <!-- Leaf Divider Line -->
+                <div class="flex items-center justify-center gap-4 max-w-xs mx-auto mb-4">
+                    <div class="h-[1px] bg-antique-gold/40 flex-1"></div>
+                    <svg class="w-5 h-5 text-antique-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path d="M12 2C6.5 2 2 6.5 2 12c0 4.5 3 8 7.5 9 1-.5 2-1.5 2.5-2.5 1 1 2 2 3.5 2 4.5 0 8.5-4 8.5-9.5C22 6.5 17.5 2 12 2z M12 22s-2-5 2-10"></path>
+                    </svg>
+                    <div class="h-[1px] bg-antique-gold/40 flex-1"></div>
+                </div>
+
+                <h2 class="font-sans text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight whitespace-nowrap">Mengapa Memilih Indoeasy Scent?</h2>
+                <p class="font-sans text-white/80 text-sm md:text-base leading-relaxed font-normal max-w-xl mx-auto">
+                    Kami menghadirkan solusi wewangian profesional untuk menciptakan pengalaman yang berkesan di setiap ruang komersial Anda.
+                </p>
+            </div>
+
+            <!-- 3 Column Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 reveal">
+                
+                <!-- Card 1: Customize Fragrance -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-500 hover:-translate-y-2 flex flex-col relative">
+                    <!-- Top Image -->
+                    <div class="relative h-64 md:h-72 overflow-hidden bg-charcoal/10">
+                        <img src="img/customize-fragrance.webp" alt="Customize Fragrance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+
+                    <!-- Floating Icon Badge -->
+                    <div class="absolute top-[224px] md:top-[256px] left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-full bg-[#FAF6F0] border-4 border-white shadow-md flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[#C9962A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 3h6m-3 0v3m-4 0h8a1 1 0 011 1v12a2 2 0 01-2 2H9a2 2 0 01-2-2V7a1 1 0 011-1z"/>
+                            <path d="M12 11c-2 0-3 1.5-3 3s1.5 3 3 3 3-1.5 3-3-1.5-3-3-3z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Bottom Content -->
+                    <div class="bg-white pt-12 pb-8 px-6 text-center flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-label-caps text-base text-[#1C1917] font-bold tracking-[0.2em] mb-4 uppercase">CUSTOMIZE FRAGRANCE</h3>
+                            <p class="font-sans text-xs md:text-sm text-[#57534E] leading-relaxed font-normal">
+                                Kami meracik wewangian khusus yang dapat disesuaikan dengan karakter dan kebutuhan industri F&amp;B, Hotel, Perkantoran, Luxury Retail, hingga Hunian Pribadi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Exclusive Fine Fragrance -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-500 hover:-translate-y-2 flex flex-col relative">
+                    <!-- Top Image -->
+                    <div class="relative h-64 md:h-72 overflow-hidden bg-charcoal/10">
+                        <img src="img/exclusive-fragrance.webp" alt="Exclusive Fine Fragrance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+
+                    <!-- Floating Icon Badge -->
+                    <div class="absolute top-[224px] md:top-[256px] left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-full bg-[#FAF6F0] border-4 border-white shadow-md flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[#C9962A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 3C6.5 3 2 7.5 2 13c0 4.5 3.5 8 8 8 5.5 0 10-4.5 10-10C20 5.5 16.5 3 12 3z"/>
+                            <path d="M12 21s-1.5-5 1.5-9"/>
+                        </svg>
+                    </div>
+
+                    <!-- Bottom Content -->
+                    <div class="bg-white pt-12 pb-8 px-6 text-center flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-label-caps text-base text-[#1C1917] font-bold tracking-[0.2em] mb-4 uppercase">EXCLUSIVE FINE FRAGRANCE</h3>
+                            <p class="font-sans text-xs md:text-sm text-[#57534E] leading-relaxed font-normal">
+                                Menggunakan konsentrat wewangian berstandar internasional bersertifikat IFRA untuk memberikan aroma yang aman, tahan lama, dan berkelas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Smart Dispenser System -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl border border-white/20 transition-all duration-500 hover:-translate-y-2 flex flex-col relative">
+                    <!-- Top Image -->
+                    <div class="relative h-64 md:h-72 overflow-hidden bg-charcoal/10">
+                        <img src="img/smart-dispanser.webp" alt="Smart Dispenser System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+
+                    <!-- Floating Icon Badge -->
+                    <div class="absolute top-[224px] md:top-[256px] left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-full bg-[#FAF6F0] border-4 border-white shadow-md flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[#C9962A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 3v3m-4-1.5l2 2.5m6-2.5l-2 2.5"/>
+                            <rect x="7" y="10" width="10" height="11" rx="2"/>
+                            <path d="M10 7h4v3h-4z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Bottom Content -->
+                    <div class="bg-white pt-12 pb-8 px-6 text-center flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-label-caps text-base text-[#1C1917] font-bold tracking-[0.2em] mb-4 uppercase">SMART DISPENSER SYSTEM</h3>
+                            <p class="font-sans text-xs md:text-sm text-[#57534E] leading-relaxed font-normal">
+                                Perangkat diffuser aroma berteknologi mikro atomisasi presisi yang dapat dikendalikan melalui aplikasi untuk pengalaman wewangian yang efisien dan konsisten.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Produk Kami Section (No-Card Clean Layout) -->
+    <section class="bg-[#0D2A1D] py-8 md:py-10 px-margin-desktop">
+        <div class="max-w-[1440px] mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-6 reveal">
+                <span class="font-label-caps text-antique-gold font-bold text-sm uppercase tracking-[0.25em] block">PRODUK KAMI</span>
+            </div>
+
+            <!-- Product List (No Card) -->
+            <div class="reveal">
+                <!-- Product 1 -->
+                <a href="products.html#diffuser" class="group flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 py-5 border-t border-white/10 hover:border-antique-gold/40 transition-colors duration-300">
+                    <div class="w-full md:w-72 h-44 md:h-36 flex-shrink-0 flex items-center justify-center">
+                        <img src="img/scent_diffuser.webp" alt="Scenting Diffuser" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"/>
+                    </div>
+                    <div class="flex-1">
+                        <span class="font-label-caps text-[10px] text-antique-gold/70 uppercase tracking-widest font-bold block mb-1">Diffuser</span>
+                        <h3 class="font-label-caps text-base text-white group-hover:text-antique-gold transition-colors font-bold tracking-[0.2em] uppercase mb-2">Scenting Diffuser</h3>
+                        <p class="font-sans text-sm text-white/50 leading-relaxed max-w-xl">Sistem pengharum ruangan otomatis berteknologi micro-atomisasi presisi untuk berbagai skala ruang, dari residensial hingga komersial.</p>
+                    </div>
+                    <span class="material-symbols-outlined text-white/20 group-hover:text-antique-gold group-hover:translate-x-2 transition-all duration-300 flex-shrink-0 !text-3xl hidden md:block">arrow_forward</span>
+                </a>
+
+                <!-- Product 2 -->
+                <a href="products.html#fragrance" class="group flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 py-5 border-t border-white/10 hover:border-antique-gold/40 transition-colors duration-300">
+                    <div class="w-full md:w-72 h-44 md:h-36 flex-shrink-0 flex items-center justify-center">
+                        <img src="img/Fragrance-Collection.webp" alt="Fragrance Collection" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"/>
+                    </div>
+                    <div class="flex-1">
+                        <span class="font-label-caps text-[10px] text-antique-gold/70 uppercase tracking-widest font-bold block mb-1">Wewangian</span>
+                        <h3 class="font-label-caps text-base text-white group-hover:text-antique-gold transition-colors font-bold tracking-[0.2em] uppercase mb-2">Fragrance Collection</h3>
+                        <p class="font-sans text-sm text-white/50 leading-relaxed max-w-xl">Pilihan wewangian dengan beragam karakter aroma, dari yang segar dan ringan hingga hangat dan dalam, cocok untuk berbagai suasana ruangan.</p>
+                    </div>
+                    <span class="material-symbols-outlined text-white/20 group-hover:text-antique-gold group-hover:translate-x-2 transition-all duration-300 flex-shrink-0 !text-3xl hidden md:block">arrow_forward</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Layanan Kami Section (Simple Visual 3-Step Process) -->
+    <section class="bg-[#F7F3EC] py-12 md:py-16 px-margin-desktop border-b border-charcoal/5">
+        <div class="max-w-[1440px] mx-auto">
+            <!-- Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10 md:mb-12 reveal">
+                <span class="font-label-caps text-antique-gold font-bold text-sm md:text-base uppercase tracking-[0.25em] block">LAYANAN KAMI</span>
+            </div>
+
+            <!-- 3 Visual Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 reveal">
+                
+                <!-- Step 1 -->
+                <div class="group flex flex-col items-start">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md bg-charcoal/10">
+                        <img src="img/Konsul_sample.webp" alt="Konsultasi &amp; Sampel Gratis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    </div>
+                    <h3 class="font-label-caps text-base text-charcoal font-bold tracking-[0.2em] uppercase mb-2 group-hover:text-antique-gold transition-colors">Konsultasi &amp; Sampel Gratis</h3>
+                    <p class="font-sans text-sm text-charcoal/70 leading-relaxed font-light">
+                        Tim kami mengirimkan atau membawakan pilihan racikan aroma langsung ke lokasi Anda untuk dicoba terlebih dahulu secara gratis.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="group flex flex-col items-start">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md bg-charcoal/10">
+                        <img src="img/Install-machine.webp" alt="Pemasangan Alat Presisi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    </div>
+                    <h3 class="font-label-caps text-base text-charcoal font-bold tracking-[0.2em] uppercase mb-2 group-hover:text-antique-gold transition-colors">Pemasangan Alat Presisi</h3>
+                    <p class="font-sans text-sm text-charcoal/70 leading-relaxed font-light">
+                        Perangkat difusi dipasang gratis oleh teknisi kami secara rapi, tanpa bising, dan tanpa mengganggu keindahan estetika ruangan.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="group flex flex-col items-start">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md bg-charcoal/10">
+                        <img src="img/Refil-perawatan.webp" alt="Refill &amp; Perawatan Berkala" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    </div>
+                    <h3 class="font-label-caps text-base text-charcoal font-bold tracking-[0.2em] uppercase mb-2 group-hover:text-antique-gold transition-colors">Refill &amp; Perawatan Berkala</h3>
+                    <p class="font-sans text-sm text-charcoal/70 leading-relaxed font-light">
+                        Setiap bulan teknisi kami datang melakukan isi ulang aroma &amp; perawatan alat otomatis. Anda tinggal menikmati kesegaran ruang Anda.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+
+<!-- Footer -->
+<footer class="w-full bg-forest-green text-antique-gold px-margin-desktop py-6 md:py-8 border-t border-white/5 relative overflow-hidden">
+    <!-- Leaf Accent Background Watermarks -->
+    <div class="absolute -left-10 -bottom-12 w-64 h-64 opacity-15 pointer-events-none text-antique-gold">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M 20,180 C 60,140 90,90 170,20" stroke-linecap="round"/>
+            <path d="M 50,150 C 30,120 10,130 35,142 C 45,147 50,150 50,150 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 75,125 C 105,100 120,70 95,95 C 83,108 75,125 75,125 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 95,95 C 70,70 45,78 70,88 C 84,93 95,95 95,95 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 125,65 C 155,40 170,10 145,38 C 133,52 125,65 125,65 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 145,38 C 120,15 95,22 120,32 C 134,37 145,38 145,38 Z" fill="currentColor" opacity="0.8"/>
+        </svg>
+    </div>
+    <div class="absolute -right-10 -top-12 w-72 h-72 opacity-15 pointer-events-none text-antique-gold">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M 180,20 C 140,60 90,90 20,170" stroke-linecap="round"/>
+            <path d="M 150,50 C 170,80 190,70 165,68 C 155,63 150,50 150,50 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 125,75 C 95,100 80,130 105,105 C 117,92 125,75 125,75 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 105,105 C 130,130 155,122 130,112 C 116,107 105,105 105,105 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 75,135 C 45,160 30,190 55,162 C 67,148 75,135 75,135 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 55,162 C 80,185 105,178 80,168 C 66,163 55,162 55,162 Z" fill="currentColor" opacity="0.8"/>
+        </svg>
+    </div>
+    <div class="max-w-[1440px] mx-auto relative z-10">
+        <div class="grid grid-cols-12 gap-6 md:gap-gutter mb-6">
+            <!-- Brand Column -->
+            <div class="col-span-12 md:col-span-4">
+                <img alt="Indoeasy Scent" class="h-10 md:h-12 w-auto mb-2 filter brightness-0 invert sepia(1) saturate(5) hue-rotate(10deg)" src="img/LOGO%20IDESY%20SCENT.png"/>
+                <p class="font-sans text-xs text-white/70 max-w-xs leading-relaxed mb-2">Solusi wewangian profesional dan scenting diffuser untuk menciptakan suasana nyaman serta karakter berkesan di setiap ruangan.</p>
+                <p class="font-sans text-[11px] text-white/60 max-w-xs leading-relaxed mb-3 flex items-start gap-1">
+                    <span class="material-symbols-outlined !text-xs text-antique-gold shrink-0 mt-0.5">location_on</span>
+                    <span>Griya Mulya Indah, Jayamulya, Kec. Serang Baru, Kab. Bekasi, Jawa Barat 17330</span>
+                </p>
+                <!-- Social Media Icons Row -->
+                <div class="flex items-center gap-2">
+                    <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/5 hover:bg-antique-gold hover:text-forest-green text-antique-gold flex items-center justify-center transition-all duration-300">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-white/5 hover:bg-antique-gold hover:text-forest-green text-antique-gold flex items-center justify-center transition-all duration-300">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" aria-label="WhatsApp" class="w-8 h-8 rounded-full bg-white/5 hover:bg-antique-gold hover:text-forest-green text-antique-gold flex items-center justify-center transition-all duration-300">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Perusahaan Column -->
+            <div class="col-span-6 md:col-span-2">
+                <h5 class="font-label-caps text-antique-gold mb-3 font-bold tracking-widest text-xs">PERUSAHAAN</h5>
+                <div class="flex flex-col gap-2">
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="about.html">Tentang Kami</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="products.html">Produk</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="contact.html">Kontak</a>
+                </div>
+            </div>
+
+            <!-- Sumber Daya Column -->
+            <div class="col-span-6 md:col-span-3">
+                <h5 class="font-label-caps text-antique-gold mb-3 font-bold tracking-widest text-xs">SUMBER DAYA</h5>
+                <div class="flex flex-col gap-2">
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="products.html#fragrance">Koleksi Wewangian</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="products.html">Teknologi Diffuser</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="contact.html">Konsultasi Gratis</a>
+                </div>
+            </div>
+
+            <!-- Hukum Column -->
+            <div class="col-span-12 md:col-span-3">
+                <h5 class="font-label-caps text-antique-gold mb-3 font-bold tracking-widest text-xs">HUKUM &amp; PRIVASI</h5>
+                <div class="flex flex-col gap-2">
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="#">Kebijakan Privasi</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="#">Ketentuan Layanan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center opacity-70">
+            <p class="text-xs text-white/70 mb-2 md:mb-0">© 2026 Indoeasy Scent. All Rights Reserved.</p>
+            <div class="flex gap-4 text-xs">
+                <span class="text-antique-gold italic">Minimalisme Sensorik.</span>
+                <span class="text-white/70">Jakarta / Global</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modern Luxury Floating WhatsApp Consultation Widget -->
+<div id="wa-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end font-sans">
+    
+    <!-- Modern Glassmorphism Popup Bubble -->
+    <div id="wa-popup-card" class="mb-3 w-72 bg-[#F7F3EC]/95 backdrop-blur-md border border-[#0D2A1D]/15 rounded-2xl shadow-2xl p-4 transition-all duration-500 opacity-0 translate-y-4 pointer-events-none origin-bottom-right">
+        <div class="flex items-center justify-between border-b border-charcoal/10 pb-2.5 mb-2.5">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="text-[11px] font-bold text-[#0D2A1D] uppercase tracking-wider">INDOEASY SCENT SUPPORT</span>
+            </div>
+            <button onclick="toggleWaPopup(false)" class="text-charcoal/40 hover:text-charcoal text-xs font-bold px-1">✕</button>
+        </div>
+        <p class="text-xs text-charcoal/80 leading-relaxed mb-3">
+            Halo! Ada yang bisa kami bantu mengenai solusi <strong>commercial scenting</strong> atau wewangian Anda?
+        </p>
+        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." 
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-white hover:text-[#0D2A1D] py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>CHAT VIA WHATSAPP</span>
+        </a>
+    </div>
+
+    <!-- Luxury Trigger Button with Emerald & Gold Glow -->
+    <button onclick="toggleWaPopup()" 
+            aria-label="Konsultasi WhatsApp"
+            class="relative w-14 h-14 rounded-full bg-[#0D2A1D] hover:bg-[#081b13] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(13,42,29,0.4)] border-2 border-[#C9A24B]/60 hover:border-[#C9A24B] transition-all duration-300 transform hover:scale-105 group">
+        
+        <!-- Muting Pulsing Ring -->
+        <span class="absolute -inset-1 rounded-full border border-[#C9A24B]/30 animate-pulse pointer-events-none"></span>
+
+        <!-- WhatsApp Icon -->
+        <svg class="w-7 h-7 fill-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+
+        <!-- Notification Badge Dot -->
+        <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#0D2A1D]"></span>
+    </button>
+</div>
+
+<script>
+    function toggleWaPopup(forceState) {
+        const card = document.getElementById('wa-popup-card');
+        if (!card) return;
+        const isOpen = forceState !== undefined ? forceState : card.classList.contains('opacity-0');
+        if (isOpen) {
+            card.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            card.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            card.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            card.classList.remove('opacity-100', 'translate-y-0');
+        }
+    }
+    // Auto show popup after 3.5 seconds
+    setTimeout(() => {
+        toggleWaPopup(true);
+    }, 3500);
+</script>
+
+<script>
+    // Animasi Reveal saat Scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Pergeseran latar belakang navigasi saat scroll
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.classList.add('editorial-shadow', 'bg-[#F7F3EC]');
+        } else {
+            nav.classList.remove('editorial-shadow');
+        }
+    });
+</script>
+
+</body>
+</html>

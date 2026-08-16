@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Kontak | Indoeasy Scent</title>
+    <meta name="description" content="Hubungi Indoeasy Scent untuk konsultasi commercial scenting, penentuan fragrance, sewa machine, refill, hingga perawatan berkala."/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "forest-green": "#0D2A1D",
+                "deep-forest": "#0D2A1D",
+                "antique-gold": "#C9A24B",
+                "warm-ivory": "#F7F3EC",
+                "charcoal": "#1F1F1D"
+            },
+            "fontFamily": {
+                "sans": ["Arial", "sans-serif"],
+                "serif": ["Arial", "sans-serif"],
+                "label-caps": ["Arial", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p, span:not(.material-symbols-outlined), a, button, input, textarea { 
+            font-family: 'Arial', sans-serif !important; 
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-dropdown { opacity: 0; visibility: hidden; }
+        input:focus, textarea:focus {
+            outline: none !important;
+            border-color: #C9A24B !important;
+            box-shadow: none !important;
+        }
+    </style>
+    <script src="js/transitions.js" defer></script>
+</head>
+<body class="bg-[#F7F3EC] text-charcoal font-sans antialiased selection:bg-antique-gold/20 selection:text-charcoal">
+
+<!-- Header Navigation -->
+<nav class="w-full top-0 sticky z-50 bg-[#F7F3EC]/95 backdrop-blur-sm border-b border-charcoal/5 transition-all duration-500">
+    <div class="flex justify-between items-center w-full px-6 md:px-16 py-3 max-w-[1440px] mx-auto">
+        <div class="flex items-center gap-4">
+            <a href="index.html">
+                <img alt="Indoeasy Scent" class="h-20 md:h-24 w-auto object-contain [mix-blend-mode:multiply]" src="img/LOGO%20IDESY%20SCENT.png"/>
+            </a>
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 font-bold text-xs tracking-widest uppercase" href="index.html">BERANDA</a>
+            <div class="relative group py-2">
+                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 font-bold text-xs tracking-widest uppercase" href="products.html">
+                    PRODUK
+                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a href="products.html#all" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Semua Produk</a>
+                    <a href="products.html#diffuser" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Scenting Diffuser</a>
+                    <a href="products.html#fragrance" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Fragrance Collection</a>
+                </div>
+            </div>
+            <div class="relative group py-2">
+                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 font-bold text-xs tracking-widest uppercase" href="about.html">
+                    TENTANG KAMI
+                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a href="about.html#cerita-kami" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cerita Kami</a>
+                    <a href="about.html#filosofi" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Filosofi &amp; Nilai</a>
+                    <a href="about.html#keahlian" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Keahlian Kami</a>
+                    <a href="about.html#cara-bekerja" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cara Kami Bekerja</a>
+                </div>
+            </div>
+            <a class="font-label-caps text-charcoal font-bold border-b border-antique-gold pb-0.5 text-xs tracking-widest uppercase" href="contact.html">KONTAK</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="md:hidden cursor-pointer text-charcoal">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-[1360px] mx-auto px-6 md:px-16 py-12 md:py-20">
+    
+    <!-- Simple & Professional Contact Section -->
+    <section>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            <!-- Left Column: Professional Contact Information & Direct Action -->
+            <div class="lg:col-span-6 space-y-8">
+                <div>
+                    <span class="font-label-caps text-antique-gold font-bold tracking-[0.2em] block text-xs uppercase mb-3">
+                        KONTAK &amp; KONSULTASI
+                    </span>
+                    
+                    <h1 class="font-sans text-3xl md:text-5xl text-[#0D2A1D] font-bold leading-[1.2] mb-4">
+                        Hubungi Indoeasy Scent
+                    </h1>
+                    
+                    <p class="font-sans text-sm md:text-base text-charcoal/70 leading-relaxed max-w-lg">
+                        Kami siap membantu Anda memilih wewangian dan sistem diffuser terbaik untuk menciptakan suasana ruang bisnis yang berkesan dan nyaman.
+                    </p>
+                </div>
+                
+                <!-- Contact Items List (Clean & Seamless - No Cards) -->
+                <div class="space-y-6 pt-2">
+                    
+                    <!-- Head Office Address -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-full bg-antique-gold/15 text-antique-gold flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-2xl">location_on</span>
+                        </div>
+                        <div>
+                            <h3 class="font-sans text-xs font-bold text-antique-gold uppercase tracking-wider mb-1">HEAD OFFICE</h3>
+                            <p class="font-sans text-sm font-semibold text-[#0D2A1D] leading-snug max-w-md">
+                                Griya Mulya Indah, Jayamulya, Kec. Serang Baru, Kab. Bekasi, Jawa Barat 17330
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone / WhatsApp -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-full bg-antique-gold/15 text-antique-gold flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-2xl">call</span>
+                        </div>
+                        <div>
+                            <h3 class="font-sans text-xs font-bold text-antique-gold uppercase tracking-wider mb-1">WHATSAPP &amp; TELEPON</h3>
+                            <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." 
+                               target="_blank" rel="noopener" 
+                               class="font-sans text-base font-bold text-[#0D2A1D] hover:text-antique-gold transition-colors block">
+                                +62 812 8780 4396
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-full bg-antique-gold/15 text-antique-gold flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-2xl">mail</span>
+                        </div>
+                        <div>
+                            <h3 class="font-sans text-xs font-bold text-antique-gold uppercase tracking-wider mb-1">EMAIL</h3>
+                            <a href="mailto:indoeasyscent@gmail.com" class="font-sans text-sm font-bold text-[#0D2A1D] hover:text-antique-gold transition-colors block">
+                                indoeasyscent@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct WhatsApp Action Button -->
+                <div class="pt-2">
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." 
+                       target="_blank" rel="noopener" 
+                       class="inline-flex items-center gap-3 bg-[#0D2A1D] hover:bg-antique-gold text-white hover:text-[#0D2A1D] px-8 py-4 rounded-xl font-sans text-xs font-bold uppercase tracking-[0.15em] transition-all duration-300 shadow-lg group">
+                        <span>HUBUNGI VIA WHATSAPP</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Google Maps Location Card -->
+            <div class="lg:col-span-6">
+                <div class="bg-white p-3 rounded-3xl border border-charcoal/10 shadow-xl overflow-hidden">
+                    <iframe 
+                        title="Lokasi Kantor Indoeasy Scent"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0487445892556!2d107.0988673!3d-6.3877478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69970868f00001%3A0x6b864a6d10c0000!2sJayamulya%2C%20Serang%20Baru%2C%20Bekasi%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                        class="w-full h-[440px] md:h-[520px] rounded-2xl border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer (Standard Compact Luxury Footer) -->
+<footer class="w-full bg-[#0D2A1D] text-white/70 border-t border-antique-gold/10 px-6 md:px-16 py-6 md:py-8 relative overflow-hidden mt-20">
+    <div class="max-w-[1440px] mx-auto relative z-10">
+        <div class="grid grid-cols-12 gap-6 md:gap-8 mb-6">
+            <!-- Brand Column -->
+            <div class="col-span-12 md:col-span-4">
+                <img alt="Indoeasy Scent" class="h-10 md:h-12 w-auto mb-2 filter brightness-0 invert sepia(1) saturate(5) hue-rotate(10deg)" src="img/LOGO%20IDESY%20SCENT.png"/>
+                <p class="font-sans text-xs text-white/70 max-w-xs leading-relaxed mb-2">Solusi wewangian profesional dan scenting diffuser untuk menciptakan suasana nyaman serta karakter berkesan di setiap ruangan.</p>
+                <p class="font-sans text-[11px] text-white/60 max-w-xs leading-relaxed mb-3 flex items-start gap-1">
+                    <span class="material-symbols-outlined !text-xs text-antique-gold shrink-0 mt-0.5">location_on</span>
+                    <span>Griya Mulya Indah, Jayamulya, Kec. Serang Baru, Kab. Bekasi, Jawa Barat 17330</span>
+                </p>
+            </div>
+
+            <!-- Perusahaan Column -->
+            <div class="col-span-6 md:col-span-2">
+                <h5 class="font-label-caps text-antique-gold mb-3 font-bold tracking-widest text-xs uppercase">PERUSAHAAN</h5>
+                <div class="flex flex-col gap-2">
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="about.html">Tentang Kami</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="products.html">Produk</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="contact.html">Kontak</a>
+                </div>
+            </div>
+
+            <!-- Sumber Daya Column -->
+            <div class="col-span-6 md:col-span-3">
+                <h5 class="font-label-caps text-antique-gold mb-3 font-bold tracking-widest text-xs uppercase">SUMBER DAYA</h5>
+                <div class="flex flex-col gap-2">
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="products.html#fragrance">Koleksi Wewangian</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="products.html">Teknologi Diffuser</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="contact.html">Konsultasi Gratis</a>
+                </div>
+            </div>
+
+            <!-- Hukum Column -->
+            <div class="col-span-12 md:col-span-3">
+                <h5 class="font-label-caps text-antique-gold mb-3 font-bold tracking-widest text-xs uppercase">HUKUM &amp; PRIVASI</h5>
+                <div class="flex flex-col gap-2">
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="#">Kebijakan Privasi</a>
+                    <a class="text-xs text-white/70 hover:text-white transition-colors" href="#">Ketentuan Layanan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center opacity-70">
+            <p class="text-xs text-white/70 mb-2 md:mb-0">© 2026 Indoeasy Scent. All Rights Reserved.</p>
+            <div class="flex gap-4 text-xs">
+                <span class="text-antique-gold italic">Commercial scenting, made simple.</span>
+                <span class="text-white/70">Jakarta / Global</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/cart.js"></script>
+<script>
+    // Form submission handler -> Redirect to WhatsApp with pre-filled details
+    const consultForm = document.getElementById('contact-consult-form');
+    if (consultForm) {
+        consultForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const namaEl = document.getElementById('form-nama');
+            const perusEl = document.getElementById('form-perusahaan');
+            const waEl = document.getElementById('form-wa');
+            const emailEl = document.getElementById('form-email');
+            
+            const nama = namaEl ? namaEl.value.trim() : '';
+            const perusahaan = perusEl ? perusEl.value.trim() : '';
+            const wa = waEl ? waEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
+            
+            const bisnisEl = document.querySelector('input[name="jenis_bisnis"]:checked');
+            const jenisBisnis = bisnisEl ? bisnisEl.value : '-';
+            
+            const lokEl = document.getElementById('form-lokasi');
+            const luasEl = document.getElementById('form-luas');
+            const lokasi = lokEl ? lokEl.value.trim() : '';
+            const luas = luasEl ? luasEl.value.trim() : '';
+            
+            const kebutuhanEls = document.querySelectorAll('input[name="kebutuhan"]:checked');
+            let kebutuhanList = [];
+            kebutuhanEls.forEach(el => kebutuhanList.push(el.value));
+            const kebutuhan = kebutuhanList.length > 0 ? kebutuhanList.join(', ') : '-';
+            
+            const pesanEl = document.getElementById('form-pesan');
+            const pesan = pesanEl ? pesanEl.value.trim() : '';
+
+            let text = `*FORM KONSULTASI SCENTING - INDOEASY SCENT*\n\n`;
+            text += `• *Nama:* ${nama}\n`;
+            if (perusahaan) text += `• *Perusahaan:* ${perusahaan}\n`;
+            text += `• *WhatsApp:* ${wa}\n`;
+            if (email) text += `• *Email:* ${email}\n`;
+            text += `• *Jenis Bisnis:* ${jenisBisnis}\n`;
+            if (lokasi) text += `• *Lokasi:* ${lokasi}\n`;
+            if (luas) text += `• *Perkiraan Luas:* ${luas}\n`;
+            text += `• *Kebutuhan:* ${kebutuhan}\n`;
+            if (pesan) text += `• *Detail Kebutuhan:* ${pesan}\n`;
+
+            const waUrl = `https://wa.me/6281287804396?text=${encodeURIComponent(text)}`;
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+        });
+    }
+</script>
+<!-- Modern Luxury Floating WhatsApp Consultation Widget -->
+<div id="wa-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end font-sans">
+    
+    <!-- Modern Glassmorphism Popup Bubble -->
+    <div id="wa-popup-card" class="mb-3 w-72 bg-[#F7F3EC]/95 backdrop-blur-md border border-[#0D2A1D]/15 rounded-2xl shadow-2xl p-4 transition-all duration-500 opacity-0 translate-y-4 pointer-events-none origin-bottom-right">
+        <div class="flex items-center justify-between border-b border-charcoal/10 pb-2.5 mb-2.5">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="text-[11px] font-bold text-[#0D2A1D] uppercase tracking-wider">INDOEASY SCENT SUPPORT</span>
+            </div>
+            <button onclick="toggleWaPopup(false)" class="text-charcoal/40 hover:text-charcoal text-xs font-bold px-1">✕</button>
+        </div>
+        <p class="text-xs text-charcoal/80 leading-relaxed mb-3">
+            Halo! Ada yang bisa kami bantu mengenai solusi <strong>commercial scenting</strong> atau wewangian Anda?
+        </p>
+        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." 
+           target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-2 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-white hover:text-[#0D2A1D] py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>CHAT VIA WHATSAPP</span>
+        </a>
+    </div>
+
+    <!-- Luxury Trigger Button with Emerald & Gold Glow -->
+    <button onclick="toggleWaPopup()" 
+            aria-label="Konsultasi WhatsApp"
+            class="relative w-14 h-14 rounded-full bg-[#0D2A1D] hover:bg-[#081b13] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(13,42,29,0.4)] border-2 border-[#C9A24B]/60 hover:border-[#C9A24B] transition-all duration-300 transform hover:scale-105 group">
+        
+        <!-- Muting Pulsing Ring -->
+        <span class="absolute -inset-1 rounded-full border border-[#C9A24B]/30 animate-pulse pointer-events-none"></span>
+
+        <!-- WhatsApp Icon -->
+        <svg class="w-7 h-7 fill-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+
+        <!-- Notification Badge Dot -->
+        <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#0D2A1D]"></span>
+    </button>
+</div>
+
+<script>
+    function toggleWaPopup(forceState) {
+        const card = document.getElementById('wa-popup-card');
+        if (!card) return;
+        const isOpen = forceState !== undefined ? forceState : card.classList.contains('opacity-0');
+        if (isOpen) {
+            card.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            card.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            card.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            card.classList.remove('opacity-100', 'translate-y-0');
+        }
+    }
+    // Auto show popup after 3.5 seconds
+    setTimeout(() => {
+        toggleWaPopup(true);
+    }, 3500);
+</script>
+</body>
+</html>
