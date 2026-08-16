@@ -450,28 +450,53 @@
                 </p>
             </div>
 
-            <!-- Industry Badges Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 reveal">
-                <div class="p-6 bg-[#F7F3EC]/80 border border-charcoal/5 rounded-xl text-center flex flex-col items-center">
-                    <span class="material-symbols-outlined !text-3xl text-antique-gold mb-2">apartment</span>
-                    <h4 class="font-bold text-sm text-[#0D2A1D] uppercase tracking-wider mb-1">Hotel &amp; Resort</h4>
-                    <p class="text-xs text-charcoal/60">Lobby, Koridor &amp; Executive Suite</p>
+            <!-- Industry Badges Grid with Real Ambient Topic Images (BAGIAN SEKTOR INDUSTRI) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                
+                <!-- Topic 1: Hotel & Resort (resort.jpg) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-charcoal/10 bg-[#0D2A1D] h-80 flex flex-col justify-end p-6 hover:-translate-y-1.5 transition-all duration-500">
+                    <img src="img/resort.webp" onerror="this.src='img/resort.jpg'" alt="Hotel & Resort Scenting" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 filter brightness-[0.85] contrast-[1.05]" loading="lazy"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0D2A1D] via-[#0D2A1D]/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-sm">Hospitality</span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-1">Hotel &amp; Resort</h4>
+                        <p class="font-sans text-xs text-white/80 leading-relaxed">Lobby utama, koridor tamu, &amp; executive suite room.</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-[#F7F3EC]/80 border border-charcoal/5 rounded-xl text-center flex flex-col items-center">
-                    <span class="material-symbols-outlined !text-3xl text-antique-gold mb-2">storefront</span>
-                    <h4 class="font-bold text-sm text-[#0D2A1D] uppercase tracking-wider mb-1">Luxury Retail</h4>
-                    <p class="text-xs text-charcoal/60">Boutique &amp; Flagship Store</p>
+
+                <!-- Topic 2: Luxury Retail (retail.jpg) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-charcoal/10 bg-[#0D2A1D] h-80 flex flex-col justify-end p-6 hover:-translate-y-1.5 transition-all duration-500">
+                    <img src="img/retail.webp" onerror="this.src='img/retail.jpg'" alt="Luxury Retail Scenting" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 filter brightness-[0.85] contrast-[1.05]" loading="lazy"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0D2A1D] via-[#0D2A1D]/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-sm">Commerce</span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-1">Luxury Retail</h4>
+                        <p class="font-sans text-xs text-white/80 leading-relaxed">Boutique fashion, showroom, &amp; flagship store.</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-[#F7F3EC]/80 border border-charcoal/5 rounded-xl text-center flex flex-col items-center">
-                    <span class="material-symbols-outlined !text-3xl text-antique-gold mb-2">corporate_fare</span>
-                    <h4 class="font-bold text-sm text-[#0D2A1D] uppercase tracking-wider mb-1">Kantor Korporat</h4>
-                    <p class="text-xs text-charcoal/60">Lounge, Meeting Room &amp; Reception</p>
+
+                <!-- Topic 3: Kantor Korporat (kantor.jpg) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-charcoal/10 bg-[#0D2A1D] h-80 flex flex-col justify-end p-6 hover:-translate-y-1.5 transition-all duration-500">
+                    <img src="img/kantor.webp" onerror="this.src='img/kantor.jpg'" alt="Kantor Korporat Scenting" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 filter brightness-[0.85] contrast-[1.05]" loading="lazy"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0D2A1D] via-[#0D2A1D]/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-sm">Corporate</span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-1">Kantor Korporat</h4>
+                        <p class="font-sans text-xs text-white/80 leading-relaxed">Executive lounge, ruang rapat, &amp; resepsionis.</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-[#F7F3EC]/80 border border-charcoal/5 rounded-xl text-center flex flex-col items-center">
-                    <span class="material-symbols-outlined !text-3xl text-antique-gold mb-2">local_cafe</span>
-                    <h4 class="font-bold text-sm text-[#0D2A1D] uppercase tracking-wider mb-1">F&amp;B &amp; Wellness</h4>
-                    <p class="text-xs text-charcoal/60">Restoran, Spa &amp; Fitness Center</p>
+
+                <!-- Topic 4: F&B & Wellness (restoran.jpg) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-charcoal/10 bg-[#0D2A1D] h-80 flex flex-col justify-end p-6 hover:-translate-y-1.5 transition-all duration-500">
+                    <img src="img/restoran.webp" onerror="this.src='img/restoran.jpg'" alt="F&B & Wellness Scenting" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 filter brightness-[0.85] contrast-[1.05]" loading="lazy"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0D2A1D] via-[#0D2A1D]/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-sm">Lifestyle</span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-1">F&amp;B &amp; Wellness</h4>
+                        <p class="font-sans text-xs text-white/80 leading-relaxed">Restoran, café, spa mewah, &amp; fitness center.</p>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Section: Standar & Jaminan Kualitas (BAGIAN CERTIFICATION) - Hidden per user request -->
