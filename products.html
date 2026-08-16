@@ -169,11 +169,28 @@
                             <span class="text-xs font-bold font-label-caps uppercase tracking-widest text-antique-gold block mb-1">Official Product Catalog</span>
                             <h3 class="font-sans text-2xl md:text-3xl text-white font-bold uppercase tracking-wider">ISX Series Diffusers</h3>
                         </div>
+
+                    <!-- Use-Case Filter Tabs (BAGIAN A4) -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 mb-10 border-b border-antique-gold/20 pb-6">
+                        <button onclick="filterProducts('all')" id="btn-filter-all" class="product-filter-btn active bg-[#C9A24B] text-[#0D2A1D] px-5 py-2 rounded-full text-xs font-extrabold uppercase tracking-widest transition-all duration-300 shadow-md">
+                            Semua Diffuser
+                        </button>
+                        <button onclick="filterProducts('small')" id="btn-filter-small" class="product-filter-btn bg-white/10 hover:bg-[#C9A24B]/30 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20 transition-all duration-300">
+                            Rumah &amp; Mobil (&lt;100m³)
+                        </button>
+                        <button onclick="filterProducts('medium')" id="btn-filter-medium" class="product-filter-btn bg-white/10 hover:bg-[#C9A24B]/30 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20 transition-all duration-300">
+                            Kantor &amp; Retail (100–1000m³)
+                        </button>
+                        <button onclick="filterProducts('large')" id="btn-filter-large" class="product-filter-btn bg-white/10 hover:bg-[#C9A24B]/30 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20 transition-all duration-300">
+                            Komersial Besar (&gt;1000m³)
+                        </button>
+                    </div>
+
                     </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 font-sans">
                         <!-- Product 1: ISX-I-0 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="small">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -203,7 +220,7 @@
                         </div>
 
                         <!-- Product 2: ISX-H2 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="medium">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -233,11 +250,12 @@
                         </div>
 
                         <!-- Product 3: ISX-H5 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="medium">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
                                     <span class="absolute top-0 left-0 z-20 bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">ISX-H5</span>
+<span class="absolute top-0 right-0 z-20 bg-emerald-600 text-white text-[8px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-widest shadow-lg animate-pulse">RECOMMENDED B2B</span>
                                     <img class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] group-hover:scale-108 group-hover:-translate-y-2 transition-all duration-500" src="img/ISX-H5.webp" onerror="this.src='isx_h2_exact_hd.webp'" alt="ISX-H5 Commercial Diffuser"/>
                                 </div>
 
@@ -263,7 +281,7 @@
                         </div>
 
                         <!-- Product 4: ISXP-I-1 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="small">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -293,7 +311,7 @@
                         </div>
 
                         <!-- Product 5: ISXA-Y -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="small">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -323,7 +341,7 @@
                         </div>
 
                         <!-- Product 6: ISXPR-OV-5/5 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="medium">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -354,7 +372,7 @@
                         </div>
 
                         <!-- Product 7: ISXPR-OV-2 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="medium">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -442,11 +460,12 @@
                         </div>
 
                         <!-- Product 10: ISX-OV-8 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="large">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
                                     <span class="absolute top-0 left-0 z-20 bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">ISX-OV-8</span>
+<span class="absolute top-0 right-0 z-20 bg-emerald-600 text-white text-[8px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-widest shadow-lg animate-pulse">MOST POPULAR</span>
                                     <img class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] group-hover:scale-108 group-hover:-translate-y-2 transition-all duration-500" src="img/ISX-OV-8.webp" onerror="this.src='mzs_600_diffuser.webp'" alt="ISX-OV-8 Commercial Aroma Diffuser"/>
                                 </div>
 
@@ -472,7 +491,7 @@
                         </div>
 
                         <!-- Product 11: ISX-U10 -->
-                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500">
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="large">
                             <div class="w-full flex flex-col items-center">
                                 <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
                                 <div class="w-full h-52 relative flex items-center justify-center p-2 mb-3">
@@ -886,7 +905,53 @@
                             HUBUNGI TIM KAMI
                         </a>
                     </div>
+    <!-- Section: Hasil Instalasi Real Project (BAGIAN A1) -->
+    <section class="mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="font-label-caps text-xs font-bold uppercase tracking-widest text-[#C9A24B] block mb-2">Dokumentasi Lapangan</span>
+            <h2 class="font-sans text-3xl font-bold text-[#0D2A1D] uppercase tracking-wider">Hasil Instalasi &amp; Maintenance</h2>
+            <p class="font-sans text-xs text-[#1F1F1D]/70 mt-2">Pemasangan diffuser presisi dan layanan refill rutin di lokasi klien bisnis Indoeasy Scent.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Project 1: Commercial Office Installation -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-[#0D2A1D]/10 bg-white">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="img/install_machine.webp" alt="Instalasi Diffuser Komersial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <span class="bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Proyek Commercial</span>
+                        <h4 class="font-bold text-sm">Instalasi Central Diffuser HVAC</h4>
+                        <p class="text-[11px] text-white/80">Corporate Office, Sudirman Jakarta</p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Project 2: Periodic Maintenance & Refill Service -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-[#0D2A1D]/10 bg-white">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="img/refil_perawatan.webp" alt="Perawatan Refill Wewangian" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <span class="bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Maintenance Berkala</span>
+                        <h4 class="font-bold text-sm">Refill &amp; Kalibrasi Sistem Aroma</h4>
+                        <p class="text-[11px] text-white/80">Luxury Hotel, Bali &amp; Jakarta</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Boutique & Retail Scenting -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-[#0D2A1D]/10 bg-white">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="img/cara-bekerja.webp" alt="Boutique & Retail Scenting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <span class="bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-1 inline-block">Retail Scenting</span>
+                        <h4 class="font-bold text-sm">Signature Scent Ambience</h4>
+                        <p class="text-[11px] text-white/80">Flagship Store, BSD City</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     </div>
@@ -1078,5 +1143,34 @@
         }
     });
 </script>
+
+<script>
+    function filterProducts(category) {
+        const cards = document.querySelectorAll('.diffuser-card');
+        const buttons = document.querySelectorAll('.product-filter-btn');
+
+        buttons.forEach(btn => {
+            btn.classList.remove('bg-[#C9A24B]', 'text-[#0D2A1D]', 'active');
+            btn.classList.add('bg-white/10', 'text-white');
+        });
+
+        const activeBtn = document.getElementById('btn-filter-' + category);
+        if (activeBtn) {
+            activeBtn.classList.remove('bg-white/10', 'text-white');
+            activeBtn.classList.add('bg-[#C9A24B]', 'text-[#0D2A1D]', 'active');
+        }
+
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+            }
+        });
+    }
+</script>
+
 </body>
 </html>
