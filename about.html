@@ -157,54 +157,47 @@
 </nav>
 
 <main>
-    <!-- CERITA KAMI (Curved Arc Split Banner - 100% Seamless Curves) -->
-    <section id="cerita-kami" class="relative overflow-hidden bg-[#F7F3EC] border-b border-charcoal/10">
-        <div class="w-full min-h-[480px] md:min-h-[540px] grid grid-cols-12 relative overflow-hidden">
+        <!-- CERITA KAMI (Who We Are - Simple, Clean & Standard 3-Column Layout) -->
+    <section id="cerita-kami" class="py-16 md:py-24 px-6 md:px-16 bg-[#F7F3EC] border-b border-charcoal/10 font-sans">
+        <div class="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <!-- Right Side (Full-bleed Image cerita-kami.webp blending seamlessly into section) -->
-            <div class="col-span-12 lg:col-span-5 lg:col-start-8 relative min-h-[360px] lg:min-h-full bg-[#F7F3EC] order-2 lg:order-2 flex items-center justify-center overflow-hidden">
-                <!-- 100% Solid Opaque Image cerita-kami.webp -->
-                <img src="img/cerita-kami.webp" alt="Produk Real Indoeasy Scent" class="w-full h-full object-cover object-center scale-100 opacity-100 filter brightness-[0.98] contrast-[1.02]"/>
+            <!-- Column 1: Feature Image (Left) -->
+            <div class="lg:col-span-5 relative overflow-hidden rounded-2xl shadow-xl group border border-[#0D2A1D]/10">
+                <img src="img/cerita-kami.webp" alt="Indoeasy Scent Aroma Indonesia" class="w-full h-[360px] md:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700"/>
             </div>
 
-            <!-- Left Side (Top Overlay Layer): Seamless Curved Dark Emerald Banner with HD Background Image -->
-            <div class="col-span-12 lg:col-span-7 order-1 lg:order-1 relative z-20 flex flex-col justify-center py-16 md:py-20 px-6 md:px-16 text-white bg-[#0D2A1D]">
-                
-                <!-- Background HD Image with Overlay -->
-                <div class="absolute inset-0 z-0 overflow-hidden">
-                    <img src="img/cerita_kami_bg_hd.webp" alt="Ambience" class="w-full h-full object-cover filter brightness-[0.45] contrast-[1.15]"/>
-                    <div class="absolute inset-0 bg-[#0D2A1D]/90"></div>
-                </div>
+            <!-- Column 2: Title & Who We Are Subtitle (Middle) -->
+            <div class="lg:col-span-3 flex flex-col justify-center">
+                <span class="font-serif italic text-base md:text-lg text-[#C9A24B] mb-2 block">Who we are</span>
+                <h2 class="font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2A1D] leading-tight mb-6 tracking-tight">
+                    Indoeasy Scent Aroma Indonesia
+                </h2>
 
-                <!-- Text Content -->
-                <div class="relative z-10 max-w-xl">
-                    <span class="font-label-caps text-antique-gold font-bold tracking-[0.25em] block mb-3 text-xs uppercase">TENTANG INDOEASY SCENT</span>
-                    <h2 class="font-serif text-3xl md:text-5xl text-white font-bold mb-3 leading-tight">Cerita Kami</h2>
-                    <h3 class="font-serif italic text-xl md:text-2xl text-antique-gold mb-6 font-normal">Membawa aroma yang tepat ke setiap ruang.</h3>
-                    
-                    <div class="space-y-4 font-sans text-sm md:text-base text-white/90 leading-relaxed border-l-2 border-antique-gold/50 pl-5">
-                        <p>
-                            Indoeasy Scent hadir untuk membantu bisnis menciptakan ruang yang lebih nyaman dan memiliki karakter melalui <strong>commercial scenting</strong>.
-                        </p>
-                        <p>
-                            Kami menyediakan solusi scenting yang lengkap, mulai dari pemilihan fragrance, penyewaan dan pemasangan mesin diffuser, pengisian ulang fragrance, hingga perawatan secara berkala.
-                        </p>
-                        <p>
-                            Bagi kami, scenting bukan hanya soal membuat ruangan menjadi wangi. Aroma yang tepat harus menyatu dengan karakter ruang, aktivitas di dalamnya, dan pengalaman yang ingin diberikan kepada setiap orang yang datang.
-                        </p>
-                        <p class="font-medium text-antique-gold pt-1">
-                            Karena itu, kami tidak hanya menyediakan produk. Kami ikut memastikan sistem scenting tetap berjalan dengan baik dan aroma tetap konsisten dari waktu ke waktu.
-                        </p>
-                    </div>
+                <!-- Action Button Row -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." target="_blank" rel="noopener noreferrer" 
+                       aria-label="Konsultasi Video"
+                       class="w-12 h-12 rounded-full bg-[#C9A24B] hover:bg-[#0D2A1D] text-[#0D2A1D] hover:text-white flex items-center justify-center transition-all duration-300 shadow-md shrink-0 group/play">
+                        <svg class="w-5 h-5 fill-current ml-0.5 group-hover/play:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </a>
+                    <a href="products.html" 
+                       class="inline-block bg-[#C9A24B] hover:bg-[#0D2A1D] text-[#0D2A1D] hover:text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-md transition-all duration-300 shadow-md hover:shadow-lg">
+                        DISCOVER MORE
+                    </a>
                 </div>
             </div>
 
-            <!-- Signature Arc Divider with Antique Gold Border (Exact 58.33% match to col-span-7) -->
-            <div class="hidden lg:block absolute top-0 bottom-0 left-[58.33%] z-30 w-36 -ml-1 pointer-events-none text-[#0D2A1D]">
-                <svg viewBox="0 0 100 500" preserveAspectRatio="none" class="w-full h-full fill-current">
-                    <path d="M 0,0 C 90,160 100,340 0,500 L 0,500 L 0,0 Z" />
-                    <path d="M 0,0 C 90,160 100,340 0,500" fill="none" stroke="#C9A24B" stroke-width="4.5" />
-                </svg>
+            <!-- Column 3: Narrative Text (Right) -->
+            <div class="lg:col-span-4 text-xs md:text-sm text-[#1F1F1D]/80 leading-relaxed space-y-4 font-sans">
+                <p>
+                    Indoeasy Scent Aroma Indonesia hadir sebagai pelopor dalam menghadirkan solusi aromaterapi &amp; <strong>commercial scenting</strong> berkualitas tinggi untuk berbagai kebutuhan Anda.
+                </p>
+                <p>
+                    Dikenal dengan produk – produk diffuser dan wewangian yang modern dan efisien, Indoeasy Scent berkomitmen untuk menciptakan suasana yang nyaman dan menenangkan di rumah, mobil, hotel, retail, maupun ruang komersial Anda.
+                </p>
+                <p>
+                    Kami menggabungkan teknologi inovatif seperti atomisasi <em>cold-air micro-diffusion</em> dan ion negatif dengan desain elegan yang cocok untuk dekorasi apa pun.
+                </p>
             </div>
 
         </div>
