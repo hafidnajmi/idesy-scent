@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Official Indoeasy Scent Website",
+  "main": "index.js",
   "scripts": {
-    "build": "echo 'Static Site Ready'"
+    "build": "echo 'Static Site Ready'",
+    "deploy": "npx wrangler deploy"
   }
 }
