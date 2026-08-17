@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="light" lang="id">
 <head>
     <meta charset="utf-8"/>
@@ -175,47 +175,42 @@
             </p>
         </div>
     </div>
-                <!-- CERITA KAMI (Who We Are - Simple 3-Column Balanced Layout) -->
-    <section id="cerita-kami" class="py-16 md:py-24 px-6 md:px-12 bg-[#F7F3EC] border-b border-[#0D2A1D]/10 font-sans">
-        <div class="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                    <!-- CERITA KAMI (Who We Are - Classic 2-Column Split: Image Left Radius 0, Text Right) -->
+    <section id="cerita-kami" class="py-16 md:py-24 px-6 md:px-16 bg-[#F7F3EC] border-b border-[#0D2A1D]/10 font-sans">
+        <div class="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             
-            <!-- Column 1: Title & Who We Are Subtitle (Left - 4 cols) -->
-            <div class="lg:col-span-4 flex flex-col justify-center">
-                <span class="font-serif italic text-base md:text-lg text-[#C9A24B] mb-2 block">Who we are</span>
-                <h2 class="font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-[#0D2A1D] leading-tight mb-6 tracking-tight">
-                    Indoeasy Scent Aroma Indonesia
+            <!-- Column 1: Feature Image Left (Radius 0 / rounded-none - 5 cols) -->
+            <div class="lg:col-span-5 relative overflow-hidden rounded-none shadow-xl border border-[#0D2A1D]/10 group">
+                <img src="img/cerita-kami.webp" alt="Indoeasy Scent Aroma Indonesia" class="w-full h-[380px] md:h-[460px] object-cover group-hover:scale-105 transition-transform duration-700 rounded-none"/>
+            </div>
+
+            <!-- Column 2: Content Right (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+                <span class="font-label-caps text-xs md:text-sm text-[#C9A24B] font-bold uppercase tracking-widest block mb-2">About Us</span>
+                
+                <h2 class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D2A1D] leading-tight mb-6 tracking-tight">
+                    Who We Are
                 </h2>
 
-                <!-- Action Button Row -->
-                <div class="flex items-center gap-3">
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." target="_blank" rel="noopener noreferrer" 
-                       aria-label="Konsultasi WhatsApp"
-                       class="w-12 h-12 rounded-full bg-[#C9A24B] hover:bg-[#0D2A1D] text-[#0D2A1D] hover:text-white flex items-center justify-center transition-all duration-300 shadow-md shrink-0 group/play">
-                        <svg class="w-5 h-5 fill-current ml-0.5 group-hover/play:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </a>
+                <div class="space-y-4 text-xs md:text-sm text-[#1F1F1D]/80 leading-relaxed mb-8 font-sans">
+                    <p>
+                        <strong>Indoeasy Scent Indonesia</strong> hadir sebagai pelopor dalam menghadirkan solusi aromaterapi &amp; <em>commercial scenting</em> profesional berkualitas tinggi untuk berbagai kebutuhan bisnis dan hunian Anda.
+                    </p>
+                    <p>
+                        Dikenal dengan produk-produk diffuser dan wewangian yang modern dan efisien, Indoeasy Scent berkomitmen untuk menciptakan suasana yang nyaman, mewah, dan menenangkan di rumah, mobil, hotel, retail, maupun ruang komersial Anda.
+                    </p>
+                    <p>
+                        Kami menggabungkan teknologi inovatif seperti atomisasi <em>cold-air micro-diffusion</em> dan ion negatif dengan desain elegan yang cocok untuk estetika dekorasi apa pun.
+                    </p>
+                </div>
+
+                <!-- Action Button (Radius 0 / rounded-none) -->
+                <div>
                     <a href="products.html" 
-                       class="inline-block bg-[#C9A24B] hover:bg-[#0D2A1D] text-[#0D2A1D] hover:text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-md transition-all duration-300 shadow-md hover:shadow-lg">
+                       class="inline-block bg-[#0D2A1D] hover:bg-[#C9A24B] text-white hover:text-[#0D2A1D] font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-none transition-all duration-300 shadow-md hover:shadow-xl">
                         DISCOVER MORE
                     </a>
                 </div>
-            </div>
-
-            <!-- Column 2: Feature Image (Center - 4 cols) -->
-            <div class="lg:col-span-4 relative overflow-hidden rounded-2xl shadow-xl group border border-[#0D2A1D]/10">
-                <img src="img/cerita-kami.webp" alt="Indoeasy Scent Aroma Indonesia" class="w-full h-[360px] md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"/>
-            </div>
-
-            <!-- Column 3: Narrative Text (Right - 4 cols) -->
-            <div class="lg:col-span-4 text-xs md:text-sm text-[#1F1F1D]/80 leading-relaxed space-y-4 font-sans border-l-2 border-[#C9A24B]/40 pl-4 lg:pl-6">
-                <p>
-                    Indoeasy Scent Aroma Indonesia hadir sebagai pelopor dalam menghadirkan solusi aromaterapi &amp; <strong>commercial scenting</strong> berkualitas tinggi untuk berbagai kebutuhan Anda.
-                </p>
-                <p>
-                    Dikenal dengan produk – produk diffuser dan wewangian yang modern dan efisien, Indoeasy Scent berkomitmen untuk menciptakan suasana yang nyaman dan menenangkan di rumah, mobil, hotel, retail, maupun ruang komersial Anda.
-                </p>
-                <p>
-                    Kami menggabungkan teknologi inovatif seperti atomisasi <em>cold-air micro-diffusion</em> dan ion negatif dengan desain elegan yang cocok untuk dekorasi apa pun.
-                </p>
             </div>
 
         </div>
