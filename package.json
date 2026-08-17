@@ -1,0 +1,9 @@
+{
+  "name": "idesy-scent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official Indoeasy Scent Website",
+  "scripts": {
+    "build": "echo 'Static Site Ready'"
+  }
+}
