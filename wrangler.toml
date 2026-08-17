@@ -1,7 +1,2 @@
 name = "idesy-scent"
-main = "index.js"
-compatibility_date = "2024-01-01"
-
-[assets]
-directory = "."
-binding = "ASSETS"
+pages_build_output_dir = "."

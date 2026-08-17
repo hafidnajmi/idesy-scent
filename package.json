@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Official Indoeasy Scent Website",
-  "main": "index.js",
   "scripts": {
     "build": "echo 'Static Site Ready'",
-    "deploy": "npx wrangler deploy"
-  },
-  "devDependencies": {
-    "wrangler": "^3.100.0"
+    "deploy": "npx wrangler pages deploy . --project-name=idesy-scent"
   }
 }
