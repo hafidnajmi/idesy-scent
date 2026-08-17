@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Indoeasy Scent — Smooth Page Transition
  * Keeps Navbar stable & frozen while <main> content smoothly fades in / fades out.
  * 100% compatible with native HTML page layouts, Tailwind, and scripts.
@@ -64,13 +64,67 @@
         });
     }
 
+    // Mobile Drawer Navigation System
+    function initMobileDrawer() {
+        var menuBtn = document.getElementById('mobile-menu-btn');
+        var drawer = document.getElementById('mobile-drawer');
+        var panel = document.getElementById('mobile-drawer-panel');
+        var closeBtn = document.getElementById('mobile-drawer-close');
+
+        if (!menuBtn || !drawer || !panel) return;
+
+        function openDrawer() {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawer.classList.add('opacity-100');
+            panel.classList.remove('translate-x-full');
+            panel.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            drawer.classList.remove('opacity-100');
+            drawer.classList.add('opacity-0', 'pointer-events-none');
+            panel.classList.remove('translate-x-0');
+            panel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openDrawer);
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+        drawer.addEventListener('click', function (e) {
+            if (e.target === drawer) closeDrawer();
+        });
+
+        // Mobile Accordion Toggle for PRODUK & TENTANG KAMI
+        var accordionBtns = drawer.querySelectorAll('.mobile-accordion-btn');
+        accordionBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var content = this.nextElementSibling;
+                var icon = this.querySelector('.material-symbols-outlined');
+                if (!content) return;
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initPageFadeIn();
             attachLinkTransitions();
+            initMobileDrawer();
         });
     } else {
         initPageFadeIn();
         attachLinkTransitions();
+        initMobileDrawer();
     }
 })();
+
