@@ -323,60 +323,16 @@ function updateCartUI() {
     });
 }
 
-// Inisialisasi menu mobile yang presisi, responsif, dan lengkap untuk seluruh halaman
+// Inisialisasi menu mobile (Disabled: Diatur secara terpusat oleh initMobileDrawer di transitions.js)
 function setupMobileMenu() {
-    const menuSpans = Array.from(document.querySelectorAll('span.material-symbols-outlined'));
-    const menuSpan = menuSpans.find(span => span.textContent.trim() === 'menu');
-    
-    if (menuSpan) {
-        const mobileMenuTrigger = menuSpan.parentElement;
-        mobileMenuTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            let overlay = document.getElementById('mobile-menu-overlay');
-            if (!overlay) {
-                overlay = document.createElement('div');
-                overlay.id = 'mobile-menu-overlay';
-                overlay.className = 'fixed inset-0 z-[70] bg-[#0D2A1D] text-white flex flex-col px-8 py-10 translate-x-full transition-transform duration-500 font-sans overflow-y-auto';
-                overlay.innerHTML = `
-                    <div class="flex justify-between items-center border-b border-white/10 pb-6 mb-8">
-                        <img alt="Indoeasy Scent" class="h-12 w-auto filter brightness-0 invert sepia(1) saturate(5) hue-rotate(10deg)" src="img/LOGO%20IDESY%20SCENT.png"/>
-                        <button class="text-white/80 hover:text-[#C9A24B] close-mobile-btn p-2">
-                            <span class="material-symbols-outlined !text-3xl">close</span>
-                        </button>
-                    </div>
-                    <nav class="flex flex-col gap-6 font-sans uppercase tracking-widest text-lg font-bold text-left">
-                        <a href="index.html" class="hover:text-[#C9A24B] transition-colors py-2 border-b border-white/5">Beranda</a>
-                        <a href="products.html" class="hover:text-[#C9A24B] transition-colors py-2 border-b border-white/5">Produk</a>
-                        <a href="collection.html" class="hover:text-[#C9A24B] transition-colors py-2 border-b border-white/5">Koleksi Wewangian</a>
-                        <a href="about.html" class="hover:text-[#C9A24B] transition-colors py-2 border-b border-white/5">Tentang Kami</a>
-                        <a href="contact.html" class="hover:text-[#C9A24B] transition-colors py-2 border-b border-white/5">Kontak</a>
-                    </nav>
-                    <div class="mt-auto pt-10 text-xs text-white/60 space-y-3 font-sans">
-                        <p class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[#C9A24B] !text-sm">call</span>
-                            <span>+62 812 8780 4396</span>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[#C9A24B] !text-sm">mail</span>
-                            <span>indoeasyscent@gmail.com</span>
-                        </p>
-                    </div>
-                `;
-                document.body.appendChild(overlay);
-
-                overlay.querySelector('.close-mobile-btn').addEventListener('click', () => {
-                    overlay.classList.add('translate-x-full');
-                });
-            }
-            overlay.classList.remove('translate-x-full');
-        });
-    }
+    return;
 }
 
 // Jalankan ketika halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
     injectCartDrawer();
     updateCartUI();
-    setupMobileMenu();
+    // setupMobileMenu(); // Handled by transitions.js
 });
+
 
