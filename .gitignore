@@ -7,6 +7,7 @@ desktop.ini
 .vscode/
 .idea/
 
-# Temp files
+# Temp & build files
 *.tmp
 *.log
+.wrangler/
