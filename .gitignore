@@ -11,3 +11,5 @@ desktop.ini
 *.tmp
 *.log
 .wrangler/
+__pycache__/
+*.pyc
