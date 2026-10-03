@@ -55,31 +55,28 @@ Verified dari luar dengan `curl --resolve` (DNS belum disentuh):
 - [ ] Umami: ganti password `admin` bawaan, tambahkan website `https://indoeasyscent.com`
 - [ ] Google Search Console: verifikasi domain via DNS TXT, submit sitemap
 
-## Kondisi VPS (verified 2026-10-04, probe langsung)
+## PENTING: dua IP yang pernah muncul di dokumen ini
 
-| Item | Nilai |
+| IP | Arti |
 |---|---|
-| IP | `34.50.118.52` |
-| Port terbuka | 22 (ssh), 80, 443 — **hanya itu** |
-| Web server | nginx/1.28.3 (Ubuntu) sudah ada di 443 |
-| Isi server | Kosong — `GET /` balas **502 Bad Gateway** (proxy tanpa backend) |
-| Akses | SSH belum ada keypair di laptop ini (public key sudah dibuat, tinggal di-paste) |
-| Panel | Cockpit (`:9090`) + Umami (`:3001`) — belum diinstall |
-| DNS | Lihat "blocker" di bawah |
+| `34.101.66.215` | **VPS Indoeasy Scent.** Debian 13, 16 GB RAM, 119 GB disk. deployed 2026-10-04. |
+| `34.50.118.52` | **BUKAN server project ini.** Shared production box, ~11 domain lain (hamztech.my.id, sirait.co, firmahukum, dll) di belakang HAProxy. Jangan pernah jalankan bootstrap/hardening di IP ini. |
 
-### Blocker: DNS return 5 IP sekaligus
+Kalau sebuah task menyebut `34.50.118.52`, konfirmasi dulu ke user sebelum
+menyentuh apa pun.
+
+### kondisi DNS saat dokumen ini ditulis
 
 ```
 185.199.108.153   ┐
 185.199.109.153   ├ GitHub Pages — situs LAMA masih hidup di sini
 185.199.110.153   │
 185.199.111.153   ┘
-34.50.118.52        VPS baru — belum ada isinya, jadi 502
+34.101.66.215       VPS baru — sudah ter-deploy, menunggu cutover DNS
 ```
 
-Konsekuensi sekarang: pengunjung yang resolve ke IP GitHub melihat situs lama,
-yang resolve ke IP VPS melihat 502. `www.indoeasyscent.com` **tidak punya A
-record sama sekali**, jadi subdomain itu tidak resolve.
+`www.indoeasyscent.com` **tidak punya A record sama sekali**, jadi subdomain itu
+tidak resolve.
 
 NS domain: `hermes.dns-parking.com` + `artemis.dns-parking.com`.
 
@@ -94,7 +91,7 @@ Sekitar 30–45 menit aktif, tergantung upload bandwidth. Yang berubah: hosting.
 
 ```
 Sebelum:  DNS → GitHub Pages (server: GitHub.com)
-Sesudah: DNS → VPS (A record ke 34.50.118.52) + Nginx serve /var/www/html
+Sesudah: DNS → VPS (A record ke 34.101.66.215) + Nginx serve /var/www/html
 ```
 
 > Penting: ini **bukan** memindahkan DNS ke Cloudflare proxy. Sesuai keputusan, DNS
