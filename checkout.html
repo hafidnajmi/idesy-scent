@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Inquiry Penawaran | Indoeasy Scent</title>
+    <meta name="description" content="Form pengajuan inquiry penawaran commercial scenting, sampel fragrance, dan sewa diffuser Indoeasy Scent."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Inquiry Penawaran | Indoeasy Scent"/>
+    <meta property="og:description" content="Form pengajuan inquiry penawaran commercial scenting Indoeasy Scent."/>
+    <meta property="og:image" content="img/LOGO%20IDESY%20SCENT.png"/>
+    <meta name="theme-color" content="#0D2A1D"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "forest-green": "#0D2A1D",
+                "antique-gold": "#C9A24B",
+                "warm-ivory": "#F7F3EC",
+                "soft-stone": "#EDE6D8",
+                "charcoal": "#1F1F1D"
+            },
+            "fontFamily": {
+                "sans": ["Arial", "Helvetica", "sans-serif"],
+                "serif": ["Arial", "Helvetica", "sans-serif"],
+                "body-md": ["Arial", "Helvetica", "sans-serif"],
+                "display-lg-mobile": ["Arial", "Helvetica", "sans-serif"],
+                "label-caps": ["Arial", "Helvetica", "sans-serif"],
+                "display-lg": ["Arial", "Helvetica", "sans-serif"],
+                "headline-sm": ["Arial", "Helvetica", "sans-serif"],
+                "headline-md": ["Arial", "Helvetica", "sans-serif"],
+                "body-lg": ["Arial", "Helvetica", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        /* Force Arial font family across all navbar elements */
+        nav, nav a, nav div, nav button, nav span:not(.material-symbols-outlined) {
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F7F3EC;
+            color: #1A1C1B;
+            font-family: 'Inter', sans-serif;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-bottom-color: #C9A24B !important;
+            box-shadow: none !important;
+        }
+        .nav-dropdown {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+    <script src="js/transitions.js" defer></script>
+
+    
+
+
+    <style>
+        /* Force Arial font family across all navbar elements */
+        nav, nav a, nav div, nav button, nav span:not(.material-symbols-outlined) {
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+        body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, div {
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+        span:not(.material-symbols-outlined) {
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+        }
+    </style>
+
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+<!-- Navigasi Utama -->
+<nav class="w-full top-0 sticky z-50 bg-[#F7F3EC]/95 backdrop-blur-sm border-b border-charcoal/5 transition-all duration-500">
+    <div class="flex justify-between items-center w-full px-margin-desktop py-3 max-w-[1440px] mx-auto">
+        <div class="flex items-center gap-4">
+            <a href="index.html">
+                <img alt="Indoeasy Scent" class="h-20 md:h-24 w-auto object-contain [mix-blend-mode:multiply]" src="img/LOGO%20IDESY%20SCENT.png"/>
+            </a>
+        </div>
+        <div class="hidden md:flex gap-gutter items-center">
+            <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 font-bold text-sm tracking-wider uppercase" href="index.html">BERANDA</a>
+            <div class="relative group py-2">
+                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 font-bold text-sm tracking-wider uppercase" href="products.html">
+                    PRODUK
+                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a href="products.html#all" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Semua Produk</a>
+                    <a href="products.html#diffuser" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Scenting Diffuser</a>
+                    <a href="products.html#fragrance" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Fragrance Collection</a>
+                </div>
+            </div>
+            <div class="relative group py-2">
+                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 font-bold text-sm tracking-wider uppercase" href="about.html">
+                    TENTANG KAMI
+                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <a href="about.html#cerita-kami" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cerita Kami</a>
+                    <a href="about.html#layanan-kami" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Our Services</a>
+                    <a href="about.html#keahlian" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Our Core Business</a>
+                    <a href="about.html#cara-bekerja" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cara Kami Bekerja</a>
+                </div>
+            </div>
+            <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 font-bold text-sm tracking-wider uppercase" href="contact.html">KONTAK</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden cursor-pointer text-[#0D2A1D] p-2 hover:bg-black/5 rounded-lg transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-[1440px] mx-auto px-margin-desktop py-16">
+    <header class="mb-16">
+        <h1 class="font-serif text-display-lg-mobile md:text-5xl text-deep-forest uppercase tracking-widest">Inquiry B2B</h1>
+        <div class="w-16 h-[1px] bg-antique-gold mt-4"></div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        
+        <!-- Left Panel: B2B Quote Form -->
+        <div class="lg:col-span-7 bg-white/40 border border-charcoal/5 p-8 rounded-lg">
+            <h2 class="font-serif text-2xl text-deep-forest mb-8">Informasi Perusahaan &amp; Pengiriman</h2>
+            
+            <form id="checkout-form" class="space-y-6" novalidate>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative">
+                        <label for="bill-first-name" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Nama Depan</label>
+                        <input type="text" id="bill-first-name" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="John">
+                        <span id="first-name-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Nama depan wajib diisi</span>
+                    </div>
+                    <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative">
+                        <label for="bill-last-name" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Nama Belakang</label>
+                        <input type="text" id="bill-last-name" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="Doe">
+                        <span id="last-name-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Nama belakang wajib diisi</span>
+                    </div>
+                </div>
+
+                <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative pt-6">
+                    <label for="bill-company" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Nama Perusahaan / Institusi</label>
+                    <input type="text" id="bill-company" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="PT Hotel Indah Jaya">
+                    <span id="company-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Nama perusahaan wajib diisi</span>
+                </div>
+
+                <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative pt-6">
+                    <label for="bill-email" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Alamat Email Bisnis</label>
+                    <input type="email" id="bill-email" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="john.doe@hotelindah.com">
+                    <span id="bill-email-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Harap masukkan alamat email yang valid</span>
+                </div>
+
+                <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative pt-6">
+                    <label for="bill-phone" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Nomor Telepon (WhatsApp)</label>
+                    <input type="tel" id="bill-phone" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="+62 812 3456 7890">
+                    <span id="bill-phone-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Nomor telepon wajib diisi</span>
+                </div>
+
+                <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative pt-6">
+                    <label for="bill-address" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Alamat Pengiriman / Kantor</label>
+                    <input type="text" id="bill-address" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="Jl. Senopati No. 8">
+                    <span id="bill-address-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Alamat wajib diisi</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                    <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative">
+                        <label for="bill-city" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Kota</label>
+                        <input type="text" id="bill-city" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="Jakarta Selatan">
+                        <span id="bill-city-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Kota wajib diisi</span>
+                    </div>
+                    <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative">
+                        <label for="bill-province" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Provinsi</label>
+                        <input type="text" id="bill-province" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="DKI Jakarta">
+                        <span id="bill-province-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Provinsi wajib diisi</span>
+                    </div>
+                    <div class="border-b border-forest-green/20 focus-within:border-antique-gold transition-colors py-2 relative">
+                        <label for="bill-zip" class="font-label-caps text-[10px] text-charcoal/40 uppercase block mb-1">Kode Pos</label>
+                        <input type="text" id="bill-zip" required class="w-full bg-transparent border-none p-0 focus:ring-0 text-charcoal font-body-md" placeholder="12190">
+                        <span id="bill-zip-error" class="text-xs text-red-600 absolute -bottom-6 left-0 hidden">Kode pos wajib diisi</span>
+                    </div>
+                </div>
+
+                <div class="pt-8">
+                    <h3 class="font-label-caps text-[#0D2A1D] mb-4 font-bold tracking-widest text-xs uppercase text-antique-gold">Prosedur Pemesanan B2B</h3>
+                    <p class="text-xs text-charcoal/60 leading-relaxed bg-[#EDE6D8]/40 p-4 border border-antique-gold/15">
+                        Karena ini adalah katalog penawaran B2B, penekanan tombol di bawah akan merangkum semua item pilihan Anda dan rincian kontak di atas, lalu membuka WhatsApp untuk berkomunikasi langsung dengan konsultan aroma korporat kami.
+                    </p>
+                </div>
+
+                <button type="submit" class="w-full bg-[#0D2A1D] text-white hover:bg-[#C9A24B] hover:text-[#0D2A1D] py-5 font-label-caps tracking-widest font-bold transition-all duration-500 active:scale-[0.98] mt-8 text-sm flex items-center justify-center gap-3">
+                    <span class="material-symbols-outlined text-lg">chat</span> KIRIM INQUIRY VIA WHATSAPP
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Panel: Order Summary -->
+        <div class="lg:col-span-5 bg-white/40 border border-charcoal/5 p-8 rounded-lg">
+            <h2 class="font-serif text-2xl text-deep-forest mb-8">Daftar Produk Permintaan</h2>
+            
+            <div id="checkout-summary-items" class="space-y-6 max-h-[350px] overflow-y-auto pr-2 mb-6">
+                <!-- Summary items populated dynamically -->
+            </div>
+            
+            <div class="border-t border-[#0D2A1D]/10 pt-6 space-y-4 text-sm font-sans">
+                <div class="flex justify-between items-center text-charcoal/60">
+                    <span>Estimasi Harga Subtotal</span>
+                    <span id="checkout-subtotal" class="font-bold text-charcoal">Rp 0</span>
+                </div>
+                <p class="text-xs text-charcoal/40 italic">Total final (termasuk diskon volume B2B, pajak korporat, dan ongkos pengiriman kustom) akan dihitung secara manual oleh sales representative kami via WhatsApp.</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Success Confirmation Dialog Overlay -->
+<div id="success-overlay" class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-all duration-500 flex items-center justify-center p-4">
+    <div class="bg-[#F7F3EC] max-w-lg w-full p-10 border border-antique-gold/20 shadow-2xl text-center space-y-6 scale-95 opacity-0 transition-all duration-500" id="success-modal">
+        <span class="material-symbols-outlined !text-6xl text-antique-gold">forum</span>
+        <h2 class="font-serif text-3xl text-deep-forest uppercase tracking-widest">Inquiry Dikirim</h2>
+        <p class="font-sans text-charcoal/70 leading-relaxed">
+            Terima kasih telah menghubungi Indoeasy Scent. Kami sedang mengalihkan Anda ke WhatsApp. Jika halaman tidak terbuka, silakan gunakan nomor pesanan di bawah ini untuk merujuk percakapan Anda dengan sales kami.
+        </p>
+        <div class="border-y border-[#0D2A1D]/10 py-4 font-label-caps text-xs text-charcoal/60 flex justify-between">
+            <span>NOMOR INQUIRY B2B</span>
+            <span class="font-bold text-deep-forest" id="order-number-val">IS-2026-99382</span>
+        </div>
+        <a href="index.html" class="bg-[#0D2A1D] text-white hover:bg-[#C9A24B] hover:text-[#0D2A1D] transition-colors py-4 px-8 text-center font-label-caps tracking-widest font-bold block text-sm">
+            KEMBALI KE BERANDA
+        </a>
+    </div>
+</div>
+
+<!-- Footer (Standard Compact Luxury Footer) -->
+
+<!-- B2B Trial & Consultation Banner (Footer Trust Section) -->
+<section class="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 relative z-30 -mb-16 md:-mb-20 font-sans">
+    <div class="bg-gradient-to-r from-[#C9A24B] via-[#D4AF57] to-[#C9A24B] rounded-3xl p-6 md:p-10 shadow-[0_20px_50px_rgba(13,42,29,0.25)] border border-white/30 text-[#0D2A1D] relative overflow-hidden">
+        <!-- Subtle Watermark Accent -->
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 opacity-10 pointer-events-none text-[#0D2A1D]">
+            <svg viewBox="0 0 200 200" fill="currentColor">
+                <path d="M 20,180 C 60,140 90,90 170,20 C 150,50 120,80 80,120 Z"/>
+            </svg>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
+            <!-- Left Info & Representative Avatar -->
+            <div class="lg:col-span-8 flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-4 sm:gap-6">
+                <div class="relative shrink-0 mx-auto sm:mx-0">
+                    <div class="h-24 sm:h-28 md:h-36 w-auto flex items-end justify-center">
+                        <img src="img/customer_service_transparent.webp" onerror="this.src='img/customer_service_transparent.png'" alt="Customer Support Indoeasy Scent" class="h-full w-auto object-contain filter drop-shadow-md" loading="lazy">
+                    </div>
+                </div>
+                <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <span class="font-label-caps text-[10px] sm:text-[11px] font-extrabold uppercase tracking-widest bg-[#0D2A1D] text-[#C9A24B] px-3 py-1 rounded-full inline-block mb-2">Layanan Konsultasi B2B</span>
+                    <h3 class="font-serif text-xl sm:text-2xl md:text-3xl font-bold leading-snug text-[#0D2A1D] mb-1.5">Jadwalkan Trial &amp; Sample Aroma Hari Ini!</h3>
+                    <p class="font-sans text-xs md:text-sm text-[#0D2A1D]/85 leading-relaxed max-w-xl">
+                        Hubungi tim spesialis kami untuk konsultasi <i>commercial scenting</i> gratis, permintaan sampel fragrance, dan jadwal uji coba unit diffuser di ruang bisnis Anda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right CTA Button -->
+            <div class="lg:col-span-4 flex lg:justify-end items-center mt-2 lg:mt-0">
+                <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20menjadwalkan%20trial%20dan%20konsultasi%20scenting%20diffuser%20untuk%20ruangan%20saya." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto text-center bg-[#0D2A1D] hover:bg-[#081B13] text-white hover:text-[#C9A24B] font-bold text-xs md:text-sm uppercase tracking-widest py-3.5 sm:py-4 px-6 sm:px-8 rounded-none shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>JADWALKAN TRIAL SEKARANG</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="w-full bg-[#0D2A1D] text-[#F7F3EC] px-6 md:px-16 pt-16 md:pt-20 pb-6 md:pb-8 border-t border-[#C9A24B]/20 mt-8 md:mt-10 relative overflow-hidden">
+    <!-- Leaf Accent Background Watermarks -->
+    <div class="absolute -left-10 -bottom-12 w-64 h-64 opacity-15 pointer-events-none text-[#C9A24B]">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M 20,180 C 60,140 90,90 170,20" stroke-linecap="round"/>
+            <path d="M 50,150 C 30,120 10,130 35,142 C 45,147 50,150 50,150 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 75,125 C 105,100 120,70 95,95 C 83,108 75,125 75,125 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 95,95 C 70,70 45,78 70,88 C 84,93 95,95 95,95 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 125,65 C 155,40 170,10 145,38 C 133,52 125,65 125,65 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 145,38 C 120,15 95,22 120,32 C 134,37 145,38 145,38 Z" fill="currentColor" opacity="0.8"/>
+        </svg>
+    </div>
+    <div class="absolute -right-10 -top-12 w-72 h-72 opacity-15 pointer-events-none text-[#C9A24B]">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M 180,20 C 140,60 90,90 20,170" stroke-linecap="round"/>
+            <path d="M 150,50 C 170,80 190,70 165,68 C 155,63 150,50 150,50 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 125,75 C 95,100 80,130 105,105 C 117,92 125,75 125,75 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 105,105 C 130,130 155,122 130,112 C 116,107 105,105 105,105 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 75,135 C 45,160 30,190 55,162 C 67,148 75,135 75,135 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M 55,162 C 80,185 105,178 80,168 C 66,163 55,162 55,162 Z" fill="currentColor" opacity="0.8"/>
+        </svg>
+    </div>
+    <div class="max-w-[1440px] mx-auto font-sans relative z-10">
+        <div class="grid grid-cols-12 gap-6 md:gap-8 mb-8">
+            <!-- Brand Column -->
+            <div class="col-span-12 md:col-span-5 mb-4 md:mb-0">
+                <img alt="Indoeasy Scent" class="h-10 md:h-12 w-auto mb-3 filter brightness-0 invert sepia(1) saturate(5) hue-rotate(10deg)" src="img/LOGO%20IDESY%20SCENT.png"/>
+                <p class="font-sans text-sm text-[#F7F3EC]/80 max-w-sm italic leading-relaxed mb-3">Solusi wewangian profesional dan scenting diffuser untuk menciptakan suasana nyaman serta karakter berkesan di setiap ruangan.</p>
+                <p class="font-sans text-xs sm:text-sm text-[#F7F3EC]/70 max-w-sm leading-relaxed mb-4 flex items-start gap-1.5">
+                    <span class="material-symbols-outlined !text-sm text-[#C9A24B] shrink-0 mt-0.5">location_on</span>
+                    <span>Griya Mulya Indah, Jayamulya, Kec. Serang Baru, Kab. Bekasi, Jawa Barat 17330</span>
+                </p>
+                
+                <!-- Social Media Icons Row -->
+                <div class="flex items-center gap-2.5">
+                    <a href="https://www.instagram.com/indoeasy.scent/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 bg-white/5 hover:bg-[#C9A24B] hover:text-[#0D2A1D] text-[#C9A24B] flex items-center justify-center transition-all duration-300">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/company/indoeasyscent" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 bg-white/5 hover:bg-[#C9A24B] hover:text-[#0D2A1D] text-[#C9A24B] flex items-center justify-center transition-all duration-300">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://wa.me/6281287804396" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-9 h-9 bg-white/5 hover:bg-[#C9A24B] hover:text-[#0D2A1D] text-[#C9A24B] flex items-center justify-center transition-all duration-300">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.893 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Perusahaan Column -->
+            <div class="col-span-6 md:col-span-3">
+                <h6 class="font-label-caps text-[#C9A24B] mb-3.5 font-bold tracking-widest text-sm uppercase">PERUSAHAAN</h6>
+                <ul class="space-y-2.5 text-sm text-[#F7F3EC]/80 mb-5">
+                    <li><a href="about.html" class="hover:text-[#C9A24B] transition-colors">Tentang Kami</a></li>
+                    <li><a href="products.html" class="hover:text-[#C9A24B] transition-colors">Produk</a></li>
+                    <li><a href="contact.html" class="hover:text-[#C9A24B] transition-colors">Kontak</a></li>
+                </ul>
+
+                <!-- Marketplace & E-Katalog INAPROC Logos -->
+                <div class="pt-0.5 pl-1">
+                    <span class="block font-label-caps text-[10px] text-[#C9A24B] font-bold uppercase tracking-wider mb-2">Dapatkan Produk kami di:</span>
+                    <div class="flex items-center gap-3 sm:gap-4 mb-2.5">
+                        <a href="https://s.shopee.co.id/BT6RxhDim?share_channel_code=1" target="_blank" rel="noopener noreferrer" aria-label="Shopee Official Store" class="inline-block hover:opacity-85 transition-opacity">
+                            <img src="img/logo-shopee.svg" alt="Shopee" class="h-6 sm:h-7 w-auto object-contain"/>
+                        </a>
+                        <a href="https://tk.tokopedia.com/ZSVrvBwT6/" target="_blank" rel="noopener noreferrer" aria-label="Tokopedia Official Store" class="inline-block hover:opacity-85 transition-opacity">
+                            <img src="img/tokopedia.webp" alt="Tokopedia" class="h-6 sm:h-7 w-auto object-contain"/>
+                        </a>
+                    </div>
+                    <!-- E-Katalog INAPROC Logo Underneath -->
+                    <div class="pt-1">
+                        <a href="https://katalog.inaproc.id/indotrust-global-solutions" target="_blank" rel="noopener noreferrer" aria-label="E-Katalog INAPROC Official Store" class="inline-block hover:opacity-85 transition-opacity" title="Terdaftar di E-Katalog INAPROC LKPP">
+                            <img src="img/logo-inaproc.png" alt="INAPROC LKPP" class="h-14 sm:h-16 md:h-18 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sumber Daya Column -->
+            <div class="col-span-6 md:col-span-4">
+                <h6 class="font-label-caps text-[#C9A24B] mb-3.5 font-bold tracking-widest text-sm uppercase">SUMBER DAYA</h6>
+                <ul class="space-y-2.5 text-sm text-[#F7F3EC]/80 mb-3">
+                    <li><a href="products.html#fragrance" class="hover:text-[#C9A24B] transition-colors">Koleksi Wewangian</a></li>
+                    <li><a href="products.html" class="hover:text-[#C9A24B] transition-colors">Teknologi Diffuser</a></li>
+                    <li><a href="contact.html" class="hover:text-[#C9A24B] transition-colors">Konsultasi Gratis</a></li>
+                </ul>
+
+                <!-- 5x Super-Sized IFRA & Kemenkes Logos (Moved Under SUMBER DAYA) -->
+                <div class="flex items-center gap-5 pt-2">
+                    <div class="inline-block" title="IFRA Certified Standard">
+                        <img src="img/ifra-logo.png" alt="IFRA Certified" class="h-28 sm:h-36 md:h-40 w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform"/>
+                    </div>
+                    <div class="inline-block" title="Sertifikasi Kementerian Kesehatan RI">
+                        <img src="img/kemenkes.png" alt="Kemenkes RI Certified" class="h-24 sm:h-32 md:h-36 w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-[#C9A24B]/15 pt-5 flex flex-col md:flex-row justify-between items-center opacity-85">
+            <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">© 2026 Indoeasy Scent. All Rights Reserved.</p>
+            <div class="flex gap-4 text-xs sm:text-sm">
+                <span class="text-[#C9A24B] italic">Minimalisme Sensorik.</span>
+                <span class="text-[#F7F3EC]/80">Jakarta / Global</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modern Luxury Floating WhatsApp Consultation Widget -->
+<div id="wa-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end font-sans">
+    
+    <!-- Modern Glassmorphism Popup Bubble -->
+    <div id="wa-popup-card" class="mb-3 w-80 bg-[#F7F3EC]/95 backdrop-blur-md border border-[#0D2A1D]/15 rounded-2xl shadow-2xl p-4 transition-all duration-500 opacity-0 translate-y-4 pointer-events-none origin-bottom-right relative">
+        <button onclick="toggleWaPopup(false)" class="absolute top-2.5 right-3 text-charcoal/40 hover:text-charcoal text-xs font-bold p-1">✕</button>
+
+        <div class="flex items-start gap-3 mb-3.5 pt-1">
+            <div class="w-14 h-14 shrink-0 rounded-full border border-[#0D2A1D]/20 overflow-hidden bg-[#C9A24B]/20 flex items-center justify-center shadow-md">
+                <img src="img/customer_service_transparent.webp" onerror="this.src='img/customer_service_transparent.png'" alt="Mbak Arien — Indoeasy Scent Support" class="w-full h-full object-cover object-top" loading="lazy">
+            </div>
+            <div class="pr-4">
+                <span class="text-xs font-bold text-[#0D2A1D] block mb-0.5">Mbak Arien Support</span>
+                <p class="text-xs text-charcoal/80 leading-relaxed">
+                    Halo! Ada yang bisa kami bantu mengenai solusi <strong>commercial scenting</strong> atau wewangian Anda?
+                </p>
+            </div>
+        </div>
+
+        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi%20mengenai%20commercial%20scenting." 
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-white hover:text-[#0D2A1D] py-2.5 px-4 rounded-none text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>CHAT VIA WHATSAPP</span>
+        </a>
+    </div>
+
+    <!-- Luxury Trigger Button with Emerald & Gold Glow -->
+    <button onclick="toggleWaPopup()" 
+            aria-label="Konsultasi WhatsApp"
+            class="relative w-14 h-14 rounded-full bg-[#0D2A1D] hover:bg-[#081b13] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(13,42,29,0.4)] border-2 border-[#C9A24B]/60 hover:border-[#C9A24B] transition-all duration-300 transform hover:scale-105 group">
+        
+        <!-- Muting Pulsing Ring -->
+        <span class="absolute -inset-1 rounded-full border border-[#C9A24B]/30 animate-pulse pointer-events-none"></span>
+
+        <!-- WhatsApp Icon -->
+        <svg class="w-7 h-7 fill-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+
+        <!-- Notification Badge Dot -->
+        <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#0D2A1D]"></span>
+    </button>
+</div>
+
+<script>
+    function toggleWaPopup(forceState) {
+        const card = document.getElementById('wa-popup-card');
+        if (!card) return;
+        const isOpen = forceState !== undefined ? forceState : card.classList.contains('opacity-0');
+        if (isOpen) {
+            card.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            card.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            card.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            card.classList.remove('opacity-100', 'translate-y-0');
+        }
+    }
+    setTimeout(() => {
+        toggleWaPopup(true);
+    }, 3500);
+</script>
+<!-- Mobile Navigation Drawer Overlay -->
+<div id="mobile-drawer" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+    <div id="mobile-drawer-panel" class="absolute top-0 right-0 w-[85%] max-w-[340px] h-full bg-[#F7F3EC] shadow-2xl flex flex-col justify-between translate-x-full transition-transform duration-300 ease-out border-l border-charcoal/10 font-sans">
+        
+        <!-- Drawer Header -->
+        <div class="p-5 flex items-center justify-between border-b border-charcoal/10 bg-[#F4F1EA]">
+            <img alt="Indoeasy Scent" class="h-10 w-auto object-contain [mix-blend-mode:multiply]" src="img/LOGO%20IDESY%20SCENT.png"/>
+            <button id="mobile-drawer-close" aria-label="Close Menu" class="w-9 h-9 rounded-full bg-black/5 text-[#0D2A1D] flex items-center justify-center hover:bg-black/10 transition-colors">
+                <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+        </div>
+
+        <!-- Drawer Menu Links -->
+        <div class="p-6 overflow-y-auto space-y-4 flex-1">
+            <a href="index.html" class="block font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">BERANDA</a>
+            
+            <!-- Mobile Accordion: PRODUK -->
+            <div class="border-b border-charcoal/5 py-2">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase hover:text-[#C9A24B] transition-colors">
+                    <span>PRODUK</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
+                </button>
+                <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
+                    <a href="products.html#all" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Semua Produk</a>
+                    <a href="products.html#diffuser" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Scenting Diffuser</a>
+                    <a href="products.html#fragrance" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Fragrance Collection</a>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion: TENTANG KAMI -->
+            <div class="border-b border-charcoal/5 py-2">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase hover:text-[#C9A24B] transition-colors">
+                    <span>TENTANG KAMI</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
+                </button>
+                <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
+                    <a href="about.html#cerita-kami" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Cerita Kami</a>
+                    <a href="about.html#layanan-kami" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Our Services</a>
+                    <a href="about.html#keahlian" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Our Core Business</a>
+                    
+                    <a href="about.html#cara-bekerja" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Cara Kami Bekerja</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="block font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">KONTAK</a>
+        </div>
+
+        <!-- Drawer Footer CTA -->
+        <div class="p-6 bg-[#F4F1EA] border-t border-charcoal/10">
+            <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20konsultasi." target="_blank" rel="noopener noreferrer" class="w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-white hover:text-[#0D2A1D] font-bold text-xs uppercase tracking-widest py-3.5 px-4 rounded-none shadow-md transition-all duration-300 flex items-center justify-center gap-2">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span>KONSULTASI WHATSAPP</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

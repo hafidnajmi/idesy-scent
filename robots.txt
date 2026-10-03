@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Halaman tanpa nilai SEO — tetap di-index karena ada inbound link,
+# tapi subtracting dari crawl budget yang jauh lebih besar.
+Disallow: /checkout.html
+Disallow: /terms-of-service.html
+
+Sitemap: https://indoeasyscent.com/sitemap.xml

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 500" fill="none">
+  <defs>
+    <linearGradient id="gMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#F7E87A"/>
+      <stop offset="28%"  stop-color="#E2B84A"/>
+      <stop offset="55%"  stop-color="#C9962A"/>
+      <stop offset="82%"  stop-color="#A0710E"/>
+      <stop offset="100%" stop-color="#7A5208"/>
+    </linearGradient>
+    <linearGradient id="gVert" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F7E87A"/>
+      <stop offset="35%"  stop-color="#E2B84A"/>
+      <stop offset="65%"  stop-color="#C99628"/>
+      <stop offset="100%" stop-color="#7A5208"/>
+    </linearGradient>
+    <linearGradient id="gSheen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#F7E87A" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#D4A83A" stop-opacity="1"/>
+      <stop offset="70%"  stop-color="#B8881C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7A5208" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="gLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#F7E87A"/>
+      <stop offset="45%"  stop-color="#D4A83A"/>
+      <stop offset="100%" stop-color="#8B6210"/>
+    </linearGradient>
+  </defs>
+  <circle cx="210" cy="178" r="156" stroke="url(#gMain)" stroke-width="2.8" fill="none"/>
+  <path d="M197 122 C194 115 189 106 190 97 C191 88 193 82 192 76 C189 83 184 90 184 99 C184 110 190 118 197 122Z" fill="url(#gVert)" opacity="0.88"/>
+  <path d="M210 128 C207 118 202 106 203 93 C204 80 208 72 210 66 C212 72 216 80 217 93 C218 106 213 118 210 128Z" fill="url(#gVert)"/>
+  <path d="M223 122 C230 118 236 110 236 99 C236 90 231 83 228 76 C227 82 229 88 230 97 C231 106 226 115 223 122Z" fill="url(#gVert)" opacity="0.88"/>
+  <rect x="206" y="118" width="8" height="6" rx="1.5" fill="url(#gVert)"/>
+  <rect x="200" y="124" width="20" height="7" rx="2" fill="url(#gVert)"/>
+  <rect x="205" y="131" width="10" height="14" rx="1" fill="url(#gVert)"/>
+  <rect x="193" y="145" width="34" height="52" rx="3" stroke="url(#gMain)" stroke-width="2.5" fill="none"/>
+  <path d="M174 218 C162 210 146 198 142 183 C138 168 146 154 158 150 C170 146 184 154 188 168 C192 182 185 202 174 218Z" fill="url(#gLeaf)" stroke="url(#gMain)" stroke-width="1.2"/>
+  <path d="M174 218 C176 200 182 180 158 150" stroke="#7A5208" stroke-width="1.3" stroke-linecap="round" opacity="0.55"/>
+  <path d="M168 205 C166 196 162 188 155 178" stroke="#7A5208" stroke-width="0.9" stroke-linecap="round" opacity="0.4"/>
+  <path d="M172 192 C170 184 167 178 162 170" stroke="#7A5208" stroke-width="0.9" stroke-linecap="round" opacity="0.4"/>
+  <text x="210" y="376" text-anchor="middle" font-family="Georgia,serif" font-size="54" font-weight="900" letter-spacing="6" fill="url(#gSheen)">INDOEASY</text>
+  <line x1="80" y1="396" x2="140" y2="396" stroke="url(#gMain)" stroke-width="1.2"/>
+  <line x1="280" y1="396" x2="340" y2="396" stroke="url(#gMain)" stroke-width="1.2"/>
+  <text x="210" y="410" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="700" letter-spacing="12" fill="url(#gSheen)">SCENT</text>
+  <text x="210" y="445" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" letter-spacing="2.2" font-style="italic" fill="url(#gMain)" opacity="0.9">— Create Your Signature Scent —</text>
+</svg>
