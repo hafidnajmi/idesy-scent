@@ -11,6 +11,50 @@ Repo sumber: `/home/pandeandhika/Documents/idesy-scent-main`
 
 ---
 
+## Deploy pertama berhasil (2026-10-04)
+
+Server `34.101.66.215` (Debian 13, 16 GB RAM, 119 GB disk) sudah melayani situs.
+Verified dari luar dengan `curl --resolve` (DNS belum disentuh):
+
+```
+/                     200   canonical + og:image + twitter:card + JSON-LD
+/products.html        200   29 JSON-LD nodes
+/collection.html      200
+/checkout.html        200
+/about.html           200
+/contact.html         200
+/privacy-policy.html  200
+/terms-of-service.html 200
+/robots.txt           200
+/sitemap.xml          200
+/img/og/index.jpg     200
+/tidak-ada.html       404   -> custom 404.html
+```
+
+15/15 file md5 identik antara repo lokal dan VPS.
+
+### Dua hal yang wajib diketahui untuk GCP
+
+1. **VM ini butuh firewall rule GCP**, bukan hanya ufw. Rule harus dibuat di
+   **VPC network yang sama** dengan instance — kalau dibuat di VPC lain, rule
+   ada di console tapi tidak pernah berlaku. Gejalanya persis seperti yang
+   terjadi di sini: port 22 tembus (default-allow SSH) sementara 80/443/3001/9090
+   timeout padahal ufw sudah meng-allow-nya.
+
+2. **Cockpit (:9090) dan Umami (:3001) sebaiknya tidak dibuka ke `0.0.0.0/0`.**
+   Gunakan SSH tunnel, tidak perlu firewall rule untuk keduanya:
+   ```bash
+   ssh -N -L 3001:localhost:3001 -L 9090:localhost:9090 idesys-vps
+   ```
+   Lalu buka `http://localhost:3001` (Umami) dan `http://localhost:9090` (Cockpit).
+
+### Sisa langkah menuju live
+
+- [ ] DNS: hapus 4 A record GitHub Pages, pastikan `@` dan `www` -> `34.101.66.215`
+- [ ] Certbot setelah DNS propagate
+- [ ] Umami: ganti password `admin` bawaan, tambahkan website `https://indoeasyscent.com`
+- [ ] Google Search Console: verifikasi domain via DNS TXT, submit sitemap
+
 ## Kondisi VPS (verified 2026-10-04, probe langsung)
 
 | Item | Nilai |

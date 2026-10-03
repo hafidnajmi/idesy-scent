@@ -21,8 +21,8 @@ set -euo pipefail
 SITE="indoeasyscent.com"
 SITEALT="www.${SITE}"
 DEPLOY_USER="deploy"
-EMAIL_LE="CHANGE-ME@example.com"     # ← GANTI dengan email Anda
-SERVER_IP="34.50.118.52"
+EMAIL_LE="indoeasyscent@gmail.com"
+SERVER_IP="34.101.66.215"
 COCKPIT_PORT="9090"
 UMAMI_PORT="3001"
 
@@ -36,7 +36,7 @@ echo "OS: $PRETTY_NAME"
 echo "IP : $SERVER_IP"
 
 # ---------------------------------------------------------------- 0. update
-log "0/7 Update paket"
+log "0/8 Update paket"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
 apt-get upgrade -yqq
@@ -44,7 +44,7 @@ apt-get install -yqq curl git rsync unzip nginx certbot python3-certbot-nginx \
   ufw fail2ban unattended-upgrades chrony ca-certificates
 
 # ------------------------------------------------------- 1. swapfile (jika perlu)
-log "1/7 Swapfile"
+log "1/8 Swapfile"
 TOTAL_MB=$(free -m | awk '/^Mem:/{print $2}')
 if [ "$TOTAL_MB" -lt 2048 ] && [ ! -f /swapfile ]; then
   fallocate -l 2G /swapfile || dd if=/dev/zero of=/swapfile bs=1M count=2048
@@ -57,14 +57,18 @@ fi
 swapon --show || true
 
 # ---------------------------------------------------------- 2. time & timezone
-log "2/7 Timezone → Asia/Jakarta + automatic security update"
+log "2/8 Timezone → Asia/Jakarta + automatic security update"
 timedatectl set-timezone Asia/Jakarta
-timedatectl set-ntp true
+# GCP: NTP is managed by the guest agent and timedatectl refuses to set it.
+# Don't let that abort the run under `set -e`.
+timedatectl set-ntp true 2>/dev/null || warn "NTP: dipakai guest agent GCP (normal)"
+systemctl enable --now chrony 2>/dev/null || systemctl restart chrony 2>/dev/null || true
 dpkg-reconfigure -plow unattended-upgrades </dev/null || true
+systemctl enable --now unattended-upgrades 2>/dev/null || true
 systemctl enable --now unattended-upgrades || true
 
 # ------------------------------------------------------------- 3. hardening SSH
-log "3/7 Hardening SSH"
+log "3/8 Hardening SSH"
 cat > /etc/ssh/sshd_config.d/99-hardening.conf <<'EOF'
 PermitRootLogin prohibit-password
 PasswordAuthentication no
@@ -91,7 +95,7 @@ touch "/home/$DEPLOY_USER/.ssh/authorized_keys"
 chmod 600 "/home/$DEPLOY_USER/.ssh/authorized_keys"
 
 # --------------------------------------------------------- 4. firewall (ufw)
-log "4/7 Firewall ufw"
+log "4/8 Firewall ufw"
 ufw --force reset >/dev/null
 ufw default deny incoming
 ufw default allow outgoing
@@ -104,7 +108,7 @@ ufw --force enable
 ufw status verbose
 
 # ----------------------------------------------------------- 5. fail2ban + logrotate
-log "5/7 fail2ban + logrotate"
+log "5/8 fail2ban + logrotate"
 cat > /etc/fail2ban/jail.local <<'EOF'
 [DEFAULT]
 bantime  = 1h
@@ -137,7 +141,7 @@ cat > /etc/logrotate.d/nginx <<'EOF'
 EOF
 
 # ---------------------------------------------------------------- 6. nginx
-log "6/7 Nginx — HTTP_ACME_CHALLENGE dulu (belum redirect, SSL belum ada)"
+log "6/8 Nginx — HTTP_ACME_CHALLENGE dulu (belum redirect, SSL belum ada)"
 cat > /etc/nginx/sites-available/${SITE}.conf <<EOF
 limit_req_zone \$binary_remote_addr zone=idesy_rl:10m rate=20r/s;
 
@@ -163,7 +167,7 @@ systemctl reload nginx
 echo "nginx aktif; /etc/nginx/sites-available/${SITE}.conf dibuat"
 
 # ---------------------------------------------------------------- 7. Cockpit
-log "7/7 Cockpit — system panel + file manager + terminal web"
+log "7/8 Cockpit — system panel + file manager + terminal web"
 apt-get install -yqq cockpit cockpit-storaged
 cat > /etc/cockpit/cockpit.conf <<EOF
 [Service]
@@ -179,7 +183,7 @@ command -v docker >/dev/null 2>&1 || {
   sh /tmp/get-docker.sh
   systemctl enable --now docker
 }
-docker pull ghcr.io/louislam/umami:postgresql-latest >/dev/null 2>&1 || true   # pre-warm
+docker pull docker.umami.is/umami-software/umami:postgresql-latest || true   # pre-warm
 mkdir -p /opt/umami
 cat > /opt/umami/docker-compose.yml <<'EOF'
 services:
@@ -188,7 +192,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: umami
-      POSTGRES_PASSWORD: CHANGE_ME_DB
+      POSTGRES_PASSWORD: CHANGE_ME_DB_REDACTED
       POSTGRES_DB: umami
     volumes:
       - umami-db:/var/lib/postgresql/data
@@ -198,16 +202,16 @@ services:
       retries: 5
 
   umami:
-    image: ghcr.io/louislam/umami:postgresql-latest
+    image: docker.umami.is/umami-software/umami:postgresql-latest
     restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
     environment:
       DATABASE_TYPE: postgresql
-      DATABASE_URL: postgresql://umami:CHANGE_ME_DB@db:5432/umami
-      DATABASE_PASSWORD: CHANGE_ME_DB
-      APP_SECRET: CHANGE_ME_SECRET
+      DATABASE_URL: postgresql://umami:CHANGE_ME_DB_REDACTED@db:5432/umami
+      DATABASE_PASSWORD: CHANGE_ME_DB_REDACTED
+      APP_SECRET: CHANGE_ME_SECRET_REDACTED
     ports:
       - "3001:3000"
 volumes:
