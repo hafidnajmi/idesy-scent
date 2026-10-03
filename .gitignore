@@ -13,3 +13,8 @@ desktop.ini
 .wrangler/
 __pycache__/
 *.pyc
+
+# Real secrets — only the .template.env is tracked
+*.env
+!*.template.env
+deploy/secrets.env

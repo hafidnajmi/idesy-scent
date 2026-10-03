@@ -1,8 +1,46 @@
-# Migrasi: Cloudflare Pages → VPS Pribadi
+# Migrasi: GitHub Pages → VPS Pribadi
 
 Domain: `indoeasyscent.com`
 Stack target: Ubuntu/Debian + Nginx, static files only (tanpa PHP/Node)
 Repo sumber: `/home/pandeandhika/Documents/idesy-scent-main`
+
+> CATATAN KOREKSI: dokumen versi lama menyebut "Cloudflare Pages". Hasil probe
+> faktanya hosting lama adalah **GitHub Pages** (respons HTTP membawa
+> `server: GitHub.com`, `x-github-request-id`). Ada sisa file Cloudflare di repo
+> (`CNAME`, `wrangler.toml`, `index.js`, `_headers`) tapi hosting aktifnya GitHub.
+
+---
+
+## Kondisi VPS (verified 2026-10-04, probe langsung)
+
+| Item | Nilai |
+|---|---|
+| IP | `34.50.118.52` |
+| Port terbuka | 22 (ssh), 80, 443 — **hanya itu** |
+| Web server | nginx/1.28.3 (Ubuntu) sudah ada di 443 |
+| Isi server | Kosong — `GET /` balas **502 Bad Gateway** (proxy tanpa backend) |
+| Akses | SSH belum ada keypair di laptop ini (public key sudah dibuat, tinggal di-paste) |
+| Panel | Cockpit (`:9090`) + Umami (`:3001`) — belum diinstall |
+| DNS | Lihat "blocker" di bawah |
+
+### Blocker: DNS return 5 IP sekaligus
+
+```
+185.199.108.153   ┐
+185.199.109.153   ├ GitHub Pages — situs LAMA masih hidup di sini
+185.199.110.153   │
+185.199.111.153   ┘
+34.50.118.52        VPS baru — belum ada isinya, jadi 502
+```
+
+Konsekuensi sekarang: pengunjung yang resolve ke IP GitHub melihat situs lama,
+yang resolve ke IP VPS melihat 502. `www.indoeasyscent.com` **tidak punya A
+record sama sekali**, jadi subdomain itu tidak resolve.
+
+NS domain: `hermes.dns-parking.com` + `artemis.dns-parking.com`.
+
+**Rencana cutover (sudah diputuskan):** TUNGGU sampai VPS siap + SSL terpasang,
+baru hapus A record GitHub Pages. Menghapus sekarang = semua trafik jatuh ke 502.
 
 ---
 
@@ -11,11 +49,12 @@ Repo sumber: `/home/pandeandhika/Documents/idesy-scent-main`
 Sekitar 30–45 menit aktif, tergantung upload bandwidth. Yang berubah: hosting. Yang tidak berubah: seluruh kode situs.
 
 ```
-Sebelum:  DNS → Cloudflare Pages (indoeasyscent.pages.dev) + CNAME indoeasyscent.com
-Sesudah: DNS → VPS (A record ke IP VPS) + Nginx serve /var/www/html
+Sebelum:  DNS → GitHub Pages (server: GitHub.com)
+Sesudah: DNS → VPS (A record ke 34.50.118.52) + Nginx serve /var/www/html
 ```
 
-> Penting: ini **bukan** memindahkan DNS ke Cloudflare proxy. Sesuai keputusan, DNS dipindah penuh ke registrar — Cloudflare Pages dinonaktifkan.
+> Penting: ini **bukan** memindahkan DNS ke Cloudflare proxy. Sesuai keputusan, DNS
+> dipindah penuh ke registrar — hosting lama (GitHub Pages) dinonaktifkan.
 
 ---
 
