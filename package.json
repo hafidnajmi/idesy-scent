@@ -2,9 +2,19 @@
   "name": "idesy-scent",
   "version": "1.0.0",
   "private": true,
-  "description": "Official Indoeasy Scent Website",
+  "description": "Official Indoeasy Scent Website — static site, deployed to a personal VPS via rsync",
   "scripts": {
     "build": "echo 'Static Site Ready'",
-    "deploy": "npx wrangler pages deploy . --project-name=idesy-scent"
-  }
+    "seo:inject": "python3 deploy/seo-inject.py",
+    "seo:check": "python3 deploy/seo-inject.py --check",
+    "seo:validate": "python3 deploy/validate-jsonld.py",
+    "seo:covers": "bash deploy/gen-og-covers.sh",
+    "seo:images": "python3 deploy/localize-images.py",
+    "seo:alt": "python3 deploy/fix-alt-text.py",
+    "seo:all": "npm run seo:covers && npm run seo:images && npm run seo:inject && npm run seo:validate",
+    "deploy": "npm run deploy:dry && npm run deploy:live",
+    "deploy:dry": "rsync -avzn --delete --exclude '.git' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude '__pycache__' ./ deploy@VPS_IP:/var/www/html/",
+    "deploy:live": "rsync -avz --delete --exclude '.git' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude '__pycache__' ./ deploy@VPS_IP:/var/www/html/"
+  },
+  "comment": "Replace VPS_IP in the deploy scripts, or export DEPLOY_HOST and use rsync directly. See docs/MIGRATION-VPS.md."
 }

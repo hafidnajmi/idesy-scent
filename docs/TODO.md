@@ -7,11 +7,12 @@ Target: `indoeasyscent.com` di VPS pribadi (Ubuntu/Debian + Nginx, static only)
 
 ## FASE 0 — Fondasi repo (WAJIB PERTAMA)
 
-- [ ] `git init` di `/home/pandeandhika/Documents/idesy-scent-main`
-- [ ] `git add -A && git commit -m "Initial: static site Indoeasy Scent (pre-migrasi VPS)"`
-- [ ] Pastikan `.gitignore` sudah cover `.wrangler/` (sudah ada — verify)
-- [ ] Pastikan `docs/` & `deploy/` ikut ter-commit (sebagai referensi tim)
-- [ ] Buat branch `feat/seo-metadata` untuk semua perubahan HTML
+- [x] `git init` di `/home/pandeandhika/Documents/idesy-scent-main`
+- [x] `git add -A && git commit -m "Initial: static site Indoeasy Scent (pre-migrasi VPS)"`
+- [x] Pastikan `.gitignore` sudah cover `.wrangler/` (sudah ada — verify)
+- [x] Tambahkan `__pycache__/` + `*.pyc` ke `.gitignore`
+- [x] Pastikan `docs/` & `deploy/` ikut ter-commit (sebagai referensi tim)
+- [x] Branch `feat/seo-metadata` dibuat untuk semua perubahan HTML
 
 > Alasan: repo tidak punya `.git` sama sekali. Tanpa ini, salah ubah 8 file HTML = tidak ada rollback.
 
@@ -30,44 +31,60 @@ Target: `indoeasyscent.com` di VPS pribadi (Ubuntu/Debian + Nginx, static only)
 
 ---
 
-## FASE 2 — Metadata HTML (seo Dasar, Impact Tinggi)
+## FASE 2 — Metadata HTML (Selesai)
 
-- [ ] Generate 8 cover image 1200×630 JPG, < 300KB → `img/og/{index,products,collection,about,contact,checkout,privacy,terms}.jpg`
-- [ ] Inject ke `index.html`:
-  - [ ] `<link rel="canonical" href="https://indoeasyscent.com/">`
-  - [ ] `og:url`, `og:site_name`, `og:locale`
-  - [ ] Twitter Card (`summary_large_image` + title/desc/image)
-  - [ ] Ganti `og:image` dari logo PNG → `img/og/index.jpg`
-- [ ] Inject `canonical` + `og:url` + Twitter Card ke 7 halaman lainnya
-- [ ] Ganti `og:image` di semua halaman ke cover yang sesuai
-- [ ] Verifikasi: `curl -s https://indoeasyscent.com/ | grep canonical`
+- [x] 9 cover image 1200×630 JPG, semua <300KB (16–26KB) → `img/og/` via `deploy/gen-og-covers.sh`
+- [x] Inject ke 8 halaman + `404.html`:
+  - [x] `<link rel="canonical">` self-referencing, absolute https
+  - [x] `og:url`, `og:site_name`, `og:locale`, `og:image` + `og:image:alt`
+  - [x] Twitter Card `summary_large_image` + title/desc/image
+  - [x] `og:image` logo PNG diganti cover per halaman
+- [x] Semua tag di-escape dengan benar (`&amp;`)
+- [x] Terverifikasi di browser: 8/8 halaman punya canonical + og:url + og:image + twitter:card
+- [ ] Verifikasi setelah deploy: `curl -s https://indoeasyscent.com/ | grep canonical`
+
+> Injector: `npm run seo:inject` (idempotent, aman di-run ulang).
+> Script: `deploy/seo-inject.py`
 
 ---
 
-## FASE 3 — Structured Data (JSON-LD)
+## FASE 3 — Structured Data (Selesai)
 
-- [ ] `index.html` → JSON-LD `LocalBusiness` (+ `geo` dari koordinat Google Maps yang sudah ada di `contact.html`)
-- [ ] `contact.html` → JSON-LD `ContactPage`
-- [ ] `products.html` → JSON-LD `Product` per produk ISX Series (SKU dari nama file, mis. `ISX-I-0`)
-- [ ] `collection.html` → JSON-LD `Product` per fragrance
-- [ ] `products.html` → JSON-LD `Service` (sewa diffuser, instalasi, perawatan, trial)
-- [ ] `BreadcrumbList` di 7 halaman non-index
-- [ ] Validasi SEMUA JSON-LD di https://validator.schema.org/ → harus 0 error
-- [ ] Test di https://search.google.com/test/rich-results
+- [x] `index.html` → `LocalBusiness` (dengan `geo` dari koordinat Google Maps di `contact.html`) + `WebSite`
+- [x] `contact.html` → `ContactPage`
+- [x] `products.html` → 24 `Product` (11 diffuser ISX + 12 fragrance + 1 reed diffuser)
+- [x] `products.html` → 4 `Service` (sewa, instalasi, perawatan, trial)
+- [x] `collection.html` → 4 `Product` fragrance (Musk White, Soda High, Lemongrass, Royal Tulip)
+- [x] `BreadcrumbList` di 7 halaman non-index
+- [x] **46 node JSON-LD lolos validasi offline terhadap vocabulary schema.org** (`npm run seo:validate`)
+- [x] `@id` unik di seluruh situs (tidak ada duplikat entitas)
+- [x] `Product` B2B tanpa `offers.price`; `collection.html` yang ADA harga publik → price ikut ditulis
+- [ ] Test di https://search.google.com/test/rich-results (setelah deploy)
+
+> Catatan: `foundingDate` SENGAJA tidak ditulis — tidak ada tahun berdiri di markup mana pun.
+> Jangan tambahkan tanpa konfirmasi dari klien.
 
 > PENTING: jangan tulis `price` di `offers` — model B2B inquiry, tidak ada harga publik. Omit field tersebut.
 
 ---
 
-## FASE 4 — On-Page Technical
+## FASE 4 — On-Page Technical (Sebagian selesai)
 
-- [ ] Perbaiki `alt` text gambar produk di `products.html` & `collection.html` (deskriptif,mengandung keyword utama)
-- [ ] Buat `404.html` (Nginx sudah mereferensikannya — sekarang akan 404 error)
-- [ ] Link ke `/404.html` yang estetis, matching brand
-- [ ] Download asset yang di-hotlink `lh3.googleusercontent.com` ke `img/` lokal
-- [ ] Ganti URL hotlink di `contact.html` (Maps iframe boleh tetap — `frame-src` sudah diizinkan)
-- [ ] Periksa heading hierarchy di tiap halaman (H1 → H2 → H3, tidak ada lompatan)
-- [ ] Pastikan `h1` tiap halaman lebih deskriptif & berisi keyword utama
+- [x] `alt` text deskriptif untuk 23 gambar katalog di `products.html` (model, jenis, kegunaan)
+- [x] Logo marketplace/sertifikasi TIDAK tersentuh oleh script alt
+- [x] `404.html` dibuat — branded, `noindex, follow`, cocok dengan `error_page` Nginx
+- [x] 5 aset hotlink `lh3.googleusercontent.com` diunduh ke `img/` (`scent-*.webp`), HTML ditulis ulang
+- [x] `sitemap.xml` + `lastmod` di 8 URL
+- [ ] Link ke `/404.html` dari navbar (opsional — error_page Nginx sudah otomatis)
+- [ ] Periksa heading hierarchy per halaman (h1 terlihat sudah deskriptif & unik)
+- [ ] ~~`alt` di `collection.html`~~ — tidak ada `<img>` katalog di sana (pakai `data-image-url`), sudah otomatis ikut ter-localize
+
+> CATATAN PENTING — bug latent di `collection.html`: file ini punya markup duplikat
+> (2× `<footer>`, 2× CTA section, blok "Scent 4: Royal Tulip" muncul 2×, 5 scent-row
+> untuk 4 scent). Schema sudah di-dedup, tapi duplikasi markup-nya belum dibersihkan.
+> Perlu diputuskan: hapus blok kembar, atau memang disengaja untuk animasi JS?
+> Selector JS (`#scent-list-container`, `.scent-row`) mungkin bergantung pada duplikasi ini.
+> src: img/collection.html baris ~56251 vs ~77133
 
 ---
 
@@ -168,15 +185,15 @@ Target: `indoeasyscent.com` di VPS pribadi (Ubuntu/Debian + Nginx, static only)
 
 ## PRIORITAS JIKA WAKTU TERBATAS
 
-**Penting (-impact langsung):**
-1. FASE 0 — git init (15 menit, protects semua kerjaan berikutnya)
-2. FASE 2 — canonical + og:image + Twitter Card (quick win, langsung CTR)
-3. FASE 7 — DNS A record
+> **Penting (-impact langsung):**
+1. ~~FASE 0 — git init~~ **SELESAI**
+2. ~~FASE 2 — canonical + og:image + Twitter Card~~ **SELESAI**
+3. **FASE 7 — DNS A record** ← ini yang memblokir semua
 4. FASE 8 — SSL + Nginx
 5. FASE 9 — deploy
 
 **High value (impact jangka menengah):**
-6. FASE 3 — JSON-LD (knowledge panel + rich results)
+6. ~~FASE 3 — JSON-LD~~ **SELESAI** (46 node, tervalidasi)
 7. FASE 5 — GSC + GA4 (tanpa ini, optimasi done but you're flying blind)
 8. FASE 10 — verifikasi end-to-end
 
@@ -206,11 +223,14 @@ Target: `indoeasyscent.com` di VPS pribadi (Ubuntu/Debian + Nginx, static only)
 cd /home/pandeandhika/Documents/idesy-scent-main
 npm run build
 
-# Upload ke VPS
-rsync -avz --delete \
-  --exclude '.wrangler' --exclude 'node_modules' \
-  --exclude '.git' --exclude 'docs' --exclude 'deploy' \
-  ./ deploy@IP_VPS:/var/www/html/
+# SEO — jalankan ulang setelah edit HTML
+npm run seo:all        # covers + localize images + inject + validate
+npm run seo:check      # idempotency check, tidak mengubah file
+npm run seo:validate   # validasi JSON-LD vs vocabulary schema.org
+
+# Upload ke VPS (dry-run dulu)
+npm run deploy:dry
+npm run deploy:live
 
 # Di VPS
 nginx -t && systemctl reload nginx

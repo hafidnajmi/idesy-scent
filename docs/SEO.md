@@ -1,6 +1,18 @@
 # SEO Setup — Indoeasy Scent (indoeasyscent.com)
 
-Status: dokumentasi + artefak konfigurasi sudah dibuat. Metadata di HTML **belum diimplementasikan** (lihat "Todo" di bawah).
+Status: **FASE 2–4 selesai diimplementasikan** (canonical, OG/Twitter Card, JSON-LD,
+cover image, alt text, 404 page, hotlink removal). Repo sudah di-`git init` dan
+perubahan ada di branch `feat/seo-metadata`.
+
+Seluruh metadata di-generate oleh script idempotent, bukan diedit manual:
+- `npm run seo:inject` — canonical + OG + Twitter Card + JSON-LD ke 8 halaman
+- `npm run seo:covers` — 9 cover image 1200×630 JPG
+- `npm run seo:validate` — validasi JSON-LD vs vocabulary schema.org
+- `npm run seo:images` — unduh aset yang di-hotlink Googleusercontent
+- `npm run seo:alt` — perbaiki alt text gambar katalog
+- `npm run seo:check` — idempotency check, tidak mengubah file
+
+Status detail per fase ada di `docs/TODO.md`.
 
 ---
 
@@ -18,18 +30,20 @@ Yang hilang (ini yang membuatSEO belum optimal):
 
 | Masalah | Dampak | Prioritas |
 |---|---|---|
-| Tidak ada `robots.txt` | search engine roam tanpa panduan | Tinggi |
-| Tidak ada `sitemap.xml` | penemuan URL lambat, halaman terlambat ter-index | Tinggi |
-| Tidak ada `rel="canonical"` | risk URL duplikat & konsolidasi sinyal terpecah | Tinggi |
-| Tidak ada `og:url` | URL share tidak konsisten antar halaman | Sedang |
-| Tidak ada Twitter Card | tidak ada preview saat share di X/Twitter | Sedang |
-| `og:image` menunjuk logo PNG kecil | preview share kosong/tidak menarik | Sedang |
-| Tidak ada JSON-LD structured data | tidak eligible untuk rich result, tidak muncul di knowledge panel | Tinggi |
+| ~~Tidak ada `robots.txt`~~ → sudah ada | — | ✅ Selesai |
+| ~~Tidak ada `sitemap.xml`~~ → sudah ada (8 URL + lastmod) | — | ✅ Selesai |
+| ~~Tidak ada `rel="canonical"`~~ → sudah ada di 9 halaman | — | ✅ Selesai |
+| ~~Tidak ada `og:url`~~ → sudah ada | — | ✅ Selesai |
+| ~~Tidak ada Twitter Card~~ → sudah ada | — | ✅ Selesai |
+| ~~`og:image` logo PNG kecil~~ → 9 cover 1200×630 JPG | — | ✅ Selesai |
+| ~~Tidak ada JSON-LD~~ → 46 node, tervalidasi | — | ✅ Selesai |
+| Tidak ada tracking (GA4 / GSC) | tidak ada data performa | Tinggi |
 | Hanya 1 `h1` per halaman tapi teks `h1` sangat pendek & generik | sinyal topik lemah | Sedang |
 | Tidak ada `alt` deskriptif pada sebagian gambar produk | gambar tidak muncul di Google Images | Sedang |
-| Gambar dari `lh3.googleusercontent.com` di-hotlink | bisa putus, tidak ada kontrol | Rendah |
+| ~~Gambar di-hotlink `lh3.googleusercontent.com`~~ → 5 aset sudah lokal | — | ✅ Selesai |
 | Tidak ada tracking (GA4 / GSC / Search Console) | tidak ada data performa | Tinggi |
-| Tidak ada 404 page | UX buruk saat URL salah, soft-404 | Rendah |
+| ~~Tidak ada 404 page~~ → sudah ada (`noindex`) | — | ✅ Selesai |
+| `collection.html` punya markup duplikat (2× footer, scent kembar) | bobot halaman naik, sinyal kacau | Sedang |
 | Link ke marketplace (Tokopedia/Shopee) & social media tanpa atribut pelacakan | bukan masalah SEO, tapiumbra analytics jadi bising | Rendah |
 
 ---
@@ -93,7 +107,7 @@ Pasang di halaman yang sesuai:
 
 **`Service`** (products.html) — untuk "sewa diffuser", "instalasi", "perawatan", "trial".
 
-**`FAQPage`** — jika ada FAQ di halaman mana pun (SEO FAQ dinonaktifkan di Google sejak 2023 jadi nilai线索 tetap branding, tapi schema valid tetap aman).
+**`FAQPage`** — jika ada FAQ di halaman mana pun (SEO FAQ dinonaktifkan di Google sejak 2023 jadi nilainya hanya branding, tapi schema valid tetap aman).
 
 **`BreadcrumbList`** di semua halaman selain index.
 
