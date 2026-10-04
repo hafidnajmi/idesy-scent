@@ -111,7 +111,7 @@ Pasang di halaman yang sesuai:
 
 **`BreadcrumbList`** di semua halaman selain index.
 
-> ⚠️ Validasi semua JSON-LD di https://validator.schema.org/ sebelum deploy. JSON-LD yang invalid bisamen downfall ranking daripada tidak ada sama sekali.
+> ⚠️ Validasi semua JSON-LD di https://validator.schema.org/ sebelum deploy. JSON-LD yang invalid bisa turunfall ranking daripada tidak ada sama sekali.
 
 ---
 

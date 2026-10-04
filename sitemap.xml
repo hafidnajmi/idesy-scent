@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Hanya URL yang boleh di-crawl + di-index yang boleh ada di sini.
+
+  /checkout.html dan /terms-of-service.html TIDAK boleh ada di sini karena
+  keduanya di-Disallow di robots.txt. Sitemap adalah instruksi eksplisit
+  "index URL ini", sedangkan Disallow berarti "jangan ambil"; menaruh
+  keduanya di sitemap dan robots.txt sekaligus adalah kontradiksi, dan
+  Google memperlakukannya sebagai sinyal kualitas yang buruk.
+
+  Halaman legal tetap boleh di-index (privacy-policy.html sengaja
+  dipertahankan) —UU PDP Indonesia mewajibkan halaman kebijakan privasi
+  dapat diakses publik.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://indoeasyscent.com/</loc>
@@ -31,19 +44,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://indoeasyscent.com/checkout.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://indoeasyscent.com/privacy-policy.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://indoeasyscent.com/terms-of-service.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>

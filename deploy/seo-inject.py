@@ -47,12 +47,21 @@ def scrape_head(html: str, slug: str):
     od = re.search(r'<meta property="og:description" content="(.*?)"', html, re.S)
     title = (t.group(1).strip() if t else "")
     desc = (d.group(1).strip() if d else "")
+
+    # Source markup already stores HTML entities ("&amp;"). The injector escapes
+    # again when it writes the Twitter tag, so unescape first or the page ships
+    # "&amp;amp;" — which crawlers read as a literal "&amp;".
+    def unent(s: str) -> str:
+        return (s.replace("&amp;", "&").replace("&lt;", "<")
+                 .replace("&gt;", ">").replace("&quot;", '"')
+                 .replace("&#39;", "'").replace("&nbsp;", " "))
+
     return {
         "title": title,
         "desc": desc,
         # prefer the page's own og:title/og:description when present, else title
-        "twtitle": (o.group(1).strip() if o else title),
-        "twdesc": (od.group(1).strip() if od else desc),
+        "twtitle": unent(o.group(1).strip() if o else title),
+        "twdesc": unent(od.group(1).strip() if od else desc),
         "crumb": None,   # filled in below
     }
 
@@ -142,6 +151,16 @@ def org_node() -> dict:
     }
 
 
+# Cakupan yang sama dengan LocalBusiness. Jangan tulis "Country: Indonesia" di
+# sini: LocalBusiness sudah dipersempit ke Jabodetabek + Jawa Barat, dan dua
+# areaServed yang bertentangan dalam satu halaman adalah sinyal yang saling
+# membatalkan.
+AREA_SERVED = [
+    {"@type": "AdministrativeArea", "name": "Jawa Barat"},
+    {"@type": "City", "name": "Bekasi"},
+    {"@type": "City", "name": "Jakarta"},
+]
+
 def local_business() -> dict:
     # LocalBusiness (a subtype of Organization) so the entity is eligible for
     # the Google local pack / knowledge panel.
@@ -160,10 +179,11 @@ def local_business() -> dict:
         "priceRange": "$$",
         "address": ADDRESS,
         "geo": GEO,
-        "areaServed": [
-            {"@type": "Country", "name": "Indonesia"},
-            {"@type": "AdministrativeArea", "name": "Jawa Barat"},
-        ],
+        # Cakupan harus jujur. Menyatakan "Indonesia" utuh membuat Google
+        # menampilkan Anda di luar jangkauan layanan, dan itu menekan
+        # sinyal lokal untuk Local Pack. Jabodetabek + Jawa Barat adalah area
+        # nyata untuk operasi dari Bekasi dengan layanan on-site.
+        "areaServed": AREA_SERVED,
         "knowsAbout": [
             "Commercial scenting", "Cold-Air diffusion", "Scent diffuser",
             "Reed diffuser", "Fragrance", "Hotel scenting", "Retail scenting",
@@ -338,6 +358,85 @@ def build_collection_payloads(html: str):
     return out
 
 
+# ------------------------------------------------------------------- FAQ
+# Every answer below is traceable to copy that already exists in the markup
+# (about.html service descriptions, products.html model spec tables, the
+# address block). Nothing here is invented: if a fact is not stated on the
+# site, it does not belong in structured data. A wrong answer in FAQPage is
+# worse than no FAQPage -- it is a fabricated claim attributed to the business.
+#
+# Placed on products.html because that is where the service + spec questions
+# are actually answerable, and it is the page with the commercial intent.
+# Deliberately NOT on checkout.html (noindex) or terms-of-service.html
+# (noindex) -- structured data on a noindex page earns nothing.
+FAQ_NODES = {
+    "products": [
+        {
+            "@type": "Question",
+            "name": "Apakah Indoeasy Scent menyediakan sewa diffuser aroma?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": (
+                    "Ya. Indoeasy Scent menyediakan layanan sewa & instalasi "
+                    "diffuser presisi dengan pemasangan gratis oleh teknisi "
+                    "berpengalaman. Tim juga menyediakan layanan refill dan "
+                    "maintenance berkala setiap bulan, serta trial dan sampel "
+                    "aroma gratis sebelum Anda memutuskan."
+                ),
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "Berapa luas ruangan yang bisa dilayani diffuser Indoeasy Scent?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": (
+                    "Tersedia unit dari 30 m3 sampai 4.000 m3. Contoh "
+                                        "model: ISX-I-0 (30 m3), ISX-H2 (300-500 m3), "
+                                        "ISX-H5 (500-1000 m3), ISX-U-5 (2.000-3.000 m3), "
+                                        "dan ISX-U10 (3.000-4.000 m3)."
+                ),
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "Bagaimana cara maintenance dan penggantian aroma dilakukan?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": (
+                    "Layanan refill & maintenance berkala mencakup pengisian "
+                    "aroma, kalibrasi sistem, dan perawatan otomatis setiap "
+                    "bulan tanpa mengganggu operasional bisnis Anda."
+                ),
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "Apakah saya bisa mencoba aroma sebelum memesan?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": (
+                    "Bisa. Indoeasy Scent menyediakan trial unit diffuser dan "
+                    "pengiriman sampel wewangian langsung ke lokasi bisnis Anda "
+                    "secara gratis."
+                ),
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "Apakah Indoeasy Scent melayani area Bekasi dan Jakarta?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": (
+                    "Ya. Indoeasy Scent berbasis di Griya Mulya Indah, Jayamulya, "
+                    "Kec. Serang Baru, Kab. Bekasi, Jawa Barat, dan melayani area "
+                    "Bekasi, Jakarta, dan Jawa Barat."
+                ),
+            },
+        },
+    ],
+}
+
 SERVICE_NODES = [
     {
         "@type": "Service",
@@ -346,7 +445,7 @@ SERVICE_NODES = [
         "serviceType": "Sewa commercial scenting diffuser",
         "description": "Layanan sewa unit scenting diffuser dengan fragrance eksklusif Indoeasy Scent untuk hotel, kantor, dan retail.",
         "provider": {"@id": f"{SITE}/#business"},
-        "areaServed": {"@type": "Country", "name": "Indonesia"},
+        "areaServed": AREA_SERVED,
     },
     {
         "@type": "Service",
@@ -355,7 +454,7 @@ SERVICE_NODES = [
         "serviceType": "Instalasi & commissioning",
         "description": "Pemasangan dan commissioning unit diffuser scenting di lokasi klien.",
         "provider": {"@id": f"{SITE}/#business"},
-        "areaServed": {"@type": "Country", "name": "Indonesia"},
+        "areaServed": AREA_SERVED,
     },
     {
         "@type": "Service",
@@ -364,7 +463,7 @@ SERVICE_NODES = [
         "serviceType": "Perawatan dan refill fragrance",
         "description": "Perawatan berkala, penggantian filter, dan refill fragrance diffuser.",
         "provider": {"@id": f"{SITE}/#business"},
-        "areaServed": {"@type": "Country", "name": "Indonesia"},
+        "areaServed": AREA_SERVED,
     },
     {
         "@type": "Service",
@@ -373,7 +472,7 @@ SERVICE_NODES = [
         "serviceType": "Trial aroma dan sampel fragrance",
         "description": "Jadwalkan trial aroma dan sampel fragrance untuk menentukan signature scent yang tepat.",
         "provider": {"@id": f"{SITE}/#business"},
-        "areaServed": {"@type": "Country", "name": "Indonesia"},
+        "areaServed": AREA_SERVED,
     },
 ]
 
@@ -450,7 +549,18 @@ def main() -> int:
                 },
             ]
         elif slug == "products":
-            graph = product_nodes + list(SERVICE_NODES)
+            graph = product_nodes + list(SERVICE_NODES) + [
+                {
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "@id": f"{SITE}/products.html#faq",
+                    "url": f"{SITE}/products.html",
+                    "name": "FAQ Sewa & Diffuser Aroma Indoeasy Scent",
+                    "inLanguage": "id-ID",
+                    "isPartOf": {"@id": f"{SITE}/#website"},
+                    "mainEntity": FAQ_NODES["products"],
+                }
+            ]
         elif slug == "collection":
             graph = build_collection_payloads(collection_html) or []
         elif slug == "contact":

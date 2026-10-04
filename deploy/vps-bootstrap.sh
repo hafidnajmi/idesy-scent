@@ -185,14 +185,30 @@ command -v docker >/dev/null 2>&1 || {
 }
 docker pull docker.umami.is/umami-software/umami:postgresql-latest || true   # pre-warm
 mkdir -p /opt/umami
-cat > /opt/umami/docker-compose.yml <<'EOF'
+
+# Secrets TIDAK pernah ditulis di file ini. Sumbernya environment atau
+# /opt/umami/secrets.env (mode 600). Kalau kosong, abort di sini — bukan
+# menulis placeholder ke compose file.
+#
+# URUTAN PENTING: file HARUS di-source SEBELUM guard, bukan sesudahnya.
+# Guard di atas blok `if` akan membatalkan script lebih dulu, jadi jalur
+# "salin template ke /opt/umami/secrets.env lalu jalankan ulang" — yang
+# tercatat di ringkasan — tidak akan pernah sampai ke tahap compose.
+if [ -f /opt/umami/secrets.env ]; then
+  set -a; . /opt/umami/secrets.env; set +a
+fi
+: "${CHANGE_ME_DB:?CHANGE_ME_DB belum di-set. Salin deploy/secrets.template.env ke /opt/umami/secrets.env, isi, lalu jalankan ulang.}"
+: "${CHANGE_ME_SECRET:?CHANGE_ME_SECRET belum di-set. Lihat /opt/umami/secrets.env}"
+
+# Unquoted heredoc delimiter WAJIB: nilai secret harus ter-expand ke compose file.
+cat > /opt/umami/docker-compose.yml <<EOF
 services:
   db:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
       POSTGRES_USER: umami
-      POSTGRES_PASSWORD: CHANGE_ME_DB_REDACTED
+      POSTGRES_PASSWORD: ${CHANGE_ME_DB}
       POSTGRES_DB: umami
     volumes:
       - umami-db:/var/lib/postgresql/data
@@ -209,11 +225,11 @@ services:
         condition: service_healthy
     environment:
       DATABASE_TYPE: postgresql
-      DATABASE_URL: postgresql://umami:CHANGE_ME_DB_REDACTED@db:5432/umami
-      DATABASE_PASSWORD: CHANGE_ME_DB_REDACTED
-      APP_SECRET: CHANGE_ME_SECRET_REDACTED
+      DATABASE_URL: postgresql://umami:${CHANGE_ME_DB}@db:5432/umami
+      DATABASE_PASSWORD: ${CHANGE_ME_DB}
+      APP_SECRET: ${CHANGE_ME_SECRET}
     ports:
-      - "3001:3000"
+      - "127.0.0.1:${UMAMI_PORT}:3000"
 volumes:
   umami-db:
 EOF

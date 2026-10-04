@@ -1,8 +1,15 @@
 User-agent: *
 Allow: /
 
-# Halaman tanpa nilai SEO — tetap di-index karena ada inbound link,
-# tapi subtracting dari crawl budget yang jauh lebih besar.
+# Dua halaman ini tidak muncul di hasil pencarian karena tidak ada nilai
+# cari untuk Visitor: form inquiry dan ketentuan layanan. Keduanya juga
+# memakai <meta name="robots" content="noindex, follow"> sebagai pengaman,
+# karena Disallow saja tidak mencabut halaman yang sudah punya tautan masuk
+# atau entri SERP lama.
+#
+# PENTING: jangan menaruh URL ini di sitemap.xml. Sitemap adalah instruksi
+# eksplisit "index URL ini", sedangkan Disallow berarti "jangan diambil" --
+# dua-duanya di tempat yang sama adalah kontradiksi.
 Disallow: /checkout.html
 Disallow: /terms-of-service.html
 
