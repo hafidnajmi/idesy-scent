@@ -1,0 +1,148 @@
+name: Deploy to VPS
+
+# A push to any branch in this repo deploys it to /var/www/html on the VPS.
+# Nginx serves static files, so nothing needs restarting: rsync writes new
+# bytes and HTML is served with `no-cache, must-revalidate`, so the change is
+# live without even an nginx reload.
+on:
+  push:
+  workflow_dispatch:
+
+# Queued, not cancelled. Two rsync runs against the same web root can delete
+# each other's files through --delete.
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Public repo: a full checkout needs no token and spends no quota.
+          # Pinned by the workflow file itself, so no branch is hardcoded.
+          persist-credentials: false
+
+      - name: Validate before deploying
+        run: |
+          set -euo pipefail
+          python3 deploy/seo-inject.py --check
+          python3 deploy/validate-jsonld.py
+          python3 deploy/mojisweep.py *.html deploy/*.py deploy/*.sh robots.txt sitemap.xml
+
+      - name: Set up SSH
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # StrictHostKeyChecking=yes against a key we pinned as a secret: an
+          # unknown host is a hard failure, never a silent accept.
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy to the web root
+        run: |
+          set -euo pipefail
+          # The exclude list must stay identical to deploy:live in
+          # package.json. Two lists means one of them is wrong, and the wrong
+          # one can publish package.json or deploy/*.py.
+          #
+          # favicon.ico, robots.txt and sitemap.xml are deliberately NOT
+          # excluded: they are tracked, they must reach production, and
+          # --delete + --exclude would leave a stale copy on the server
+          # forever. *.pdf is excluded because internal documents must never
+          # be published, and they are not tracked either.
+          rsync -avz --delete \
+            --exclude '.git' \
+            --exclude '.gitignore' \
+            --exclude '.github' \
+            --exclude 'node_modules' \
+            --exclude '.wrangler' \
+            --exclude '__pycache__' \
+            --exclude 'docs' \
+            --exclude 'deploy' \
+            --exclude 'img/ads' \
+            --exclude 'package.json' \
+            --exclude 'package-lock.json' \
+            --exclude 'index.js' \
+            --exclude 'CNAME' \
+            --exclude '_headers' \
+            --exclude '.assetsignore' \
+            --exclude 'wrangler.toml' \
+            --exclude '*.pdf' \
+            -e "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            ./ "$DEPLOY_USER@$VPS_HOST":/var/www/html/
+        env:
+          VPS_HOST: 34.101.66.215
+          # Not root: the deploy key is authorized for this user only.
+          DEPLOY_USER: pandeandhika
+
+      - name: Fix ownership and reload nginx
+        run: |
+          set -euo pipefail
+          SSH="ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes $DEPLOY_USER@$VPS_HOST"
+          # rsync creates files as this user, and --delete needs to be able to
+          # overwrite them on the NEXT run. Ownership must stay
+          # DEPLOY_USER:www-data: chowning to www-data makes the next run fail
+          # with mkstemp Permission denied. nginx still reads everything at
+          # 644, so www-data does not need to own anything.
+          $SSH 'sudo -n chown -R '"$DEPLOY_USER"':www-data /var/www/html && sudo -n find /var/www/html -type d -exec chmod 755 {} + && sudo -n find /var/www/html -type f -exec chmod 644 {} +'
+          $SSH 'sudo -n nginx -t'
+          $SSH 'sudo -n systemctl reload nginx'
+        env:
+          VPS_HOST: 34.101.66.215
+          DEPLOY_USER: pandeandhika
+
+      - name: Verify production
+        run: |
+          set -euo pipefail
+          # Every page must be 200 AND byte-identical to this commit. An HTTP
+          # 200 alone proves nothing: the previous deploy's bytes also return
+          # 200, so a silently skipped rsync would pass a status-only check.
+          for page in index products collection checkout about contact privacy-policy terms-of-service; do
+            remote=$(curl -fsS "https://indoeasyscent.com/$page.html" | md5sum | cut -d' ' -f1)
+            local=$(md5sum "$page.html" | cut -d' ' -f1)
+            if [ "$remote" != "$local" ]; then
+              echo "::error::$page.html differs between the repo and production"
+              exit 1
+            fi
+            echo "ok  $page.html"
+          done
+          # Tracked files that must exist in production. /404.html is
+          # deliberately NOT here: nginx marks it `internal`, so a direct
+          # request correctly returns 404 while the branded page is still
+          # served for real missing URLs. Asserting 200 on it would fail a
+          # perfectly healthy deploy.
+          for path in robots.txt sitemap.xml favicon.ico; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://indoeasyscent.com/$path")
+            if [ "$code" != "200" ]; then
+              echo "::error::$path returned $code, expected 200"
+              exit 1
+            fi
+            echo "ok  $path ($code)"
+          done
+          # The branded 404 must actually work, not just exist.
+          code=$(curl -s -o /dev/null -w '%{http_code}' \
+            "https://indoeasyscent.com/tidak-ada-$(date +%s).html")
+          if [ "$code" != "404" ]; then
+            echo "::error::missing URL returned $code, expected 404"
+            exit 1
+          fi
+          echo "ok  branded 404"
+          # Files that must never be public.
+          for path in package.json index.js docs/GOOGLE-ADS.md deploy/seo-inject.py; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://indoeasyscent.com/$path")
+            if [ "$code" != "403" ]; then
+              echo "::error::$path is public as $code, expected 403"
+              exit 1
+            fi
+            echo "ok  $path denied ($code)"
+          done
