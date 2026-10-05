@@ -1,11 +1,12 @@
 name: Deploy to VPS
 
-# A push to any branch in this repo deploys it to /var/www/html on the VPS.
-# Nginx serves static files, so nothing needs restarting: rsync writes new
-# bytes and HTML is served with `no-cache, must-revalidate`, so the change is
-# live without even an nginx reload.
+# Only main deploys. An unfiltered `on: push` fires for EVERY branch, so a
+# half-finished feature branch would overwrite production. With this filter a
+# team can work on any branch freely and nothing goes live until it lands on
+# main, either by direct push or by merging a pull request.
 on:
   push:
+    branches: [main]
   workflow_dispatch:
 
 # Queued, not cancelled. Two rsync runs against the same web root can delete
@@ -33,9 +34,15 @@ jobs:
       - name: Validate before deploying
         run: |
           set -euo pipefail
+          # These three catch a corrupt commit. They do NOT catch a commit
+          # that deletes a page: seo-inject only inspects pages that exist,
+          # so dropping products.html passes every check and then --delete
+          # removes it from production. assert-site-intact.py is what stops
+          # that.
           python3 deploy/seo-inject.py --check
           python3 deploy/validate-jsonld.py
           python3 deploy/mojisweep.py *.html deploy/*.py deploy/*.sh robots.txt sitemap.xml
+          python3 deploy/assert-site-intact.py
 
       - name: Set up SSH
         run: |

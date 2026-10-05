@@ -8,6 +8,7 @@
     "seo:inject": "python3 deploy/seo-inject.py",
     "seo:check": "python3 deploy/seo-inject.py --check",
     "seo:validate": "python3 deploy/validate-jsonld.py",
+    "site:check": "python3 deploy/assert-site-intact.py",
     "seo:covers": "bash deploy/gen-og-covers.sh",
     "seo:images": "python3 deploy/localize-images.py",
     "seo:alt": "python3 deploy/fix-alt-text.py",
