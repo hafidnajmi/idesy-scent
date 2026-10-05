@@ -64,6 +64,14 @@ jobs:
           # unknown host is a hard failure, never a silent accept.
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
+        env:
+          # A repository secret is NOT automatically an environment variable.
+          # Without this block the step runs under `set -u` and dies on
+          # "SSH_PRIVATE_KEY: unbound variable" while the secret sits
+          # unread in GitHub. Verify with actions/runs/<id>/logs, not with the
+          # job summary: the summary only shows which step failed.
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
 
       - name: Deploy to the web root
         run: |
