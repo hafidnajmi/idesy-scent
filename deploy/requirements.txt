@@ -1,0 +1,14 @@
+# Dependensi runtime untuk perkakas di deploy/
+#
+# Hanya validate-jsonld.py yang butuh paket pip; skrip lain di sini stdlib
+# semua. Paket ini hilang dari repo karena tidak pernah dicatat, sehingga hanya
+# terpenuhi oleh apa pun yang kebetulan terpasang di mesin penulis skrip, dan
+# hilang begitu skrip yang sama dijalankan di GitHub Actions.
+#
+# Versi dipin supaya validasi menghasilkan hasil yang sama setiap kali
+# dijalankan. Naikkan hanya setelah memastikan 47 node masih valid.
+schema==0.7.8
+
+# Dipakai ~/bin/setup-gh-secrets-idesy.sh (di luar repo) untuk enkripsi sodium
+# yang GitHub mewajibkan saat menyimpan Actions secret.
+pynacl==1.6.2

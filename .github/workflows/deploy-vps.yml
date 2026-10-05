@@ -31,14 +31,24 @@ jobs:
           # Pinned by the workflow file itself, so no branch is hardcoded.
           persist-credentials: false
 
+      - name: Install validation dependencies
+        run: |
+          set -euo pipefail
+          # validate-jsonld.py needs the `schema` pip package. It was never
+          # recorded in the repo, so it only ever resolved against whatever
+          # happened to be installed on the machine that wrote the script --
+          # which is why it passed locally and failed on the runner. Every
+          # other validator is stdlib-only; this was the only outlier.
+          python3 -m pip install --quiet --disable-pip-version-check -r deploy/requirements.txt
+
       - name: Validate before deploying
         run: |
           set -euo pipefail
-          # These three catch a corrupt commit. They do NOT catch a commit
-          # that deletes a page: seo-inject only inspects pages that exist,
-          # so dropping products.html passes every check and then --delete
-          # removes it from production. assert-site-intact.py is what stops
-          # that.
+          # These catch a corrupt commit. They do NOT catch a commit that
+          # deletes a page: seo-inject and validate-jsonld only inspect pages
+          # that exist, so dropping products.html passes all of them and then
+          # --delete removes it from production. assert-site-intact.py is
+          # what stops that.
           python3 deploy/seo-inject.py --check
           python3 deploy/validate-jsonld.py
           python3 deploy/mojisweep.py *.html deploy/*.py deploy/*.sh robots.txt sitemap.xml
