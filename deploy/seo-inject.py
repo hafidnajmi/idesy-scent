@@ -193,18 +193,109 @@ def local_business() -> dict:
 
 
 def breadcrumb(page: dict) -> list | None:
-    if not page["crumb"]:
+    """JSON-LD built from crumb_items, the SAME source as the visible trail.
+
+    Keeping one source is what stops the two from drifting -- the FAQPage bug in
+    this project was exactly a two-source mismatch between visible text and
+    markup.
+    """
+    items = crumb_items(page)
+    if not items:
         return None
     return [
         {
             "@type": "BreadcrumbList",
             "@id": f"{SITE}{page['path']}#breadcrumb",
             "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Beranda", "item": SITE + "/"},
-                {"@type": "ListItem", "position": 2, "name": page["crumb"], "item": SITE + page["path"]},
+                {
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "name": it["name"],
+                    "item": SITE + it["path"],
+                }
+                for i, it in enumerate(items)
             ],
         }
     ]
+
+
+# --------------------------------------------------------------- breadcrumbs (DOM)
+# Google requires structured data to describe content that is actually visible
+# on the page -- the same rule that applies to FAQPage. A BreadcrumbList with no
+# matching visible trail is a self-inflicted inconsistency, so both come from
+# ONE source (crumb_items) and the validator compares them.
+#
+# Design notes, read off the existing pages rather than invented:
+#   * Label style matches the site's <span class="font-label-caps"> eyebrows.
+#   * Separator is a Material Symbols "chevron_right" in the SAME font the
+#     other 10-16 icons per page already load. A literal ">" character would
+#     render as text if the icon font failed, so the icon carries
+#     aria-hidden="true" and the accessible name lives on the nav's aria-label.
+#   * The trail is inserted as the first child of <main>, so it sits above the
+#     page header on every layout that already has top padding on <main>.
+#
+# PAD: six of eight pages put horizontal padding on <main> itself, so a bare
+# <nav> lines up with the content below it. about.html is the exception --
+# its <main> is a bare <main> with full-bleed children (a banner photo that is
+# meant to run edge to edge), so the trail needs its own gutter or it lands
+# flush against the viewport edge. That is a visible layout bug, not a
+# preference, so PAD is per-page data rather than a blanket wrapper.
+# index.html and 404.html get no crumb at all (see PATHS) so PAD never applies.
+PAD = {
+    "about": "max-w-[1440px] mx-auto px-4 md:px-16",
+}
+DEFAULT_PAD = ""
+#
+# The two legal pages keep their trail even though they are noindex: markup on
+# a page excluded from the index earns nothing but costs nothing, and if the
+# client later opens them for indexing the trail is already correct.
+def crumb_items(page: dict) -> list | None:
+    """Single source of truth for both the JSON-LD and the visible trail."""
+    if not page["crumb"]:
+        return None
+    return [
+        {"name": "Beranda", "path": "/"},
+        {"name": page["crumb"], "path": page["path"]},
+    ]
+
+
+def breadcrumb_dom(page: dict, slug: str) -> str:
+    """Visible breadcrumb trail. Returns "" for pages without one."""
+    items = crumb_items(page)
+    if not items:
+        return ""
+    pad = PAD.get(slug, DEFAULT_PAD)
+    out = [BEGIN,
+           f'    <nav aria-label="Breadcrumb" class="{pad} mb-8">',
+           '        <ol class="flex flex-wrap items-center gap-2 '
+           'font-label-caps text-[11px] uppercase tracking-[0.2em] '
+           'text-charcoal/50">']
+    last = len(items) - 1
+    for i, it in enumerate(items):
+        out.append('            <li class="flex items-center gap-2">')
+        if i == last:
+            # esc() is correct here: the page reads "Produk & Layanan", so the
+            # source must carry &amp;. A crawler parses that back to "&" and
+            # matches the JSON-LD name -- the validator compares DECODED text
+            # for the same reason. Do not "fix" this by emitting a bare &.
+            out.append(
+                f'                <span aria-current="page" '
+                f'class="text-antique-gold font-bold">{esc(it["name"])}</span>'
+            )
+        else:
+            out.append(
+                f'                <a href="{esc(it["path"])}" '
+                f'class="hover:text-antique-gold transition-colors">'
+                f'{esc(it["name"])}</a>'
+            )
+            out.append(
+                '                <span class="material-symbols-outlined '
+                'text-[14px] leading-none text-antique-gold/60" '
+                'aria-hidden="true">chevron_right</span>'
+            )
+        out.append('            </li>')
+    out += ['        </ol>', '    </nav>', END]
+    return "\n".join(out) + "\n"
 
 
 # --------------------------------------------------- product & fragrance schemas
@@ -524,6 +615,19 @@ def main() -> int:
             problems.append(f"{slug}: no <meta name=\"description\"> anchor")
             continue
         html = html[: anchor.end()] + head_meta(page) + "\n" + html[anchor.end():]
+
+        # ---- 2b. visible breadcrumb trail, first child of <main>.
+        # <main> exists on every page in PATHS; 404.html has no PATHS entry and
+        # no <main> of its own beyond a flex wrapper, and is deliberately left
+        # alone because it is noindex and has no crumb.
+        crumb_html = breadcrumb_dom(page, slug)
+        if crumb_html:
+            main_open = re.search(r"<main(?:\s[^>]*)?>", html)
+            if not main_open:
+                problems.append(f"{slug}: no <main> to place the breadcrumb in")
+            else:
+                at = main_open.end()
+                html = html[:at] + "\n" + crumb_html + html[at:]
 
         # ---- 3. JSON-LD graph, just before </head>
         graph = [local_business()]

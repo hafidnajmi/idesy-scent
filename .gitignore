@@ -18,3 +18,7 @@ __pycache__/
 *.env
 !*.template.env
 deploy/secrets.env
+
+# Dokumen internal (berita acara, laporan) — isinya data privat
+# (IP server, detail rotasi kredensial). Jangan pernah masuk repo.
+/berita-acara-*.pdf

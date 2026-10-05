@@ -40,6 +40,77 @@ def nodes_of(doc):
     return doc.get("@graph", [doc]) if isinstance(doc, dict) else doc
 
 
+def decode(s: str) -> str:
+    """Render HTML source text the way a crawler sees it.
+
+    The breadcrumb writes "Produk &amp; Layanan" and the JSON-LD writes
+    "Produk & Layanan". Those are the SAME string to Google -- the parser
+    decodes the entity. A byte comparison reports a false mismatch, which is
+    how a correct page gets "fixed" into broken markup.
+    """
+    s = (s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+          .replace("&quot;", '"').replace("&#39;", "'")
+          .replace("&nbsp;", " "))
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def check_breadcrumb(slug: str, html: str, errors: list) -> None:
+    """BreadcrumbList must match the visible trail, item for item.
+
+    Google requires structured data to describe content that is actually on the
+    page. A BreadcrumbList with no visible counterpart is an inconsistency we
+    would be creating on purpose, so this compares both sides.
+    """
+    nav = re.search(r'<nav aria-label="Breadcrumb".*?</nav>', html, re.S)
+    ld = None
+    for block in re.findall(
+        r'<script type="application/ld\+json">(.*?)</script>', html, re.S
+    ):
+        for node in nodes_of(json.loads(block)):
+            if node.get("@type") == "BreadcrumbList":
+                ld = node
+
+    if bool(nav) != bool(ld):
+        errors.append(
+            f"{slug}: breadcrumb DOM={bool(nav)} but JSON-LD={bool(ld)}"
+        )
+        return
+    if not nav:
+        return
+
+    trail = nav.group(0)
+
+    dom = []
+    for li in re.findall(r"<li[^>]*>(.*?)</li>", trail, re.S):
+        m = re.search(r"<(?:a|span)[^>]*>(.*?)</(?:a|span)>", li, re.S)
+        if m:
+            dom.append(decode(re.sub(r"<[^>]+>", "", m.group(1))))
+
+    items = ld.get("itemListElement", [])
+    jld = [decode(str(i.get("name", ""))) for i in items]
+
+    if dom != jld:
+        errors.append(f"{slug}: visible trail {dom} != JSON-LD {jld}")
+
+    hrefs = re.findall(r'<a href="([^"]+)"', trail)
+    for h, i in zip(hrefs, items):
+        if i.get("item") != "https://indoeasyscent.com" + h:
+            errors.append(
+                f"{slug}: <a href=\"{h}\"> but JSON-LD item {i.get('item')}"
+            )
+
+    n_cur = len(re.findall(r'aria-current="page"', trail))
+    if n_cur != 1:
+        errors.append(
+            f"{slug}: {n_cur} aria-current=\"page\" in the trail (expected 1)"
+        )
+    # aria-current must sit on the final <li>; check the last item's own text
+    # rather than re-deriving it from the string order.
+    last_li = re.findall(r"<li[^>]*>(.*?)</li>", trail, re.S)[-1]
+    if 'aria-current="page"' not in last_li:
+        errors.append(f"{slug}: aria-current is not on the last trail item")
+
+
 def main():
     errors, warnings, total = [], [], 0
     seen_ids = {}
@@ -50,6 +121,10 @@ def main():
         except Exception as e:
             errors.append(f"{slug}: {e}")
             continue
+
+        check_breadcrumb(
+            slug, (ROOT / f"{slug}.html").read_text(encoding="utf-8"), errors
+        )
 
         for node in nodes_of(doc):
             total += 1

@@ -12,11 +12,14 @@
     "seo:images": "python3 deploy/localize-images.py",
     "seo:alt": "python3 deploy/fix-alt-text.py",
     "seo:status": "bash deploy/seo-status.sh",
+    "ads:assets": "bash deploy/gen-ads-assets.sh",
+    "ads:validate": "python3 deploy/validate-ads-copy.py",
+    "ads:doc": "python3 deploy/gen-ads-copysheet.py",
     "seo:sweep": "python3 deploy/mojisweep.py *.html deploy/*.py deploy/*.sh docs/*.md js/*.js robots.txt sitemap.xml",
     "seo:all": "npm run seo:covers && npm run seo:images && npm run seo:inject && npm run seo:validate && npm run seo:sweep",
     "deploy": "npm run deploy:dry && npm run deploy:live",
-    "deploy:dry": "rsync -avzn --delete --exclude '.git' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude '__pycache__' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'index.js' --exclude 'CNAME' --exclude '_headers' --exclude '.assetsignore' --exclude 'wrangler.toml' ./ idesys-vps:/var/www/html/",
-    "deploy:live": "rsync -avz --delete --exclude '.git' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude '__pycache__' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'index.js' --exclude 'CNAME' --exclude '_headers' --exclude '.assetsignore' --exclude 'wrangler.toml' ./ idesys-vps:/var/www/html/ && ssh idesys-vps 'sudo chown -R pandeandhika:www-data /var/www/html && find /var/www/html -type d -exec chmod 755 {} + && find /var/www/html -type f -exec chmod 644 {} +'"
+    "deploy:dry": "rsync -avzn --delete --exclude '.git' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude 'img/ads' --exclude '__pycache__' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'index.js' --exclude 'CNAME' --exclude '_headers' --exclude '.assetsignore' --exclude 'wrangler.toml' ./ idesys-vps:/var/www/html/",
+    "deploy:live": "rsync -avz --delete --exclude '.git' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude 'img/ads' --exclude '__pycache__' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'index.js' --exclude 'CNAME' --exclude '_headers' --exclude '.assetsignore' --exclude 'wrangler.toml' ./ idesys-vps:/var/www/html/ && ssh idesys-vps 'sudo chown -R pandeandhika:www-data /var/www/html && find /var/www/html -type d -exec chmod 755 {} + && find /var/www/html -type f -exec chmod 644 {} +'"
   },
   "comment": "Deploy lewat SSH alias 'idesys-vps' di ~/.ssh/config (user pandeandhika, key ~/.ssh/id_ed25519_vps). Ganti alias kalau hostname/user berubah. Selalu deploy:dry dulu."
 }
