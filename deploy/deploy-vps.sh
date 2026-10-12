@@ -39,7 +39,7 @@ else
 fi
 
 echo "==> permission"
-ssh "$HOST" "sudo chown -R www-data:www-data $ROOT && sudo chmod -R 755 $ROOT && sudo find $ROOT -type f -exec chmod 644 {} \;"
+ssh "$HOST" "sudo chown -R pandeandhika:www-data $ROOT && sudo chmod -R 755 $ROOT && sudo find $ROOT -type f -exec chmod 644 {} \;"
 
 echo "==> verifikasi nginx"
 ssh "$HOST" "sudo nginx -t"
