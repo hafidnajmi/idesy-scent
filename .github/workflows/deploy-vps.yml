@@ -89,6 +89,7 @@ jobs:
             --exclude '.git' \
             --exclude '.gitignore' \
             --exclude '.github' \
+            --exclude '.well-known' \
             --exclude 'node_modules' \
             --exclude '.wrangler' \
             --exclude '__pycache__' \
