@@ -104,8 +104,9 @@ jobs:
             --exclude '.assetsignore' \
             --exclude 'wrangler.toml' \
             --exclude '*.pdf' \
+            --rsync-path="sudo -n rsync" \
             -e "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
-            ./ "$DEPLOY_USER@$VPS_HOST":/var/www/html/
+            ./ "$DEPLOY_USER@$VPS_HOST":/home/admin/web/indoeasyscent.com/public_html/
         env:
           VPS_HOST: 34.101.66.215
           # Not root: the deploy key is authorized for this user only.
@@ -117,10 +118,8 @@ jobs:
           SSH="ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes $DEPLOY_USER@$VPS_HOST"
           # rsync creates files as this user, and --delete needs to be able to
           # overwrite them on the NEXT run. Ownership must stay
-          # DEPLOY_USER:www-data: chowning to www-data makes the next run fail
-          # with mkstemp Permission denied. nginx still reads everything at
-          # 644, so www-data does not need to own anything.
-          $SSH 'sudo -n chown -R '"$DEPLOY_USER"':www-data /var/www/html && sudo -n find /var/www/html -type d -exec chmod 755 {} + && sudo -n find /var/www/html -type f -exec chmod 644 {} +'
+          # admin:admin for HestiaCP.
+          $SSH 'sudo -n chown -R admin:admin /home/admin/web/indoeasyscent.com/public_html && sudo -n find /home/admin/web/indoeasyscent.com/public_html -type d -exec chmod 755 {} + && sudo -n find /home/admin/web/indoeasyscent.com/public_html -type f -exec chmod 644 {} +'
           $SSH 'sudo -n nginx -t'
           $SSH 'sudo -n systemctl reload nginx'
         env:
