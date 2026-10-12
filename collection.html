@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="google-site-verification" content="jgI0HnvlpmEDaxeUQBhlKWh7JXorsHSU2S92_pT2CQE"/>
     <title>Koleksi Wewangian Exclusive | Indoeasy Scent</title>
     <meta name="description" content="Fragrance oil premium &amp; Reed Diffuser untuk hotel, kantor, butik, dan retail. Empat aroma eksklusif Indoeasy Scent, tersedia sampel aroma gratis."/>
 <!-- SEO:INJECT:BEGIN -->
@@ -27,13 +28,99 @@
     <link rel="apple-touch-icon" href="img/favicon-512.png"/>
     <meta name="theme-color" content="#0D2A1D"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-        /* Force Arial font family across all navbar elements */
-        nav, nav a, nav div, nav button, nav span:not(.material-symbols-outlined) {
-            font-family: Arial, Helvetica, sans-serif !important;
+
+        /* Typography & Navbar Style from indoeasyholiday.com */
+        :root {
+            --font-primary: 'Libre Caslon Display', Georgia, serif;
+            --font-secondary: 'Nunito', 'Inter', sans-serif;
+            --nav-link-font-family: 'Nunito', sans-serif;
+            --nav-link-font-size: 16px;
+            --nav-link-font-weight: 400;
+            --nav-link-text-color: #1F1F1D;
         }
+
+        body {
+            background-color: #F7F3EC;
+            color: #1A1C1B;
+            font-family: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        /* Editorial hero headings */
+        h1, h2.font-serif, .font-serif, .font-display {
+            font-family: 'Libre Caslon Display', Georgia, serif;
+        }
+
+        /* Product names, badges, specs & cards use standard sans-serif (Nunito) like navbar */
+        .product-card h3,
+        .product-card h4,
+        .product-card h5,
+        .diffuser-card h3,
+        .diffuser-card h4,
+        .diffuser-card h5,
+        .fragrance-card h3,
+        .fragrance-card h4,
+        .fragrance-card h5,
+        .product-title,
+        .product-name,
+        h3.font-sans,
+        h4, h5, h6,
+        .font-sans,
+        .font-label-caps {
+            font-family: 'Nunito', 'Inter', sans-serif !important;
+        }
+
+        /* Navbar Links matching indoeasyholiday.com reference */
+        .nav-link {
+            font-family: 'Nunito', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            color: #1F1F1D !important;
+            text-decoration: none !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            padding: 4px 0 !important;
+            transition: color 0.2s ease, text-decoration 0.2s ease !important;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #1F1F1D !important;
+            text-decoration: underline !important;
+            text-underline-offset: 7px !important;
+            text-decoration-thickness: 1.5px !important;
+        }
+
+        .nav-link.active, .nav-link--active {
+            color: #1F1F1D !important;
+            text-decoration: underline !important;
+            text-underline-offset: 7px !important;
+            text-decoration-thickness: 1.5px !important;
+            font-weight: 500 !important;
+        }
+
+        .nav-dropdown-item {
+            font-family: 'Nunito', sans-serif !important;
+            font-size: 14px !important;
+            color: #1F1F1D !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            font-weight: 400 !important;
+            transition: all 0.2s ease !important;
+        }
+        .nav-dropdown-item:hover {
+            background-color: rgba(201, 162, 75, 0.1) !important;
+            color: #C9A24B !important;
+            padding-left: 24px !important;
+        }
+    
+        
         .material-symbols-outlined {
             font-family: 'Material Symbols Outlined' !important;
             font-weight: normal;
@@ -110,15 +197,18 @@
                 "margin-mobile": "24px"
             },
             "fontFamily": {
-                "sans": ["Arial", "Helvetica", "sans-serif"],
-                "serif": ["Arial", "Helvetica", "sans-serif"],
-                "body-md": ["Arial", "Helvetica", "sans-serif"],
-                "display-lg-mobile": ["Arial", "Helvetica", "sans-serif"],
-                "label-caps": ["Arial", "Helvetica", "sans-serif"],
-                "display-lg": ["Arial", "Helvetica", "sans-serif"],
-                "headline-sm": ["Arial", "Helvetica", "sans-serif"],
-                "headline-md": ["Arial", "Helvetica", "sans-serif"],
-                "body-lg": ["Arial", "Helvetica", "sans-serif"]
+                "sans": ["'Nunito'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+                "serif": ["'Libre Caslon Display'", "Georgia", "serif"],
+                "display": ["'Libre Caslon Display'", "Georgia", "serif"],
+                "body": ["'Nunito'", "'Inter'", "sans-serif"],
+                "nav": ["'Nunito'", "sans-serif"],
+                "body-md": ["'Nunito'", "sans-serif"],
+                "display-lg-mobile": ["'Libre Caslon Display'", "serif"],
+                "label-caps": ["'Nunito'", "sans-serif"],
+                "display-lg": ["'Libre Caslon Display'", "serif"],
+                "headline-sm": ["'Libre Caslon Display'", "serif"],
+                "headline-md": ["'Libre Caslon Display'", "serif"],
+                "body-lg": ["'Nunito'", "sans-serif"]
             },
             "fontSize": {
                 "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
@@ -134,10 +224,7 @@
       }
     </script>
     <style>
-        /* Force Arial font family across all navbar elements */
-        nav, nav a, nav div, nav button, nav span:not(.material-symbols-outlined) {
-            font-family: Arial, Helvetica, sans-serif !important;
-        }
+        
         .nav-dropdown {
             opacity: 0;
             visibility: hidden;
@@ -148,16 +235,9 @@
     
 
     <style>
-        /* Force Arial font family across all navbar elements */
-        nav, nav a, nav div, nav button, nav span:not(.material-symbols-outlined) {
-            font-family: Arial, Helvetica, sans-serif !important;
-        }
-        body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, div {
-            font-family: Arial, Helvetica, sans-serif !important;
-        }
-        span:not(.material-symbols-outlined) {
-            font-family: Arial, Helvetica, sans-serif !important;
-        }
+        
+        
+        
         .material-symbols-outlined {
             font-family: 'Material Symbols Outlined' !important;
         }
@@ -292,33 +372,37 @@
                 <img alt="Indoeasy Scent" class="h-20 md:h-24 w-auto object-contain [mix-blend-mode:multiply]" src="img/LOGO%20IDESY%20SCENT.png"/>
             </a>
         </div>
-        <div class="hidden md:flex gap-gutter items-center">
-            <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 font-bold text-sm tracking-wider uppercase" href="index.html">BERANDA</a>
+        <div class="hidden md:flex gap-10 items-center">
+            <a class="nav-link" href="index.html">Home</a>
+            
+            <!-- Menu About Dropdown -->
             <div class="relative group py-2">
-                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 font-bold text-sm tracking-wider uppercase" href="products.html">
-                    PRODUK
-                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <a class="nav-link" href="about.html">
+                    About
+                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
                 </a>
-                <!-- Dropdown Menu -->
-                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <a href="products.html" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Semua Produk</a>
-                    <a href="products.html#section-diffuser" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Scenting Diffuser</a>
-                    <a href="products.html#section-fragrance" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Fragrance Collection</a>
-                    </div>
+                <div class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
+                    <a href="about.html#cerita-kami" class="nav-dropdown-item block px-5 py-2.5">Cerita Kami</a>
+                    <a href="about.html#layanan-kami" class="nav-dropdown-item block px-5 py-2.5">Our Services</a>
+                    <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Our Core Business</a>
+                    <a href="about.html#cara-bekerja" class="nav-dropdown-item block px-5 py-2.5">Cara Kami Bekerja</a>
+                </div>
             </div>
-                        <div class="relative group py-2">
-                <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 flex items-center gap-1 font-bold text-sm tracking-wider uppercase" href="about.html">
-                    TENTANG KAMI
-                    <svg class="w-[10px] h-[10px] transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+            <!-- Menu Products Dropdown -->
+            <div class="relative group py-2">
+                <a class="nav-link active" href="products.html">
+                    Products
+                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
                 </a>
-                <div class="nav-dropdown absolute left-0 mt-3 w-64 bg-[#F7F3EC] border border-charcoal/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <a href="about.html#cerita-kami" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cerita Kami</a>
-                    <a href="about.html#layanan-kami" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Our Services</a>
-                    <a href="about.html#keahlian" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Our Core Business</a>
-                    <a href="about.html#cara-bekerja" class="block px-6 py-3 font-label-caps text-xs font-bold tracking-widest text-charcoal hover:bg-antique-gold/10 hover:text-antique-gold uppercase transition-colors">Cara Kami Bekerja</a>
-                    </div>
+                <div class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
+                    <a href="products.html" class="nav-dropdown-item block px-5 py-2.5">Semua Produk</a>
+                    <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Scenting Diffuser</a>
+                    <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Fragrance Collection</a>
+                </div>
             </div>
-            <a class="font-label-caps text-charcoal/60 hover:text-antique-gold transition-colors duration-300 font-bold text-sm tracking-wider uppercase" href="contact.html">KONTAK</a>
+
+            <a class="nav-link" href="contact.html">Contact</a>
         </div>
         <div class="flex items-center gap-6">
             <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden cursor-pointer text-[#0D2A1D] p-2 hover:bg-black/5 rounded-lg transition-colors">
@@ -402,7 +486,7 @@
                 </div>
                 <!-- Floating Scent Image -->
                 <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-musk-white.webp"/>
+                    <img class="w-full h-full object-cover" src="img/scent-musk-white.webp" alt="Aroma Fragrance Musk White"/>
                 </div>
             </div>
 
@@ -427,7 +511,7 @@
                 </div>
                 <!-- Floating Scent Image -->
                 <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-soda-high.webp"/>
+                    <img class="w-full h-full object-cover" src="img/scent-soda-high.webp" alt="Aroma Fragrance Soda High"/>
                 </div>
             </div>
 
@@ -452,7 +536,7 @@
                 </div>
                 <!-- Floating Scent Image -->
                 <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-lemongrass.webp"/>
+                    <img class="w-full h-full object-cover" src="img/scent-lemongrass.webp" alt="Aroma Fragrance Lemongrass"/>
                 </div>
             </div>
 
@@ -477,7 +561,7 @@
                 </div>
                 <!-- Floating Scent Image -->
                 <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-royal-tulip.webp"/>
+                    <img class="w-full h-full object-cover" src="img/scent-royal-tulip.webp" alt="Aroma Fragrance Royal Tulip"/>
                 </div>
             </div>
             
@@ -527,7 +611,7 @@
             </div>
             
             <div class="col-span-12 md:col-span-7 h-[700px] relative overflow-hidden rounded-lg shadow-2xl mt-12 md:mt-0">
-                <img class="w-full h-full object-cover" src="img/scent-tile-25dcf79ff9.webp"/>
+                <img class="w-full h-full object-cover" src="img/scent-tile-25dcf79ff9.webp" alt="Koleksi Aroma Indoeasy Scent"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-forest/10 to-transparent"></div>
                 <div class="absolute bottom-12 left-12 right-12 text-warm-ivory text-left">
                     <span class="font-label-caps text-[11px] uppercase tracking-[0.3em] opacity-80 mb-4 block">Studi Kasus Penggunaan</span>
@@ -728,38 +812,36 @@
 
         <!-- Drawer Menu Links -->
         <div class="p-6 overflow-y-auto space-y-4 flex-1">
-            <a href="index.html" class="block font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">BERANDA</a>
+            <a href="index.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Home</a>
             
-            <!-- Mobile Accordion: PRODUK -->
+            <!-- Mobile Accordion: About -->
             <div class="border-b border-charcoal/5 py-2">
-                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase hover:text-[#C9A24B] transition-colors">
-                    <span>PRODUK</span>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
+                    <span>About</span>
                     <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
                 </button>
                 <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
-                    <a href="products.html" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Semua Produk</a>
-                    <a href="products.html#section-diffuser" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Scenting Diffuser</a>
-                    <a href="products.html#section-fragrance" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Fragrance Collection</a>
-                    <a href="collection.html" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Koleksi Wewangian</a>
+                    <a href="about.html#cerita-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cerita Kami</a>
+                    <a href="about.html#layanan-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Services</a>
+                    <a href="about.html#keahlian" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Core Business</a>
+                    <a href="about.html#cara-bekerja" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cara Kami Bekerja</a>
                 </div>
             </div>
 
-            <!-- Mobile Accordion: TENTANG KAMI -->
+            <!-- Mobile Accordion: Products -->
             <div class="border-b border-charcoal/5 py-2">
-                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase hover:text-[#C9A24B] transition-colors">
-                    <span>TENTANG KAMI</span>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
+                    <span>Products</span>
                     <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
                 </button>
                 <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
-                    <a href="about.html#cerita-kami" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Cerita Kami</a>
-                    <a href="about.html#layanan-kami" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Our Services</a>
-                    <a href="about.html#keahlian" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Our Core Business</a>
-                    
-                    <a href="about.html#cara-bekerja" class="block font-sans text-xs font-semibold text-charcoal/80 hover:text-[#C9A24B] uppercase">Cara Kami Bekerja</a>
+                    <a href="products.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Produk</a>
+                    <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Scenting Diffuser</a>
+                    <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Fragrance Collection</a>
                 </div>
             </div>
 
-            <a href="contact.html" class="block font-sans text-sm font-bold tracking-wider text-[#0D2A1D] uppercase py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">KONTAK</a>
+            <a href="contact.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Contact</a>
         </div>
 
         <!-- Drawer Footer CTA -->
