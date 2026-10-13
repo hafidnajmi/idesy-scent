@@ -482,10 +482,15 @@ FAQ_NODES = {
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": (
-                    "Tersedia unit dari 30 m3 sampai 4.000 m3. Contoh "
-                                        "model: ISX-I-0 (30 m3), ISX-H2 (300-500 m3), "
-                                        "ISX-H5 (500-1000 m3), ISX-U-5 (2.000-3.000 m3), "
-                                        "dan ISX-U10 (3.000-4.000 m3)."
+                    "Unit diffuser profesional kami melayani kapasitas mulai dari "
+                    "30 m3 hingga 4.000 m3 per unit (contoh model: ISX-I-0, ISX-H2, "
+                    "ISX-H5, ISX-U-5, dan ISX-U10). Untuk area komersial berskala "
+                    "besar di atas 4.000 m3 (seperti atrium mall, grand ballroom, "
+                    "bandara, maupun gedung perkantoran), kami menyediakan solusi "
+                    "kustomisasi sentral melalui integrasi sistem HVAC/AC sentral "
+                    "dan multi-point diffuser network. Tim ahli kami siap melakukan "
+                    "site survey gratis untuk merancang kalkulasi dan distribusi "
+                    "aroma yang presisi."
                 ),
             },
         },
