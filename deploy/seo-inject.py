@@ -77,6 +77,7 @@ PATHS = {
     "contact":          ("/contact.html", "Kontak", "contact"),
     "privacy-policy":   ("/privacy-policy.html", "Kebijakan Privasi", "privacy-policy"),
     "terms-of-service": ("/terms-of-service.html", "Ketentuan Layanan", "terms-of-service"),
+    "artikel":          ("/artikel.html", "Artikel & Panduan", "artikel"),
 }
 
 # ------------------------------------------------------------------- helpers
@@ -243,6 +244,7 @@ def breadcrumb(page: dict) -> list | None:
 # index.html and 404.html get no crumb at all (see PATHS) so PAD never applies.
 PAD = {
     "about": "max-w-[1440px] mx-auto px-4 md:px-16",
+    "artikel": "max-w-[1440px] mx-auto px-4 md:px-16",
 }
 DEFAULT_PAD = ""
 #
@@ -584,6 +586,7 @@ def og_image_alt(slug: str) -> str:
         "checkout": "Form inquiry penawaran Indoeasy Scent",
         "privacy-policy": "Kebijakan privasi Indoeasy Scent",
         "terms-of-service": "Ketentuan layanan Indoeasy Scent",
+        "artikel": "Artikel dan panduan commercial scenting Indoeasy Scent",
     }[slug]
 
 
@@ -685,7 +688,7 @@ def main() -> int:
                     "mainEntity": {"@id": f"{SITE}/#business"},
                 }
             ]
-        elif slug in ("privacy-policy", "terms-of-service"):
+        elif slug in ("privacy-policy", "terms-of-service", "artikel"):
             graph = [
                 {
                     "@context": "https://schema.org",

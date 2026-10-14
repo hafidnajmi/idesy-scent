@@ -36,6 +36,7 @@ PAGES = [
     "contact.html",
     "privacy-policy.html",
     "terms-of-service.html",
+    "artikel.html",
 ]
 
 SUPPORT = [

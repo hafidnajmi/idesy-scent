@@ -132,7 +132,7 @@ jobs:
           # Every page must be 200 AND byte-identical to this commit. An HTTP
           # 200 alone proves nothing: the previous deploy's bytes also return
           # 200, so a silently skipped rsync would pass a status-only check.
-          for page in index products collection checkout about contact privacy-policy terms-of-service; do
+          for page in index products collection checkout about contact privacy-policy terms-of-service artikel; do
             remote=$(curl -fsS "https://indoeasyscent.com/$page.html" | md5sum | cut -d' ' -f1)
             local=$(md5sum "$page.html" | cut -d' ' -f1)
             if [ "$remote" != "$local" ]; then
