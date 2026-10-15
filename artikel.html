@@ -160,12 +160,14 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        .article-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .article-item {
+            transition: opacity 0.3s ease;
         }
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 35px -10px rgba(13, 42, 29, 0.12);
+        .article-img-wrap img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .article-item:hover .article-img-wrap img {
+            transform: scale(1.04);
         }
     </style>
     <script src="js/transitions.js" defer></script>
@@ -302,78 +304,80 @@
     <!-- Articles Section -->
     <section class="py-16 md:py-20 px-4 md:px-16 max-w-[1440px] mx-auto">
         
-        <!-- Category Filter Tabs (Monochrome Editorial Styling) -->
-        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-12">
-            <button class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-neutral-900 text-white border border-neutral-900 transition-colors rounded-none">Semua Artikel</button>
-            <button class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none">Perhotelan</button>
-            <button class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none">Klinik &amp; Spa</button>
-            <button class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none">Perkantoran &amp; HVAC</button>
-            <button class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none">Teknologi Diffuser</button>
+        <!-- Category Filter Tabs (Interactive Editorial Tabs) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10 pb-6 border-b border-neutral-300/80">
+            <button type="button" data-filter="all" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-neutral-900 text-white border border-neutral-900 transition-colors rounded-none cursor-pointer">Semua Artikel</button>
+            <button type="button" data-filter="perhotelan" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Perhotelan</button>
+            <button type="button" data-filter="klinik" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Klinik &amp; Spa</button>
+            <button type="button" data-filter="perkantoran" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Perkantoran &amp; HVAC</button>
+            <button type="button" data-filter="teknologi" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Teknologi Diffuser</button>
+            <button type="button" data-filter="retail" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Retail &amp; Butik</button>
+            <button type="button" data-filter="restoran" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Restoran &amp; Lounge</button>
+            <button type="button" data-filter="servis" class="filter-btn px-4 md:px-5 py-2 md:py-2.5 text-xs font-semibold uppercase tracking-wider bg-white border border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-black transition-colors rounded-none cursor-pointer">Layanan Sewa</button>
         </div>
 
-        <!-- Articles Grid (4 In-Depth B2B Articles) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Empty Filter State Notice (Hidden by default) -->
+        <div id="articles-empty-notice" class="hidden py-16 text-center text-neutral-500 font-sans text-sm">
+            Tidak ada artikel dalam kategori ini saat ini.
+        </div>
+
+        <!-- Editorial Articles List (No Cards, Pure Editorial Layout) -->
+        <div class="divide-y divide-neutral-300/80">
             
             <!-- Article 1: Hospitality / Hotel -->
-            <article class="article-card bg-white border border-neutral-200 rounded-none shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                <div>
-                    <div class="relative h-64 overflow-hidden bg-neutral-900">
-                        <img src="img/resort.webp" alt="Scenting Hotel dan Resort Indoeasy Scent" class="w-full h-full object-cover"/>
-                        <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border border-white/20 rounded-none shadow-sm">
-                            Perhotelan &amp; Resort
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <div class="flex items-center gap-4 text-xs text-neutral-500 mb-3">
-                            <span>Oleh Tim Ahli Indoeasy Scent</span>
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="perhotelan">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/resort.webp" alt="Scenting Hotel dan Resort Indoeasy Scent" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Perhotelan &amp; Resort</span>
                             <span>•</span>
                             <span>5 Menit Baca</span>
                         </div>
-                        <h2 class="font-serif text-xl md:text-2xl text-neutral-900 font-bold mb-3 leading-snug">
-                            Panduan Scenting Diffuser untuk Hotel &amp; Resort
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Panduan Scenting Diffuser untuk Lobi Hotel &amp; Resort Bintang 5
                         </h2>
-                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans">
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
                             <p>
-                                Kesan pertama tamu hotel terbentuk dalam <strong>7 detik pertama</strong> saat melangkah ke area lobi. Studi psikologi persepsi membuktikan bahwa indra penciuman terhubung langsung ke sistem limbik otak yang mengontrol emosi dan memori jangka panjang.
+                                Kesan pertama tamu hotel terbentuk dalam <strong>7 detik pertama</strong> saat melangkah ke area lobi. Studi psikologi persepsi membuktikan bahwa indra penciuman terhubung langsung ke sistem limbik otak yang mengontrol emosi dan retensi memori jangka panjang.
                             </p>
                             <p>
-                                Untuk area perhotelan komersial, penyebaran aroma memerlukan pendekatan zonasi presisi:
+                                Untuk fasilitas perhotelan komersial, penyebaran aroma memerlukan pendekatan zonasi presisi:
                             </p>
                             <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-neutral-700">
                                 <li><strong>Lobby Utama (300–1.000 m³):</strong> Disarankan memakai unit ISX-H2 atau ISX-H5 dengan aroma signature seperti White Tea, Woody Amber, atau Royal Jasmine.</li>
-                                <li><strong>Koridor &amp; Lift:</strong> Diffuser compact yang bekerja senyap untuk memastikan aroma mengalir lembut tanpa menyengat.</li>
+                                <li><strong>Koridor &amp; Lift:</strong> Diffuser compact yang bekerja senyap (<30 dB) untuk memastikan aroma mengalir lembut tanpa menyengat.</li>
                                 <li><strong>Grand Ballroom (&gt;3.000 m³):</strong> Sistem diffuser berkapasitas besar seperti ISX-U10 yang diintegrasikan langsung ke ducting pendingin ruangan.</li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="p-6 md:p-8 pt-0 border-t border-neutral-100 mt-4 flex items-center justify-between">
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20konsultasi%20scenting%20diffuser%20untuk%20hotel%2Fvilla." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
-                        <span>Konsultasi Scenting Hotel</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20konsultasi%20scenting%20diffuser%20untuk%20hotel%2Fvilla." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Konsultasi Scenting Hotel</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
             <!-- Article 2: Clinic & Aesthetic Spa -->
-            <article class="article-card bg-white border border-neutral-200 rounded-none shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                <div>
-                    <div class="relative h-64 overflow-hidden bg-neutral-900">
-                        <img src="img/Konsul_sample.webp" alt="Pengharum Ruangan Klinik Kecantikan dan Spa" class="w-full h-full object-cover"/>
-                        <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border border-white/20 rounded-none shadow-sm">
-                            Klinik &amp; Spa
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <div class="flex items-center gap-4 text-xs text-neutral-500 mb-3">
-                            <span>Oleh Tim Ahli Indoeasy Scent</span>
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="klinik">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/Konsul_sample.webp" alt="Pengharum Ruangan Klinik Kecantikan dan Spa" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Klinik &amp; Spa</span>
                             <span>•</span>
                             <span>4 Menit Baca</span>
                         </div>
-                        <h2 class="font-serif text-xl md:text-2xl text-neutral-900 font-bold mb-3 leading-snug">
-                            Standar Scent Marketing untuk Klinik Estetika &amp; Medis
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Standar Scent Marketing untuk Fasilitas Medis, Klinik Estetika &amp; Spa
                         </h2>
-                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans">
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
                             <p>
                                 Ruang tunggu klinik kecantikan dan fasilitas medis sering diselimuti aroma antiseptik yang memicu kecemasan pasien. Menerapkan therapeutic ambient scenting terbukti menurunkan tingkat stres ruang tunggu hingga <strong>60%</strong>.
                             </p>
@@ -384,39 +388,36 @@
                                 <li><strong>Sertifikasi IFRA &amp; Kemenkes:</strong> Minyak wewangian bebas zat karsinogenik, aman bagi pernapasan anak-anak maupun lansia, serta tidak memicu alergi.</li>
                                 <li><strong>Teknologi Dry-Mist Non-Residu:</strong> Tidak ada partikel minyak yang mengendap di lantai atau alat medis. Diffuser ISX-I-0 dan ISX-H2 Indoeasy Scent menggunakan atomisasi dingin menghasilkan partikel nano kering.</li>
                             </ul>
-                            <div class="text-xs text-neutral-800 bg-neutral-100 p-3.5 border-l-2 border-neutral-900 rounded-none leading-relaxed font-sans">
+                            <div class="border-l-2 border-neutral-900 pl-4 py-1.5 text-xs text-neutral-800 leading-relaxed font-sans my-3">
                                 <strong>Rekomendasi aroma klinik:</strong> Lavender Chamomile untuk relaksasi intens, atau Lemongrass Eucalyptus untuk kesan higienis alami dan segar.
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="p-6 md:p-8 pt-0 border-t border-neutral-100 mt-4 flex items-center justify-between">
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20konsultasi%20pengharum%20ruangan%20untuk%20klinik%2Fspa." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
-                        <span>Konsultasi Scenting Klinik</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20konsultasi%20pengharum%20ruangan%20untuk%20klinik%2Fspa." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Konsultasi Scenting Klinik</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
             <!-- Article 3: Tech Comparison (Cold-Air vs Aerosol) -->
-            <article class="article-card bg-white border border-neutral-200 rounded-none shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                <div>
-                    <div class="relative h-64 overflow-hidden bg-neutral-900">
-                        <img src="img/scent_diffuser.webp" alt="Teknologi Cold Air Micro Diffusion vs Aerosol" class="w-full h-full object-cover"/>
-                        <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border border-white/20 rounded-none shadow-sm">
-                            Teknologi Diffuser
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <div class="flex items-center gap-4 text-xs text-neutral-500 mb-3">
-                            <span>Oleh Tim Ahli Indoeasy Scent</span>
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="teknologi">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/scent_diffuser.webp" alt="Teknologi Cold Air Micro Diffusion vs Aerosol" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Teknologi Diffuser</span>
                             <span>•</span>
                             <span>6 Menit Baca</span>
                         </div>
-                        <h2 class="font-serif text-xl md:text-2xl text-neutral-900 font-bold mb-3 leading-snug">
-                            Perbandingan: Cold-Air Micro-Diffusion vs Aerosol Kaleng
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Perbandingan Teknis: Cold-Air Micro-Diffusion vs Aerosol Semprot Kaleng
                         </h2>
-                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans">
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
                             <p>
                                 Mengapa industri komersial modern beralih dari semprotan kaleng (aerosol) ke sistem <strong>Cold-Air Micro-Diffusion</strong>? Berikut perbandingan teknisnya:
                             </p>
@@ -458,34 +459,31 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <div class="p-6 md:p-8 pt-0 border-t border-neutral-100 mt-4 flex items-center justify-between">
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20tanya%20skema%20sewa%20diffuser%20cold-air." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
-                        <span>Bandingkan Skema Sewa Kami</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20tanya%20skema%20sewa%20diffuser%20cold-air." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Bandingkan Skema Sewa Kami</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
             <!-- Article 4: HVAC & Corporate Building -->
-            <article class="article-card bg-white border border-neutral-200 rounded-none shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                <div>
-                    <div class="relative h-64 overflow-hidden bg-neutral-900">
-                        <img src="img/kantor.webp" alt="Sistem Pengharum Ruangan AC Sentral HVAC Gedung Kantor" class="w-full h-full object-cover"/>
-                        <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border border-white/20 rounded-none shadow-sm">
-                            Perkantoran &amp; HVAC
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <div class="flex items-center gap-4 text-xs text-neutral-500 mb-3">
-                            <span>Oleh Tim Ahli Indoeasy Scent</span>
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="perkantoran">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/kantor.webp" alt="Sistem Pengharum Ruangan AC Sentral HVAC Gedung Kantor" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Perkantoran &amp; HVAC</span>
                             <span>•</span>
                             <span>5 Menit Baca</span>
                         </div>
-                        <h2 class="font-serif text-xl md:text-2xl text-neutral-900 font-bold mb-3 leading-snug">
-                            Integrasi Pengharum Ruangan ke Sistem AC Sentral (HVAC)
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Integrasi Mesin Pengharum ke Saluran AC Sentral (HVAC/AHU) Gedung Kantor
                         </h2>
-                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans">
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
                             <p>
                                 Untuk gedung perkantoran bertingkat, mall, atau pabrik kawasan industri (seperti Cikarang dan Karawang), meletakkan diffuser berdiri di setiap sudut sering kali tidak efisien dan mengurangi keindahan interior.
                             </p>
@@ -499,12 +497,158 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20jadwalkan%20survey%20integrasi%20diffuser%20HVAC%2FAC%20Sentral." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Jadwalkan Survey HVAC Gratis</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="p-6 md:p-8 pt-0 border-t border-neutral-100 mt-4 flex items-center justify-between">
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20jadwalkan%20survey%20integrasi%20diffuser%20HVAC%2FAC%20Sentral." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
-                        <span>Jadwalkan Survey HVAC Gratis</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+            </article>
+
+            <!-- Article 5: Retail & Commercial Boutiques -->
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="retail">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/retail.webp" alt="Scent Marketing Butik Fashion dan Retail Komersial" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Retail &amp; Butik</span>
+                            <span>•</span>
+                            <span>4 Menit Baca</span>
+                        </div>
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Scent Marketing pada Butik Fashion &amp; Showroom: Meningkatkan Dwell Time Tamu
+                        </h2>
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
+                            <p>
+                                Durasi waktu pengunjung berada di dalam gerai (*dwell time*) berkorelasi langsung dengan tingkat konversi transaksi belanja. Riset perilaku ritel menunjukkan bahwa atmosfer aroma yang tepat mampu meningkatkan durasi belanja hingga <strong>20%</strong> dan mengangkat persepsi kualitas produk secara instan.
+                            </p>
+                            <p>
+                                Strategi penataan titik difusi untuk butik fesyen dan showroom otomotif premium:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-neutral-700">
+                                <li><strong>Entrance Scent Signature:</strong> Penempatan unit di area pintu masuk dengan semprotan mikron halus sebagai sambutan sensorik yang membedakan toko Anda dari kompetitor.</li>
+                                <li><strong>Fitting Room &amp; VIP Lounge:</strong> Area fitting room diberi wewangian lembut (seperti Velvet Linen atau Royal Jasmine) untuk menciptakan suasana rileks saat pelanggan mencoba produk.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20konsultasi%20scent%20marketing%20untuk%20butik%2Fshowroom." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Konsultasi Scenting Retail</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6: F&B, Restaurants & Lounges -->
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="restoran">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/restoran.webp" alt="Manajemen Zonasi Aroma Restoran dan Cafe" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Restoran &amp; Lounge</span>
+                            <span>•</span>
+                            <span>4 Menit Baca</span>
+                        </div>
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Manajemen Zonasi Aroma untuk Restoran, Cafe &amp; Lounge Kuliner
+                        </h2>
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
+                            <p>
+                                Tantangan terbesar bisnis kuliner komersial adalah bau minyak masakan atau asap dapur yang merembes ke ruang makan utama. Pewangi aerosol biasa justru sering kali bentrok dan merusak selera makan pelanggan.
+                            </p>
+                            <p>
+                                Pendekatan scenting zonasi profesional Indoeasy Scent:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-neutral-700">
+                                <li><strong>Odor Neutralizer (Bukan Menutupi):</strong> Memakai konsentrat penawar bau di area koridor toilet dan transisi dapur untuk mengikat partikel udara tak sedap secara aktif.</li>
+                                <li><strong>Foyer &amp; Reception Area:</strong> Menggunakan aroma fresh citrus atau subtle roasted bean yang membangkitkan nafsu makan tanpa mengaburkan kelezatan aroma makanan di meja santap.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20konsultasi%20pengharum%20ruangan%20restoran%2Flounge." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Konsultasi Scenting Restoran</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 7: Rental & Servicing Model -->
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="servis">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/Refil-perawatan.webp" alt="Servis dan Refill Mesin Diffuser Berkala Indoeasy Scent" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Layanan Sewa</span>
+                            <span>•</span>
+                            <span>5 Menit Baca</span>
+                        </div>
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Mengapa Skema Sewa Diffuser Full Service Lebih Efisien Dibanding Pembelian Unit Putus
+                        </h2>
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
+                            <p>
+                                Banyak pengelola fasilitas membeli mesin diffuser secara putus, namun dalam 3–6 bulan unit sering terbengkalai karena nozzle tersumbat, botol habis tanpa ada yang mengisi ulang, atau hilangnya dukungan teknis suku cadang.
+                            </p>
+                            <p>
+                                Perbandingan skema operasional komersial:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-neutral-700">
+                                <li><strong>Pembelian Putus:</strong> Beban CAPEX awal tinggi, tim internal harus repot memonitor dan belanja isi ulang, serta risiko kerugian saat mesin rusak tanpa unit cadangan.</li>
+                                <li><strong>Skema Langganan All-In Indoeasy:</strong> Biaya operasional bulanan terukur (OPEX), unit mesin dipinjamkan, isi ulang wewangian terjadwal oleh teknisi kami, serta penggantian unit instan jika terjadi malafungsi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20pelajari%20paket%20sewa%20diffuser%20all-in." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Pelajari Paket Sewa Bisnis</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 8: Technical Installation & Calibration -->
+            <article class="article-item py-10 md:py-14 flex flex-col md:flex-row gap-8 lg:gap-12 items-start" data-category="teknologi">
+                <div class="w-full md:w-80 lg:w-[360px] aspect-[16/10] md:h-60 shrink-0 overflow-hidden bg-neutral-200 article-img-wrap">
+                    <img src="img/Install-machine.webp" alt="Instalasi dan Kalibrasi Diffuser Komersial" class="w-full h-full object-cover"/>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
+                            <span class="text-neutral-900">Teknologi Diffuser</span>
+                            <span>•</span>
+                            <span>5 Menit Baca</span>
+                        </div>
+                        <h2 class="font-serif text-2xl md:text-3xl text-neutral-900 font-normal leading-snug mb-3">
+                            Standar Site Survey &amp; Kalibrasi Konsentrasi Fragrance untuk Efisiensi Ruangan
+                        </h2>
+                        <div class="space-y-3 text-sm text-neutral-700 leading-relaxed font-sans mb-4">
+                            <p>
+                                Menentukan intensitas aroma bukan sekadar menebak semprotan, melainkan perhitungan aerodinamika ruang. Tim teknisi Indoeasy Scent melakukan site survey komprehensif sebelum unit dioperasikan:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-neutral-700">
+                                <li><strong>Kalkulasi Volume Kubikasi (m³):</strong> Mengukur dimensi panjang, lebar, dan tinggi plafon untuk menentukan tipe mesin diffuser yang presisi (dari 300 m³ hingga 10.000 m³).</li>
+                                <li><strong>Analisis Sirkulasi Udara (Airflow &amp; Draft):</strong> Memetakan arah hembusan AC dan pintu lalu lintas tamu agar aroma tersebar merata dan tidak langsung terbuang ke luar.</li>
+                                <li><strong>Program Micro-Timer Presisi:</strong> Mengatur siklus durasi semprot (misal 15 detik aktif, 90 detik jeda) agar konsentrasi aroma senantiasa prima tanpa saturasi berlebih.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20ingin%20jadwalkan%20site%20survey%20teknis%20gratis." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-neutral-900 hover:text-black uppercase tracking-wider transition-colors">
+                            <span>Jadwalkan Site Survey Teknis</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -777,6 +921,43 @@
     setTimeout(() => {
         toggleWaPopup(true);
     }, 3500);
+
+    // Article Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('.article-item');
+    const emptyNotice = document.getElementById('articles-empty-notice');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const filter = this.getAttribute('data-filter');
+
+            // Update button styles
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-neutral-900', 'text-white', 'border-neutral-900');
+                b.classList.add('bg-white', 'text-neutral-600', 'border-neutral-300');
+            });
+            this.classList.remove('bg-white', 'text-neutral-600', 'border-neutral-300');
+            this.classList.add('bg-neutral-900', 'text-white', 'border-neutral-900');
+
+            // Filter articles with fade effect
+            let visibleCount = 0;
+            articles.forEach(article => {
+                const category = article.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    article.style.display = 'flex';
+                    article.style.opacity = '1';
+                    visibleCount++;
+                } else {
+                    article.style.display = 'none';
+                    article.style.opacity = '0';
+                }
+            });
+
+            if (emptyNotice) {
+                emptyNotice.classList.toggle('hidden', visibleCount > 0);
+            }
+        });
+    });
 </script>
 
 </body>
