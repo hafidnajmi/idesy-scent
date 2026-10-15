@@ -53,44 +53,48 @@
         }
     </script>
     <style>
+        /* Navbar Links matching standard site reference */
         .nav-link {
-            font-family: 'Nunito', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #1F1F1D;
-            transition: color 0.3s ease;
-            position: relative;
-            padding-bottom: 4px;
+            font-family: 'Nunito', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            color: #1F1F1D !important;
+            text-decoration: none !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            padding: 4px 0 !important;
+            transition: color 0.2s ease, text-decoration 0.2s ease !important;
+            cursor: pointer;
         }
-        .nav-link:hover, .nav-link.active {
-            color: #C9A24B;
+
+        .nav-link:hover {
+            color: #1F1F1D !important;
+            text-decoration: underline !important;
+            text-underline-offset: 7px !important;
+            text-decoration-thickness: 1.5px !important;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background-color: #C9A24B;
-            transition: width 0.3s ease;
+
+        .nav-link.active, .nav-link--active {
+            color: #1F1F1D !important;
+            text-decoration: underline !important;
+            text-underline-offset: 7px !important;
+            text-decoration-thickness: 1.5px !important;
+            font-weight: 500 !important;
         }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
+
         .nav-dropdown-item {
-            font-family: 'Nunito', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            color: #1F1F1D;
+            font-family: 'Nunito', sans-serif !important;
+            font-size: 14px !important;
+            color: #1F1F1D !important;
+            text-decoration: none !important;
             transition: all 0.2s ease;
         }
         .nav-dropdown-item:hover {
-            background-color: rgba(201, 162, 75, 0.1);
-            color: #C9A24B;
-            padding-left: 24px;
+            color: #C9A24B !important;
+            background-color: rgba(201, 162, 75, 0.08);
+            padding-left: 24px !important;
         }
         .material-symbols-outlined {
             font-family: 'Material Symbols Outlined' !important;
@@ -208,7 +212,7 @@
 
 <main class="flex-grow">
 <!-- SEO:INJECT:BEGIN -->
-    <nav aria-label="Breadcrumb" class=" mb-8">
+    <nav aria-label="Breadcrumb" class="max-w-[1440px] mx-auto px-4 md:px-16 mb-8">
         <ol class="flex flex-wrap items-center gap-2 font-label-caps text-[11px] uppercase tracking-[0.2em] text-charcoal/50">
             <li class="flex items-center gap-2">
                 <a href="/" class="hover:text-antique-gold transition-colors">Beranda</a>

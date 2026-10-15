@@ -246,6 +246,7 @@ def breadcrumb(page: dict) -> list | None:
 PAD = {
     "about": "max-w-[1440px] mx-auto px-4 md:px-16",
     "artikel": "max-w-[1440px] mx-auto px-4 md:px-16",
+    "area-layanan": "max-w-[1440px] mx-auto px-4 md:px-16",
 }
 DEFAULT_PAD = ""
 #
