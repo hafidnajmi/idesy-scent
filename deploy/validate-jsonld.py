@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SLUGS = ["index", "products", "collection", "checkout",
-         "about", "contact", "privacy-policy", "terms-of-service", "artikel"]
+         "about", "contact", "privacy-policy", "terms-of-service", "artikel", "area-layanan"]
 
 try:
     from schema import Schema, SchemaError

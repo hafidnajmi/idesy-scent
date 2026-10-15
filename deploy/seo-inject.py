@@ -78,6 +78,7 @@ PATHS = {
     "privacy-policy":   ("/privacy-policy.html", "Kebijakan Privasi", "privacy-policy"),
     "terms-of-service": ("/terms-of-service.html", "Ketentuan Layanan", "terms-of-service"),
     "artikel":          ("/artikel.html", "Artikel & Panduan", "artikel"),
+    "area-layanan":     ("/area-layanan.html", "Area Layanan", "area-layanan"),
 }
 
 # ------------------------------------------------------------------- helpers
@@ -587,6 +588,7 @@ def og_image_alt(slug: str) -> str:
         "privacy-policy": "Kebijakan privasi Indoeasy Scent",
         "terms-of-service": "Ketentuan layanan Indoeasy Scent",
         "artikel": "Artikel dan panduan commercial scenting Indoeasy Scent",
+        "area-layanan": "Jangkauan layanan dan teknisi lokal Indoeasy Scent di Jawa Barat dan Jakarta",
     }[slug]
 
 
@@ -688,7 +690,7 @@ def main() -> int:
                     "mainEntity": {"@id": f"{SITE}/#business"},
                 }
             ]
-        elif slug in ("privacy-policy", "terms-of-service", "artikel"):
+        elif slug in ("privacy-policy", "terms-of-service", "artikel", "area-layanan"):
             graph = [
                 {
                     "@context": "https://schema.org",
