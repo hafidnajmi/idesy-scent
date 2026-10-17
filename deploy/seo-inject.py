@@ -42,9 +42,9 @@ SAME_AS = [
 # injected Twitter Card can never drift from what the page actually renders.
 def scrape_head(html: str, slug: str):
     t = re.search(r"<title>(.*?)</title>", html, re.S)
-    d = re.search(r'<meta name="description" content="(.*?)"', html, re.S)
-    o = re.search(r'<meta property="og:title" content="(.*?)"', html, re.S)
-    od = re.search(r'<meta property="og:description" content="(.*?)"', html, re.S)
+    d = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', html, re.S | re.I)
+    o = re.search(r'<meta\s+property="og:title"\s+content="([^"]*)"', html, re.S | re.I)
+    od = re.search(r'<meta\s+property="og:description"\s+content="([^"]*)"', html, re.S | re.I)
     title = (t.group(1).strip() if t else "")
     desc = (d.group(1).strip() if d else "")
 
@@ -338,18 +338,8 @@ def build_product_payloads(html_products: str):
                 {"@type": "PropertyValue", "name": "Merek", "value": "Indoeasy Scent"},
                 {"@type": "PropertyValue", "name": "Sertifikasi", "value": "IFRA, Kemenkes RI"},
             ],
-            # B2B inquiry model: no public price, so offers carries no price.
-            "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "url": SITE + "/products.html",
-                "businessFunction": "https://purl.org/goodrelations/v1#Sell",
-                "eligibleQuantity": {
-                    "@type": "QuantitativeValue",
-                    "minValue": 1,
-                    "unitText": "unit",
-                },
-            },
+            # B2B inquiry/rental model: no public e-commerce checkout price,
+            # so 'offers' is omitted to avoid Google Merchant Listing 'missing price' errors.
         })
 
     # Fragrance + reed diffuser cards: uppercase h4 label followed by its image.
@@ -386,11 +376,7 @@ def build_product_payloads(html_products: str):
             "description": desc,
             "brand": {"@type": "Brand", "name": "Indoeasy Scent"},
             "category": "Reed Diffuser" if is_reed else "Fragrance",
-            "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "url": SITE + "/products.html",
-            },
+            # B2B inquiry model: no public e-commerce price tag on products.html.
         })
     return out
 
