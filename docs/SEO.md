@@ -73,7 +73,7 @@ Pasang di halaman yang sesuai:
     "addressCountry": "ID"
   },
   "sameAs": [
-    "https://www.instagram.com/indoeasy.scent/",
+    "https://www.instagram.com/indoeasyscent/",
     "https://linkedin.com/company/indoeasyscent"
   ]
 }
@@ -216,7 +216,7 @@ Perbaikan `og:image`:
     "hoursClose": "18:00"
   },
   "sameAs": [
-    "https://www.instagram.com/indoeasy.scent/",
+    "https://www.instagram.com/indoeasyscent/",
     "https://linkedin.com/company/indoeasyscent"
   ]
 }

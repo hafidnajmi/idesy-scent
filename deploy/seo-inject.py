@@ -32,7 +32,7 @@ ADDRESS = {
 }
 GEO = {"@type": "GeoCoordinates", "latitude": -6.3877478, "longitude": 107.0988673}
 SAME_AS = [
-    "https://www.instagram.com/indoeasy.scent/",
+    "https://www.instagram.com/indoeasyscent/",
     "https://linkedin.com/company/indoeasyscent",
 ]
 # No opening hours are stated anywhere in the markup -> omitted, not guessed.
