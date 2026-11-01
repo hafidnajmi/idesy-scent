@@ -184,6 +184,23 @@
     </style>
 
     <script src="js/analytics.js" defer></script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1120087204109580');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1120087204109580&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
 
 <!-- SEO:INJECT:BEGIN -->
@@ -268,12 +285,25 @@
                 </div>
             </div>
 
-            <a class="nav-link" href="area-layanan.html">Area Layanan</a>
+            <!-- Menu Area Layanan Dropdown -->
+            <div class="relative group py-2">
+                <a class="nav-link" href="area-layanan.html">
+                    Area Layanan
+                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
+                </a>
+                <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
+                    <a href="area-layanan.html" class="nav-dropdown-item block px-5 py-2.5">Semua Area Layanan</a>
+                    <a href="area-layanan.html#koridor-industri" class="nav-dropdown-item block px-5 py-2.5">Bekasi, Cikarang &amp; Karawang</a>
+                    <a href="area-layanan.html#koridor-jakarta" class="nav-dropdown-item block px-5 py-2.5">DKI Jakarta Raya</a>
+                    <a href="area-layanan.html#koridor-bandung" class="nav-dropdown-item block px-5 py-2.5">Bandung &amp; Lembang</a>
+                    <a href="area-layanan.html#koridor-bodetabek" class="nav-dropdown-item block px-5 py-2.5">Bogor, Depok &amp; Tangerang</a>
+                </div>
+            </div>
             <a class="nav-link" href="artikel.html">Artikel</a>
             <a class="nav-link" href="contact.html">Contact</a>
         </div>
         <div class="flex items-center gap-6">
-            <button class="md:hidden cursor-pointer text-charcoal" aria-label="Menu Mobile">
+            <button id="mobile-menu-btn" class="md:hidden cursor-pointer text-[#0D2A1D] p-2 hover:bg-black/5 rounded-lg transition-colors" aria-label="Open Navigation Menu">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
@@ -530,6 +560,21 @@
                     <a href="products.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Produk</a>
                     <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Scenting Diffuser</a>
                     <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Fragrance Collection</a>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion: Area Layanan -->
+            <div class="border-b border-charcoal/5 py-2">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
+                    <span>Area Layanan</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
+                </button>
+                <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
+                    <a href="area-layanan.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Area Layanan</a>
+                    <a href="area-layanan.html#koridor-industri" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bekasi, Cikarang &amp; Karawang</a>
+                    <a href="area-layanan.html#koridor-jakarta" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">DKI Jakarta</a>
+                    <a href="area-layanan.html#koridor-bandung" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bandung &amp; Lembang</a>
+                    <a href="area-layanan.html#koridor-bodetabek" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bogor, Depok &amp; Tangerang</a>
                 </div>
             </div>
 
