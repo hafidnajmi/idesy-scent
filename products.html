@@ -28,190 +28,17 @@
     <link rel="icon" href="img/favicon-48.png" type="image/png" sizes="48x48"/>
     <link rel="apple-touch-icon" href="img/favicon-512.png"/>
     <meta name="theme-color" content="#0D2A1D"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Production Compiled & Minified Stylesheet -->
+    <link rel="preload" as="style" href="css/style.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- Konfigurasi Tailwind -->
-    <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "secondary": "#C9A24B",
-                "antique-gold": "#C9A24B",
-                "surface": "#F7F3EC",
-                "background": "#F7F3EC",
-                "primary": "#0D2A1D",
-                "deep-forest": "#0D2A1D",
-                "warm-ivory": "#F7F3EC",
-                "charcoal": "#1F1F1D",
-                "on-surface-variant": "#424844"
-              },
-              "borderRadius": {
-                "DEFAULT": "0px",
-                "lg": "8px",
-                "xl": "12px",
-                "full": "9999px"
-              },
-              "spacing": {
-                "section-gap": "100px",
-                "margin-desktop": "64px",
-                "unit": "8px",
-                "gutter": "32px",
-                "margin-mobile": "24px"
-              },
-              "fontFamily": {
-                "sans": ["'Nunito'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-                "serif": ["'Libre Caslon Display'", "Georgia", "serif"],
-                "display": ["'Libre Caslon Display'", "Georgia", "serif"],
-                "body": ["'Nunito'", "'Inter'", "sans-serif"],
-                "nav": ["'Nunito'", "sans-serif"],
-                "body-md": ["'Nunito'", "sans-serif"],
-                "display-lg-mobile": ["'Libre Caslon Display'", "serif"],
-                "label-caps": ["'Nunito'", "sans-serif"],
-                "display-lg": ["'Libre Caslon Display'", "serif"],
-                "headline-sm": ["'Libre Caslon Display'", "serif"],
-                "headline-md": ["'Libre Caslon Display'", "serif"],
-                "body-lg": ["'Nunito'", "sans-serif"]
-            }
-            },
-          },
-        }
-    </script>
-    <style>
-
-        /* Typography & Navbar Style from indoeasyholiday.com */
-        :root {
-            --font-primary: 'Libre Caslon Display', Georgia, serif;
-            --font-secondary: 'Nunito', 'Inter', sans-serif;
-            --nav-link-font-family: 'Nunito', sans-serif;
-            --nav-link-font-size: 16px;
-            --nav-link-font-weight: 400;
-            --nav-link-text-color: #1F1F1D;
-        }
-
-        body {
-            background-color: #F7F3EC;
-            color: #1A1C1B;
-            font-family: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-        }
-
-        /* Editorial hero headings */
-        h1, h2.font-serif, .font-serif, .font-display {
-            font-family: 'Libre Caslon Display', Georgia, serif;
-        }
-
-        /* Product names, badges, specs & cards use standard sans-serif (Nunito) like navbar */
-        .product-card h3,
-        .product-card h4,
-        .product-card h5,
-        .diffuser-card h3,
-        .diffuser-card h4,
-        .diffuser-card h5,
-        .fragrance-card h3,
-        .fragrance-card h4,
-        .fragrance-card h5,
-        .product-title,
-        .product-name,
-        h3.font-sans,
-        h4, h5, h6,
-        .font-sans,
-        .font-label-caps {
-            font-family: 'Nunito', 'Inter', sans-serif !important;
-        }
-
-        /* Navbar Links matching indoeasyholiday.com reference */
-        .nav-link {
-            font-family: 'Nunito', sans-serif !important;
-            font-size: 16px !important;
-            font-weight: 400 !important;
-            color: #1F1F1D !important;
-            text-decoration: none !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            padding: 4px 0 !important;
-            transition: color 0.2s ease, text-decoration 0.2s ease !important;
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            color: #1F1F1D !important;
-            text-decoration: underline !important;
-            text-underline-offset: 7px !important;
-            text-decoration-thickness: 1.5px !important;
-        }
-
-        .nav-link.active, .nav-link--active {
-            color: #1F1F1D !important;
-            text-decoration: underline !important;
-            text-underline-offset: 7px !important;
-            text-decoration-thickness: 1.5px !important;
-            font-weight: 500 !important;
-        }
-
-        .nav-dropdown-item {
-            font-family: 'Nunito', sans-serif !important;
-            font-size: 14px !important;
-            color: #1F1F1D !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
-            font-weight: 400 !important;
-            transition: all 0.2s ease !important;
-        }
-        .nav-dropdown-item:hover {
-            background-color: rgba(201, 162, 75, 0.1) !important;
-            color: #C9A24B !important;
-            padding-left: 24px !important;
-        }
-    
-        
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-            font-weight: normal;
-            font-style: normal;
-            font-size: 24px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-smoothing: antialiased;
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
-        ::selection { background: #C9A24B; color: #ffffff; }
-        .editorial-rule { height: 1px; background-color: rgba(201, 162, 75, 0.2); }
-        .filter-btn.active {
-            color: #C9A24B;
-            border-bottom: 2px solid #C9A24B;
-        }
-        .nav-dropdown {
-            opacity: 0;
-            visibility: hidden;
-        }
-        summary::-webkit-details-marker { display: none; }
-        summary { list-style: none; }
-    </style>
     <script src="js/transitions.js" defer></script>
 
     
 
-    <style>
-        
-        
-        
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-        }
-    </style>
 
     <script src="js/analytics.js" defer></script>
     <!-- Meta Pixel Code -->
@@ -537,6 +364,70 @@
     },
     {
       "@type": "Product",
+      "@id": "https://indoeasyscent.com/products.html#ISX-U15",
+      "name": "ISX-U15 HVAC Large Scent Diffuser",
+      "sku": "ISX-U15",
+      "image": [
+        "https://indoeasyscent.com/img/U15.webp"
+      ],
+      "description": "ISX-U15 — unit commercial scenting HVAC large scale 24V Turbo berkapasitas 1500ml dengan jangkauan 5000-8000m3 untuk gedung, hotel, mall, dan ruang komersial skala besar.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Commercial Scent Diffuser",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Merek",
+          "value": "Indoeasy Scent"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Cakupan",
+          "value": "5000-8000m3"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Koneksi",
+          "value": "HVAC Central Duct"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/products.html#ISX-F-Air",
+      "name": "ISX-F-Air Floor-Standing Scent Diffuser",
+      "sku": "ISX-F-Air",
+      "image": [
+        "https://indoeasyscent.com/img/F-Air.webp"
+      ],
+      "description": "ISX-F-Air — unit diffuser floor-standing berpenampilan aluminium alloy metallic elegan dengan kapasitas 500ml dan jangkauan 2000m3 untuk lobi hotel, showroom, dan butik.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Commercial Scent Diffuser",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Merek",
+          "value": "Indoeasy Scent"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Cakupan",
+          "value": "2000m3"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tipe",
+          "value": "Floor-Standing"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
       "@id": "https://indoeasyscent.com/products.html#REED-DIFFUSER",
       "name": "Reed Diffuser Stik Bambu",
       "sku": "FRG-REED-DIFFUSER",
@@ -549,6 +440,51 @@
         "name": "Indoeasy Scent"
       },
       "category": "Reed Diffuser"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/products.html#MIDNIGHT-BLOSSOM",
+      "name": "Fragrance Midnight Blossom",
+      "sku": "FRG-C09SB009",
+      "image": [
+        "https://indoeasyscent.com/img/midnight-blossom.webp"
+      ],
+      "description": "Fragrance Midnight Blossom (C09SB009) dari koleksi eksklusif Indoeasy Scent — keharuman memikat perpaduan sparkling bergamot, aldehydic breeze, damask rose, french lavender, dan velvet oakmoss.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/products.html#ALOE-SERENITY",
+      "name": "Fragrance Aloe Serenity",
+      "sku": "FRG-C07AS007",
+      "image": [
+        "https://indoeasyscent.com/img/aloe-serenity.png"
+      ],
+      "description": "Fragrance Aloe Serenity (C07AS007) dari koleksi eksklusif Indoeasy Scent — aroma menenangkan crisp cucumber, dewy green leaves, soothing aloe vera gel, dan lotus.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/products.html#TIMELESS",
+      "name": "Fragrance Timeless",
+      "sku": "FRG-C08TL008",
+      "image": [
+        "https://indoeasyscent.com/img/timeless.png"
+      ],
+      "description": "Fragrance Timeless (C08TL008) dari koleksi eksklusif Indoeasy Scent — keharuman abadi perpaduan bergamot, lemon, grapefruit, aldehydes, rose, amber, dan cedarwood.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance"
     },
     {
       "@type": "Product",
@@ -567,13 +503,13 @@
     },
     {
       "@type": "Product",
-      "@id": "https://indoeasyscent.com/products.html#JAPAN-PEACH",
-      "name": "Fragrance Japan Peach",
-      "sku": "FRG-JAPAN-PEACH",
+      "@id": "https://indoeasyscent.com/products.html#SAKURA-PEACH",
+      "name": "Fragrance Sakura Peach",
+      "sku": "FRG-SAKURA-PEACH",
       "image": [
         "https://indoeasyscent.com/img/japan-peach.webp"
       ],
-      "description": "Fragrance Japan Peach dari koleksi eksklusif Indoeasy Scent — wewangian premium untuk hotel, butik, kantor, dan kios. Ketersediaan via inquiry.",
+      "description": "Fragrance Sakura Peach (C02JP002) dari koleksi eksklusif Indoeasy Scent — aroma segar juicy peach, soft peach blossom, dan cozy vanilla untuk lobi hotel dan butik premium.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -582,13 +518,13 @@
     },
     {
       "@type": "Product",
-      "@id": "https://indoeasyscent.com/products.html#FRUITY-GOURMAND",
-      "name": "Fragrance Fruity Gourmand",
-      "sku": "FRG-FRUITY-GOURMAND",
+      "@id": "https://indoeasyscent.com/products.html#FRUITY-DELIGHT",
+      "name": "Fragrance Fruity Delight",
+      "sku": "FRG-FRUITY-DELIGHT",
       "image": [
         "https://indoeasyscent.com/img/fruity-gourmand.webp"
       ],
-      "description": "Fragrance Fruity Gourmand dari koleksi eksklusif Indoeasy Scent — wewangian premium untuk hotel, butik, kantor, dan kios. Ketersediaan via inquiry.",
+      "description": "Fragrance Fruity Delight (C03FG003) dari koleksi eksklusif Indoeasy Scent — aroma manis sweet berry, creamy vanilla, caramel, dan warm gourmand yang memikat.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -597,13 +533,13 @@
     },
     {
       "@type": "Product",
-      "@id": "https://indoeasyscent.com/products.html#SUMMER-VIBES",
-      "name": "Fragrance Summer Vibes",
-      "sku": "FRG-SUMMER-VIBES",
+      "@id": "https://indoeasyscent.com/products.html#OCEAN-BLISS",
+      "name": "Fragrance Ocean Bliss",
+      "sku": "FRG-OCEAN-BLISS",
       "image": [
         "https://indoeasyscent.com/img/summer-vibes.webp"
       ],
-      "description": "Fragrance Summer Vibes dari koleksi eksklusif Indoeasy Scent — wewangian premium untuk hotel, butik, kantor, dan kios. Ketersediaan via inquiry.",
+      "description": "Fragrance Ocean Bliss (C04SV004) dari koleksi eksklusif Indoeasy Scent — keharuman segar citrus burst, aquatic breeze, dan clean musk bernuansa pantai tropis mewah.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -627,13 +563,13 @@
     },
     {
       "@type": "Product",
-      "@id": "https://indoeasyscent.com/products.html#TUBEROSE",
-      "name": "Fragrance Tuberose",
-      "sku": "FRG-TUBEROSE",
+      "@id": "https://indoeasyscent.com/products.html#WHITE-TUBEROSE",
+      "name": "Fragrance White Tuberose",
+      "sku": "FRG-WHITE-TUBEROSE",
       "image": [
         "https://indoeasyscent.com/img/tuberose.webp"
       ],
-      "description": "Fragrance Tuberose dari koleksi eksklusif Indoeasy Scent — wewangian premium untuk hotel, butik, kantor, dan kios. Ketersediaan via inquiry.",
+      "description": "Fragrance White Tuberose (C06TB006) dari koleksi eksklusif Indoeasy Scent — pesona sedap malam putih elegan dengan sentuhan jasmine, creamy floral, dan warm amber.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -719,11 +655,11 @@
       "@type": "Product",
       "@id": "https://indoeasyscent.com/products.html#LEMONGRASS",
       "name": "Fragrance Lemongrass",
-      "sku": "FRG-LEMONGRASS",
+      "sku": "FRG-C01LG001",
       "image": [
         "https://indoeasyscent.com/img/lemongrass.webp"
       ],
-      "description": "Fragrance Lemongrass dari koleksi eksklusif Indoeasy Scent — wewangian premium untuk hotel, butik, kantor, dan kios. Ketersediaan via inquiry.",
+      "description": "Fragrance Lemongrass (C01LG001) dari koleksi eksklusif Indoeasy Scent — crisp lemongrass, kaffir lime leaf, sparkling ginger, dan calming green tea untuk suasana spa & hotel relaksasi.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -827,59 +763,6 @@
       ]
     },
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": "https://indoeasyscent.com/products.html#faq",
-      "url": "https://indoeasyscent.com/products.html",
-      "name": "FAQ Sewa & Diffuser Aroma Indoeasy Scent",
-      "inLanguage": "id-ID",
-      "isPartOf": {
-        "@id": "https://indoeasyscent.com/#website"
-      },
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Apakah Indoeasy Scent menyediakan sewa diffuser aroma?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ya. Indoeasy Scent menyediakan layanan sewa & instalasi diffuser presisi dengan pemasangan gratis oleh teknisi berpengalaman. Tim juga menyediakan layanan refill dan maintenance berkala setiap bulan, serta trial dan sampel aroma gratis sebelum Anda memutuskan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Berapa luas ruangan yang bisa dilayani diffuser Indoeasy Scent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Unit diffuser profesional kami melayani kapasitas mulai dari 30 m3 hingga 4.000 m3 per unit (contoh model: ISX-I-0, ISX-H2, ISX-H5, ISX-U-5, dan ISX-U10). Untuk area komersial berskala besar di atas 4.000 m3 (seperti atrium mall, grand ballroom, bandara, maupun gedung perkantoran), kami menyediakan solusi kustomisasi sentral melalui integrasi sistem HVAC/AC sentral dan multi-point diffuser network. Tim ahli kami siap melakukan site survey gratis untuk merancang kalkulasi dan distribusi aroma yang presisi."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Bagaimana cara maintenance dan penggantian aroma dilakukan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Layanan refill & maintenance berkala mencakup pengisian aroma, kalibrasi sistem, dan perawatan otomatis setiap bulan tanpa mengganggu operasional bisnis Anda."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Apakah saya bisa mencoba aroma sebelum memesan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Bisa. Indoeasy Scent menyediakan trial unit diffuser dan pengiriman sampel wewangian langsung ke lokasi bisnis Anda secara gratis."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Apakah Indoeasy Scent melayani area Bekasi dan Jakarta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ya. Indoeasy Scent berbasis di Griya Mulya Indah, Jayamulya, Kec. Serang Baru, Kab. Bekasi, Jawa Barat, dan melayani area Bekasi, Jakarta, dan Jawa Barat."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "@id": "https://indoeasyscent.com/products.html#breadcrumb",
       "itemListElement": [
@@ -913,32 +796,30 @@
             </a>
         </div>
         <div class="hidden md:flex gap-10 items-center">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Beranda</a>
             
             <!-- Menu About Dropdown -->
             <div class="relative group py-2">
-                <a class="nav-link" href="about.html">
-                    About
-                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
+                <a class="nav-link" href="about.html">Tentang Kami<svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
                 </a>
                 <div class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
                     <a href="about.html#cerita-kami" class="nav-dropdown-item block px-5 py-2.5">Cerita Kami</a>
-                    <a href="about.html#layanan-kami" class="nav-dropdown-item block px-5 py-2.5">Our Services</a>
-                    <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Our Core Business</a>
+                    <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Bisnis Utama</a>
                     <a href="about.html#cara-bekerja" class="nav-dropdown-item block px-5 py-2.5">Cara Kami Bekerja</a>
                 </div>
             </div>
 
+            <!-- Menu Layanan Sewa -->
+            <a class="nav-link" href="services.html">Layanan</a>
+
             <!-- Menu Products Dropdown -->
             <div class="relative group py-2">
-                <a class="nav-link active" href="products.html">
-                    Products
-                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
+                <a class="nav-link active" href="products.html">Produk<svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
                 </a>
                 <div class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
                     <a href="products.html" class="nav-dropdown-item block px-5 py-2.5">Semua Produk</a>
-                    <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Scenting Diffuser</a>
-                    <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Fragrance Collection</a>
+                    <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Mesin Diffuser</a>
+                    <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Koleksi Wewangian</a>
                 </div>
             </div>
 
@@ -957,7 +838,7 @@
                 </div>
             </div>
             <a class="nav-link" href="artikel.html">Artikel</a>
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">Kontak</a>
         </div>
         <div class="flex items-center gap-6">
             <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden cursor-pointer text-[#0D2A1D] p-2 hover:bg-black/5 rounded-lg transition-colors">
@@ -988,7 +869,7 @@
         <div class="grid grid-cols-12 gap-gutter items-end">
             <div class="col-span-12 md:col-span-7">
                 <span class="font-label-caps text-[12px] uppercase text-antique-gold mb-4 block tracking-widest font-bold">Katalog Resmi &amp; Layanan</span>
-                <h1 class="font-serif text-5xl md:text-[60px] text-deep-forest leading-tight">Our Products</h1>
+                <h1 class="font-serif text-3xl sm:text-4xl md:text-[56px] text-deep-forest leading-tight">Scenting Diffuser &amp; Fine Fragrance</h1>
             </div>
             <div class="col-span-12 md:col-span-5 pb-unit">
                 <p class="font-sans text-lg text-on-surface-variant max-w-md">
@@ -999,7 +880,7 @@
         <div class="mt-8 border-b border-antique-gold/10"></div>
     </section>
 
-    <!-- Section: Professional Scenting Diffuser -->
+    <!-- Section: Mesin Diffuser Profesional -->
     <section class="mb-section-gap product-section relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-2xl p-4 sm:p-6 md:p-12 border border-antique-gold/20" id="section-diffuser">
         <!-- Background Image with Ultra HD Contrast & Sharpness -->
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700" style="background-image: url('img/diffuser_section_bg.webp'); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"></div>
@@ -1008,7 +889,7 @@
         <!-- Section Content Overlay -->
         <div class="relative z-10">
             <div class="flex items-center gap-4 mb-6">
-                <h2 class="font-sans text-3xl md:text-4xl font-bold uppercase tracking-wider text-white">Professional Scenting Diffuser</h2>
+                <h2 class="font-serif text-3xl md:text-4xl font-normal tracking-wide text-white">Professional Scenting Diffuser</h2>
                 <div class="flex-grow border-t border-antique-gold/40"></div>
             </div>
             <p class="font-sans text-base text-white/80 max-w-2xl mb-8 leading-relaxed">
@@ -1020,7 +901,7 @@
                 <div>
                     <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-antique-gold/30 pb-3 mb-8 gap-2">
                         <div>
-                            <span class="text-xs font-bold font-label-caps uppercase tracking-widest text-antique-gold block mb-1">Official Product Catalog</span>
+                            <span class="text-xs font-bold font-label-caps uppercase tracking-widest text-antique-gold block mb-1">Katalog Produk Resmi</span>
                             <h3 class="font-sans text-2xl md:text-3xl text-white font-bold uppercase tracking-wider">ISX Series Diffusers</h3>
                         </div>
                     </div>
@@ -1358,6 +1239,69 @@
                                     <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20produk%20Scent%20Diffuser%20ISX-U10%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>      </div>
                             </div>
                         </div>
+                        <!-- Product 12: ISX-U15 -->
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="large">
+                            <div class="w-full flex flex-col items-center">
+                                <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
+                                <div class="w-full h-36 sm:h-52 relative flex items-center justify-center p-1 sm:p-2 mb-2">
+                                    <span class="absolute top-0 left-0 z-20 bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">ISX-U15</span>
+                                    <img class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] group-hover:scale-108 group-hover:-translate-y-2 transition-all duration-500" src="img/U15.webp" onerror="this.src='img/professional_diffuser.webp'" alt="ISX-U15 — HVAC Large Scent Diffuser Indoeasy Scent"/>
+                                </div>
+
+                                <!-- Title & Subtitle -->
+                                <h4 class="font-sans text-sm sm:text-xl font-bold text-white mb-0.5 tracking-wider uppercase group-hover:text-[#C9A24B] transition-colors">ISX-U15</h4>
+                                <p class="text-xs text-white/75 mb-3 font-normal max-w-[220px]">HVAC Large Scent Diffuser</p>
+                                
+                                <!-- Floating Spec Highlights from Spec Sheet -->
+                                <div class="w-full max-w-[210px] mx-auto text-center">
+                                    <div class="text-[10px] sm:text-xs font-bold text-[#C9A24B] uppercase tracking-wider mb-1">COVERAGE: 5000–8000m³</div>
+                                    <div class="space-y-0.5 text-[9px] sm:text-xs text-white/80 font-sans border-t border-white/10 pt-2 text-left">
+                                        <div class="flex justify-between"><span class="text-white/50">Model:</span> <span class="font-semibold text-white">ISX-U15</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Size:</span> <span class="font-semibold text-white">144*144*454.5mm</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Voltage:</span> <span class="font-semibold text-white">24V Turbo Pump</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Power:</span> <span class="font-semibold text-white">17.7W</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Capacity:</span> <span class="font-semibold text-white">1.5L (1500ml)</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Weight:</span> <span class="font-semibold text-white">5kg</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Noise:</span> <span class="font-semibold text-white">&lt; 55dba</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Control:</span> <span class="font-semibold text-white">WiFi/BT/Touch/PC</span></div>
+                                    </div>
+                          
+                                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20produk%20HVAC%20Large%20Scent%20Diffuser%20ISX-U15%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Product ISX-U15')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 13: ISX-F-Air -->
+                        <div class="group flex flex-col justify-between items-center text-center p-2 hover:translate-y-[-6px] transition-all duration-500 diffuser-card" data-category="large">
+                            <div class="w-full flex flex-col items-center">
+                                <!-- Pure Product Cutout Image Showcase with Top-Left Badge -->
+                                <div class="w-full h-36 sm:h-52 relative flex items-center justify-center p-1 sm:p-2 mb-2">
+                                    <span class="absolute top-0 left-0 z-20 bg-[#C9A24B] text-[#0D2A1D] text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">ISX-F-Air</span>
+                                    <img class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] group-hover:scale-108 group-hover:-translate-y-2 transition-all duration-500" src="img/F-Air.webp" onerror="this.src='img/mzs_600_diffuser.webp'" alt="ISX-F-Air — Floor-Standing Scent Diffuser Indoeasy Scent"/>
+                                </div>
+
+                                <!-- Title & Subtitle -->
+                                <h4 class="font-sans text-sm sm:text-xl font-bold text-white mb-0.5 tracking-wider uppercase group-hover:text-[#C9A24B] transition-colors">ISX-F-Air</h4>
+                                <p class="text-xs text-white/75 mb-3 font-normal max-w-[220px]">Floor-Standing Scent Diffuser</p>
+                                
+                                <!-- Floating Spec Highlights from Spec Sheet -->
+                                <div class="w-full max-w-[210px] mx-auto text-center">
+                                    <div class="text-[10px] sm:text-xs font-bold text-[#C9A24B] uppercase tracking-wider mb-1">COVERAGE: 2000m³</div>
+                                    <div class="space-y-0.5 text-[9px] sm:text-xs text-white/80 font-sans border-t border-white/10 pt-2 text-left">
+                                        <div class="flex justify-between"><span class="text-white/50">Model:</span> <span class="font-semibold text-white">F-Air</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Size:</span> <span class="font-semibold text-white">106.6*106.6*550mm</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Voltage:</span> <span class="font-semibold text-white">DC 12V</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Power:</span> <span class="font-semibold text-white">12W</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Capacity:</span> <span class="font-semibold text-white">500ml</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Weight:</span> <span class="font-semibold text-white">3.2kg</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Noise:</span> <span class="font-semibold text-white">≤ 45dba</span></div>
+                                        <div class="flex justify-between"><span class="text-white/50">Feature:</span> <span class="font-semibold text-white">Hidden Fan &amp; Infrared</span></div>
+                                    </div>
+                          
+                                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20produk%20Floor-Standing%20Scent%20Diffuser%20ISX-F-Air%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Product ISX-F-Air')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1375,17 +1319,17 @@
 
         <div class="relative z-10 text-white">
             <div class="flex items-center gap-4 mb-6">
-                <h2 class="font-sans text-3xl md:text-4xl font-bold uppercase tracking-wider text-white">FRAGRANCE COLLECTION</h2>
+                <h2 class="font-serif text-3xl md:text-4xl font-normal tracking-wide text-white">Koleksi Wewangian</h2>
                 <div class="flex-grow border-t border-[#C9A24B]/40"></div>
             </div>
             <div class="mb-10">
-                <span class="font-label-caps text-xs text-[#C9A24B] uppercase tracking-widest block mb-2 font-bold">Exclusive Scent Collection</span>
+                <span class="font-label-caps text-xs text-[#C9A24B] uppercase tracking-widest block mb-2 font-bold">Koleksi Aroma Eksklusif</span>
                 <p class="font-sans text-base text-white/85 max-w-2xl leading-relaxed">
                     Temukan koleksi wewangian premium yang dirancang khusus untuk menghidupkan suasana dan memperkuat identitas karakter ruang Anda, cocok untuk berbagai skala kebutuhan hunian hingga komersial.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 font-sans">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 font-sans">
                 <!-- Special Product: REED DIFFUSER -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-[#C9A24B]/10 backdrop-blur-sm rounded-xl border border-[#C9A24B]/50 hover:border-[#C9A24B] hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
@@ -1406,21 +1350,21 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20produk%20Reed%20Diffuser%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20produk%20Reed%20Diffuser%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Product Reed Diffuser')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
 
-                <!-- Product 1: CITRUS -->
+                <!-- Product 1: LEMONGRASS -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">CITRUS</h4>
-                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C01CT001</span>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">LEMONGRASS</h4>
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C01LG001</span>
 
                         <!-- Bottle Silhouette Frame -->
                         <div class="relative flex flex-col items-center justify-center my-3 group w-full">
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/citrus.webp" onerror="this.src='img/citrus.png'" alt="Fragrance Citrus Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/lemongrass.webp" onerror="this.src='img/lemon-grass.png'" alt="Fragrance Lemongrass Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1428,25 +1372,26 @@
                         <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">fresh bergamot, lemon zest, green tea</span>
+                                <span class="text-white/80">crisp lemongrass, fresh kaffir lime leaf, sparkling ginger</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
-                                <span class="text-white/80">white floral, neroli, lemongrass</span>
+                                <span class="text-white/80">calming green tea, subtle white jasmine, citronella blossom</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Back notes:</span>
-                                <span class="text-white/80">clean cedarwood, subtle musk</span>
+                                <span class="text-white/80">smooth vetiver, warm cedarwood, soft white musk</span>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20CITRUS%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20LEMONGRASS%20(C01LG001)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance LEMONGRASS')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 2: JAPAN PEACH -->
+
+                <!-- Product 2: SAKURA PEACH -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">JAPAN PEACH</h4>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">SAKURA PEACH</h4>
                         <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C02JP002</span>
 
                         <!-- Bottle Silhouette Frame -->
@@ -1454,7 +1399,7 @@
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/japan-peach.webp" onerror="this.src='img/japan-peach.png'" alt="Fragrance Japan Peach Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/sakura-peach.webp" onerror="this.src='img/japan-peach.webp'" alt="Fragrance Sakura Peach Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1462,25 +1407,26 @@
                         <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">sweet juicy peach, fresh nectarine</span>
+                                <span class="text-white/80">juicy peach, fresh fruity, light citrus</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
-                                <span class="text-white/80">delicate white tea, subtle blossom</span>
+                                <span class="text-white/80">soft peach blossom, sweet floral, fresh airy notes</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Back notes:</span>
-                                <span class="text-white/80">soft musk, light woody notes</span>
+                                <span class="text-white/80">cozy vanilla, light musk, soft sandalwood</span>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20JAPAN%20PEACH%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20SAKURA%20PEACH%20(C02JP002)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance SAKURA PEACH')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 3: FRUITY GOURMAND -->
+
+                <!-- Product 3: FRUITY DELIGHT -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">FRUITY GOURMAND</h4>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">FRUITY DELIGHT</h4>
                         <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C03FG003</span>
 
                         <!-- Bottle Silhouette Frame -->
@@ -1488,7 +1434,7 @@
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/fruity-gourmand.webp" onerror="this.src='img/fruity-gourmand.png'" alt="Fragrance Fruity Gourmand Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/fruity-delight.webp" onerror="this.src='img/fruity-gourmand.webp'" alt="Fragrance Fruity Delight Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1496,7 +1442,7 @@
                         <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">wild berries, red apple, sweet orange</span>
+                                <span class="text-white/80">sweet berry, juicy fruits, dessert accord</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
@@ -1509,12 +1455,13 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20FRUITY%20GOURMAND%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20FRUITY%20DELIGHT%20(C03FG003)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance FRUITY DELIGHT')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 4: SUMMER VIBES -->
+
+                <!-- Product 4: OCEAN BLISS -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">SUMMER VIBES</h4>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">OCEAN BLISS</h4>
                         <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C04SV004</span>
 
                         <!-- Bottle Silhouette Frame -->
@@ -1522,7 +1469,7 @@
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/summer-vibes.webp" onerror="this.src='img/summer-vibes.png'" alt="Fragrance Summer Vibes Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/ocean-bliss.webp" onerror="this.src='img/summer-vibes.webp'" alt="Fragrance Ocean Bliss Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1543,8 +1490,9 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20SUMMER%20VIBES%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20OCEAN%20BLISS%20(C04SV004)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance OCEAN BLISS')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
+
                 <!-- Product 5: SWEET DREAMS -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
@@ -1577,12 +1525,13 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20SWEET%20DREAMS%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20SWEET%20DREAMS%20(C05SD005)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance SWEET DREAMS')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 6: TUBEROSE -->
+
+                <!-- Product 6: WHITE TUBEROSE -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">TUBEROSE</h4>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">WHITE TUBEROSE</h4>
                         <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C06TB006</span>
 
                         <!-- Bottle Silhouette Frame -->
@@ -1590,7 +1539,7 @@
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/tuberose.webp" onerror="this.src='img/tuberose.png'" alt="Fragrance Tuberose Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/white-tuberose.webp" onerror="this.src='img/tuberose.webp'" alt="Fragrance White Tuberose Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1611,20 +1560,21 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20TUBEROSE%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20WHITE%20TUBEROSE%20(C06TB006)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance WHITE TUBEROSE')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 7: SUNNY BURST -->
+
+                <!-- Product 7: ALOE SERENITY -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">SUNNY BURST</h4>
-                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C07SB007</span>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">ALOE SERENITY</h4>
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C07AS007</span>
 
                         <!-- Bottle Silhouette Frame -->
                         <div class="relative flex flex-col items-center justify-center my-3 group w-full">
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/sunny-burst.webp" onerror="this.src='img/sunny-burst.png'" alt="Fragrance Sunny Burst Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/aloe-serenity.webp" onerror="this.src='img/Aloe Serenity.webp'" alt="Fragrance Aloe Serenity Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1632,33 +1582,34 @@
                         <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">bright citrus, morning sunshine accord, fresh orange</span>
+                                <span class="text-white/80">crisp cucumber, dewy green leaves, fresh bergamot</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
-                                <span class="text-white/80">light fruity, energetic citrus blossom</span>
+                                <span class="text-white/80">soothing aloe vera gel, white tea, transparent lotus</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Back notes:</span>
-                                <span class="text-white/80">clean cedarwood, soft amber, crisp musk</span>
+                                <span class="text-white/80">clean white musk, light cedarwood, crisp mineral accord</span>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20SUNNY%20BURST%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20ALOE%20SERENITY%20(C07AS007)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance ALOE SERENITY')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 8: SODA HIGH -->
+
+                <!-- Product 8: TIMELESS -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">SODA HIGH</h4>
-                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C24SH001</span>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">TIMELESS</h4>
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C08TL008</span>
 
                         <!-- Bottle Silhouette Frame -->
                         <div class="relative flex flex-col items-center justify-center my-3 group w-full">
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/soda-high.webp" onerror="this.src='img/soda-high.png'" alt="Fragrance Soda High Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/timeless.webp" onerror="this.src='img/Timeless.webp'" alt="Fragrance Timeless Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1666,33 +1617,34 @@
                         <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">fizzy soda accord, sparkling lime, crisp citrus</span>
+                                <span class="text-white/80">Bergamot, Lemon, Grapefruit, Aldehydes, Lime, Orange</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
-                                <span class="text-white/80">carbonated bubbles, sweet ginger, ice accord</span>
+                                <span class="text-white/80">Ozone, Rose, Bergamot, Palmarosa, Litsea Cubeba</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Back notes:</span>
-                                <span class="text-white/80">clean musk, subtle sweetness, crystal amber</span>
+                                <span class="text-white/80">Musk, Amber, Cedarwood, Benzoin</span>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20SODA%20HIGH%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20TIMELESS%20(C08TL008)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance TIMELESS')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
-                <!-- Product 9: STORMY GARDEN -->
+
+                <!-- Product 9: MIDNIGHT BLOSSOM -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">STORMY GARDEN</h4>
-                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C24SG002</span>
+                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">MIDNIGHT BLOSSOM</h4>
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C09SB009</span>
 
                         <!-- Bottle Silhouette Frame -->
                         <div class="relative flex flex-col items-center justify-center my-3 group w-full">
                             <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
                             <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
                             <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/stormy-garden.webp" onerror="this.src='img/stomy-graden.png'" alt="Fragrance Stormy Garden Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
+                                <img src="img/midnight-blossom.webp" onerror="this.src='img/MIDNIGHT BLOSSOM.webp'" alt="Fragrance Midnight Blossom Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
                             </div>
                         </div>
 
@@ -1700,21 +1652,22 @@
                         <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">petrichor, wet green leaves, fresh ozone</span>
+                                <span class="text-white/80">sparkling bergamot, aldehydic breeze, pink pepper</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
-                                <span class="text-white/80">rain-soaked roses, earthy geranium, damp soil accord</span>
+                                <span class="text-white/80">french lavender, damask rose, soft iris</span>
                             </div>
                             <div>
                                 <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Back notes:</span>
-                                <span class="text-white/80">mossy patchouli, wet vetiver, dark cedarwood</span>
+                                <span class="text-white/80">rich amber, creamy sandalwood, velvet oakmoss</span>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20STORMY%20GARDEN%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20MIDNIGHT%20BLOSSOM%20(C09SB009)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance MIDNIGHT BLOSSOM')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
+
                 <!-- Product 10: WHITE TEA -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
@@ -1747,8 +1700,9 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20WHITE%20TEA%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20WHITE%20TEA%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance WHITE TEA')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
+
                 <!-- Product 11: OCEAN ETERNITY -->
                 <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
                     <div class="w-full flex flex-col items-center">
@@ -1781,122 +1735,9 @@
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20OCEAN%20ETERNITY%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
-                </div>
-                <!-- Product 12: LEMONGRASS -->
-                <div class="flex flex-col justify-between items-center text-center p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#C9A24B]/60 hover:translate-y-[-4px] transition-all duration-300">
-                    <div class="w-full flex flex-col items-center">
-                        <h4 class="font-label-caps text-sm sm:text-lg font-bold text-white mb-0.5 tracking-wider uppercase">LEMONGRASS</h4>
-                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-0.5 rounded-full tracking-widest uppercase mb-3 shadow-sm">C24LG005</span>
-
-                        <!-- Bottle Silhouette Frame -->
-                        <div class="relative flex flex-col items-center justify-center my-3 group w-full">
-                            <div class="w-10 h-2.5 border-2 border-[#C9A24B]/70 border-b-0 rounded-t-md bg-[#C9A24B]/20"></div>
-                            <div class="w-14 h-1.5 border-x-2 border-[#C9A24B]/70 bg-[#C9A24B]/30"></div>
-                            <div class="w-20 sm:w-28 h-32 sm:h-44 border-2 border-[#C9A24B]/80 rounded-b-2xl overflow-hidden p-0.5 bg-[#0D2A1D] shadow-xl">
-                                <img src="img/lemongrass.webp" onerror="this.src='img/lemon-grass.png'" alt="Fragrance Lemongrass Indoeasy Scent — wewangian premium untuk hotel, butik, dan kantor" class="w-full h-full object-cover rounded-b-xl group-hover:scale-105 transition-transform duration-500"/>
-                            </div>
-                        </div>
-
-                        <!-- Notes List -->
-                        <div class="w-full space-y-1 text-[10px] sm:text-xs mb-2 text-center">
-                            <div>
-                                <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Top notes:</span>
-                                <span class="text-white/80">crisp lemongrass, fresh kaffir lime, citron zest</span>
-                            </div>
-                            <div>
-                                <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Middle notes:</span>
-                                <span class="text-white/80">herbal verbena, green tea, light ginger root</span>
-                            </div>
-                            <div>
-                                <span class="block font-bold text-[#C9A24B] text-[11px] uppercase tracking-wider">Back notes:</span>
-                                <span class="text-white/80">subtle cedar, earthy musk, dry vetiver</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20LEMONGRASS%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20wewangian%20Fragrance%20OCEAN%20ETERNITY%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance OCEAN ETERNITY')" class="mt-3 flex items-center justify-center gap-1.5 w-full bg-[#0D2A1D] hover:bg-[#C9A24B] text-[#C9A24B] hover:text-[#0D2A1D] border border-[#C9A24B]/40 hover:border-[#C9A24B] py-2 px-3 rounded-none text-[10px] font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><span>SELENGKAPNYA</span></a>
                 </div>
             </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ — content must be visible on the page, not only in JSON-LD.
-         Google requires the FAQPage markup to match visible copy; markup with
-         no matching on-page text is a manual-action risk, not a shortcut. -->
-    <section id="faq" class="py-section-gap border-t border-charcoal/10 font-sans">
-        <div class="max-w-[1440px] mx-auto px-margin-desktop">
-            <span class="font-label-caps text-label-caps text-[#C9A24B] uppercase block mb-4">Pertanyaan Umum</span>
-            <h2 class="font-serif text-5xl text-charcoal leading-tight mb-10">FAQ <span class="italic text-[#C9A24B]">Sewa &amp; Diffuser</span></h2>
-
-            <div class="grid grid-cols-1 gap-6 max-w-4xl">
-                <details class="group border-b border-charcoal/10 pb-5">
-                    <summary class="cursor-pointer list-none flex items-start justify-between gap-4 font-serif text-xl text-charcoal hover:text-[#C9A24B] transition-colors">
-                        <span>Apakah Indoeasy Scent menyediakan sewa diffuser aroma?</span>
-                        <span class="w-8 h-8 rounded-full border border-[#C9A24B]/30 flex items-center justify-center text-[#C9A24B] shrink-0 transition-all duration-300 group-open:rotate-45 group-hover:border-[#C9A24B] group-hover:bg-[#C9A24B]/10" aria-hidden="true">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="mt-4 font-sans text-body-lg text-on-surface-variant leading-relaxed">Ya. Indoeasy Scent menyediakan layanan sewa &amp; instalasi diffuser presisi dengan pemasangan gratis oleh teknisi berpengalaman. Tim juga menyediakan layanan refill dan maintenance berkala setiap bulan, serta trial dan sampel aroma gratis sebelum Anda memutuskan.</p>
-                </details>
-
-                <details class="group border-b border-charcoal/10 pb-5">
-                    <summary class="cursor-pointer list-none flex items-start justify-between gap-4 font-serif text-xl text-charcoal hover:text-[#C9A24B] transition-colors">
-                        <span>Berapa luas ruangan yang bisa dilayani diffuser Indoeasy Scent?</span>
-                        <span class="w-8 h-8 rounded-full border border-[#C9A24B]/30 flex items-center justify-center text-[#C9A24B] shrink-0 transition-all duration-300 group-open:rotate-45 group-hover:border-[#C9A24B] group-hover:bg-[#C9A24B]/10" aria-hidden="true">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="mt-4 font-sans text-body-lg text-on-surface-variant leading-relaxed">Unit diffuser profesional kami melayani kapasitas mulai dari 30 m&sup3; hingga 4.000 m&sup3; per unit (contoh model: ISX-I-0, ISX-H2, ISX-H5, ISX-U-5, dan ISX-U10). Untuk area komersial berskala besar di atas 4.000 m&sup3; (seperti atrium mall, grand ballroom, bandara, maupun gedung perkantoran), kami menyediakan solusi kustomisasi sentral melalui integrasi sistem HVAC/AC sentral dan multi-point diffuser network. Tim ahli kami siap melakukan site survey gratis untuk merancang kalkulasi dan distribusi aroma yang presisi.</p>
-                </details>
-
-                <details class="group border-b border-charcoal/10 pb-5">
-                    <summary class="cursor-pointer list-none flex items-start justify-between gap-4 font-serif text-xl text-charcoal hover:text-[#C9A24B] transition-colors">
-                        <span>Bagaimana cara maintenance dan penggantian aroma dilakukan?</span>
-                        <span class="w-8 h-8 rounded-full border border-[#C9A24B]/30 flex items-center justify-center text-[#C9A24B] shrink-0 transition-all duration-300 group-open:rotate-45 group-hover:border-[#C9A24B] group-hover:bg-[#C9A24B]/10" aria-hidden="true">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="mt-4 font-sans text-body-lg text-on-surface-variant leading-relaxed">Layanan refill &amp; maintenance berkala mencakup pengisian aroma, kalibrasi sistem, dan perawatan otomatis setiap bulan tanpa mengganggu operasional bisnis Anda.</p>
-                </details>
-
-                <details class="group border-b border-charcoal/10 pb-5">
-                    <summary class="cursor-pointer list-none flex items-start justify-between gap-4 font-serif text-xl text-charcoal hover:text-[#C9A24B] transition-colors">
-                        <span>Apakah saya bisa mencoba aroma sebelum memesan?</span>
-                        <span class="w-8 h-8 rounded-full border border-[#C9A24B]/30 flex items-center justify-center text-[#C9A24B] shrink-0 transition-all duration-300 group-open:rotate-45 group-hover:border-[#C9A24B] group-hover:bg-[#C9A24B]/10" aria-hidden="true">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="mt-4 font-sans text-body-lg text-on-surface-variant leading-relaxed">Bisa. Indoeasy Scent menyediakan trial unit diffuser dan pengiriman sampel wewangian langsung ke lokasi bisnis Anda secara gratis.</p>
-                </details>
-
-                <details class="group border-b border-charcoal/10 pb-5">
-                    <summary class="cursor-pointer list-none flex items-start justify-between gap-4 font-serif text-xl text-charcoal hover:text-[#C9A24B] transition-colors">
-                        <span>Apakah Indoeasy Scent melayani area Bekasi dan Jakarta?</span>
-                        <span class="w-8 h-8 rounded-full border border-[#C9A24B]/30 flex items-center justify-center text-[#C9A24B] shrink-0 transition-all duration-300 group-open:rotate-45 group-hover:border-[#C9A24B] group-hover:bg-[#C9A24B]/10" aria-hidden="true">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="mt-4 font-sans text-body-lg text-on-surface-variant leading-relaxed">Ya. Indoeasy Scent berbasis di Griya Mulya Indah, Jayamulya, Kec. Serang Baru, Kab. Bekasi, Jawa Barat, dan melayani area Bekasi, Jakarta, dan Jawa Barat.</p>
-                </details>
-            </div>
-        </div>
     </section>
 
     </div>
@@ -2028,7 +1869,7 @@
                 <ul class="space-y-2.5 text-sm text-[#F7F3EC]/80 mb-3">
                     <li><a href="collection.html" class="hover:text-[#C9A24B] transition-colors">Koleksi Wewangian</a></li>
                     <li><a href="products.html" class="hover:text-[#C9A24B] transition-colors">Teknologi Diffuser</a></li>
-                    <li><a href="products.html#faq" class="hover:text-[#C9A24B] transition-colors">FAQ</a></li>
+                    <li><a href="services.html#faq" class="hover:text-[#C9A24B] transition-colors">FAQ</a></li>
                     <li><a href="contact.html" class="hover:text-[#C9A24B] transition-colors">Konsultasi Gratis</a></li>
                 </ul>
 
@@ -2046,7 +1887,7 @@
 
         <!-- Copyright -->
         <div class="border-t border-[#C9A24B]/15 pt-5 flex flex-col md:flex-row justify-between items-center opacity-85">
-            <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">© 2026 Indoeasy Scent. All Rights Reserved.</p>
+            <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">&copy; 2026 Indoeasy Scent. Hak Cipta Dilindungi.</p>
             <div class="flex gap-4 text-xs sm:text-sm">
                 <span class="text-[#C9A24B] italic">Minimalisme Sensorik.</span>
                 <span class="text-[#F7F3EC]/80">Jakarta / Global</span>
@@ -2199,32 +2040,34 @@
 
         <!-- Drawer Menu Links -->
         <div class="p-6 overflow-y-auto space-y-4 flex-1">
-            <a href="index.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Home</a>
+            <a href="index.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Beranda</a>
             
-            <!-- Mobile Accordion: About -->
+            <!-- Mobile Accordion: Tentang Kami -->
             <div class="border-b border-charcoal/5 py-2">
                 <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                    <span>About</span>
+                    <span>Tentang Kami</span>
                     <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
                 </button>
                 <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
                     <a href="about.html#cerita-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cerita Kami</a>
-                    <a href="about.html#layanan-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Services</a>
-                    <a href="about.html#keahlian" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Core Business</a>
+                    <a href="about.html#keahlian" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bisnis Utama</a>
                     <a href="about.html#cara-bekerja" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cara Kami Bekerja</a>
                 </div>
             </div>
 
-            <!-- Mobile Accordion: Products -->
+            <!-- Mobile Layanan -->
+            <a href="services.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Layanan</a>
+
+            <!-- Mobile Accordion: Produk -->
             <div class="border-b border-charcoal/5 py-2">
                 <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                    <span>Products</span>
+                    <span>Produk</span>
                     <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
                 </button>
                 <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
                     <a href="products.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Produk</a>
-                    <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Scenting Diffuser</a>
-                    <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Fragrance Collection</a>
+                    <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Mesin Diffuser</a>
+                    <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Koleksi Wewangian</a>
                 </div>
             </div>
 
@@ -2244,7 +2087,7 @@
             </div>
 
             <a href="artikel.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Artikel &amp; Panduan</a>
-            <a href="contact.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Contact</a>
+            <a href="contact.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Kontak</a>
         </div>
 
         <!-- Drawer Footer CTA -->
@@ -2258,5 +2101,47 @@
     </div>
 </div>
 
+<script>
+// Mobile Drawer & Accordion Functionality
+(function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerPanel = document.getElementById('mobile-drawer-panel');
+    const closeBtn = document.getElementById('mobile-drawer-close');
+
+    if (menuBtn && drawer && drawerPanel) {
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawerPanel.classList.remove('translate-x-full');
+        });
+    }
+
+    if (closeBtn && drawer && drawerPanel) {
+        closeBtn.addEventListener('click', () => {
+            drawer.classList.add('opacity-0', 'pointer-events-none');
+            drawerPanel.classList.add('translate-x-full');
+        });
+        drawer.addEventListener('click', (e) => {
+            if (e.target === drawer) {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawerPanel.classList.add('translate-x-full');
+            }
+        });
+    }
+
+    document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.material-symbols-outlined');
+            if (content) {
+                content.classList.toggle('hidden');
+            }
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+})();
+</script>
 </body>
 </html>

@@ -28,202 +28,13 @@
     <link rel="icon" href="img/favicon-48.png" type="image/png" sizes="48x48"/>
     <link rel="apple-touch-icon" href="img/favicon-512.png"/>
     <meta name="theme-color" content="#0D2A1D"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Production Compiled & Minified Stylesheet -->
+    <link rel="preload" as="style" href="css/style.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-
-        /* Typography & Navbar Style from indoeasyholiday.com */
-        :root {
-            --font-primary: 'Libre Caslon Display', Georgia, serif;
-            --font-secondary: 'Nunito', 'Inter', sans-serif;
-            --nav-link-font-family: 'Nunito', sans-serif;
-            --nav-link-font-size: 16px;
-            --nav-link-font-weight: 400;
-            --nav-link-text-color: #1F1F1D;
-        }
-
-        body {
-            background-color: #F7F3EC;
-            color: #1A1C1B;
-            font-family: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-        }
-
-        /* Editorial hero headings */
-        h1, h2.font-serif, .font-serif, .font-display {
-            font-family: 'Libre Caslon Display', Georgia, serif;
-        }
-
-        /* Product names, badges, specs & cards use standard sans-serif (Nunito) like navbar */
-        .product-card h3,
-        .product-card h4,
-        .product-card h5,
-        .diffuser-card h3,
-        .diffuser-card h4,
-        .diffuser-card h5,
-        .fragrance-card h3,
-        .fragrance-card h4,
-        .fragrance-card h5,
-        .product-title,
-        .product-name,
-        h3.font-sans,
-        h4, h5, h6,
-        .font-sans,
-        .font-label-caps {
-            font-family: 'Nunito', 'Inter', sans-serif !important;
-        }
-
-        /* Navbar Links matching indoeasyholiday.com reference */
-        .nav-link {
-            font-family: 'Nunito', sans-serif !important;
-            font-size: 16px !important;
-            font-weight: 400 !important;
-            color: #1F1F1D !important;
-            text-decoration: none !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            padding: 4px 0 !important;
-            transition: color 0.2s ease, text-decoration 0.2s ease !important;
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            color: #1F1F1D !important;
-            text-decoration: underline !important;
-            text-underline-offset: 7px !important;
-            text-decoration-thickness: 1.5px !important;
-        }
-
-        .nav-link.active, .nav-link--active {
-            color: #1F1F1D !important;
-            text-decoration: underline !important;
-            text-underline-offset: 7px !important;
-            text-decoration-thickness: 1.5px !important;
-            font-weight: 500 !important;
-        }
-
-        .nav-dropdown-item {
-            font-family: 'Nunito', sans-serif !important;
-            font-size: 14px !important;
-            color: #1F1F1D !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
-            font-weight: 400 !important;
-            transition: all 0.2s ease !important;
-        }
-        .nav-dropdown-item:hover {
-            background-color: rgba(201, 162, 75, 0.1) !important;
-            color: #C9A24B !important;
-            padding-left: 24px !important;
-        }
-    
-        
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-            font-weight: normal;
-            font-style: normal;
-            font-size: 24px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-smoothing: antialiased;
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            background-color: #F7F3EC;
-            color: #1F1F1D;
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* Floating Image Effect */
-        .scent-row {
-            position: relative;
-        }
-        .scent-row:hover .scent-image {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            visibility: visible;
-        }
-        .scent-image {
-            pointer-events: none;
-            position: absolute;
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transform: translate(-50%, -50%) scale(0.9);
-            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
-            width: 240px;
-            height: 320px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .text-gold { color: #C9A24B; }
-        .bg-gold { background-color: #C9A24B; }
-        .border-gold { border-color: #C9A24B; }
-        .text-charcoal { color: #1F1F1D; }
-        .bg-forest { background-color: #0D2A1D; }
-    </style>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "gold": "#C9A24B",
-                "charcoal": "#1F1F1D",
-                "forest": "#0D2A1D",
-                "warm-ivory": "#F7F3EC",
-                "on-surface-variant": "#444748",
-                "surface-variant": "#e4e2dd",
-                "outline-variant": "#c4c7c7",
-            },
-            "borderRadius": {
-                "DEFAULT": "0rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-            },
-            "spacing": {
-                "section-gap": "128px",
-                "margin-desktop": "64px",
-                "unit": "8px",
-                "gutter": "32px",
-                "margin-mobile": "24px"
-            },
-            "fontFamily": {
-                "sans": ["'Nunito'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-                "serif": ["'Libre Caslon Display'", "Georgia", "serif"],
-                "display": ["'Libre Caslon Display'", "Georgia", "serif"],
-                "body": ["'Nunito'", "'Inter'", "sans-serif"],
-                "nav": ["'Nunito'", "sans-serif"],
-                "body-md": ["'Nunito'", "sans-serif"],
-                "display-lg-mobile": ["'Libre Caslon Display'", "serif"],
-                "label-caps": ["'Nunito'", "sans-serif"],
-                "display-lg": ["'Libre Caslon Display'", "serif"],
-                "headline-sm": ["'Libre Caslon Display'", "serif"],
-                "headline-md": ["'Libre Caslon Display'", "serif"],
-                "body-lg": ["'Nunito'", "sans-serif"]
-            },
-            "fontSize": {
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                "display-lg-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "400"}],
-                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
-                "display-lg": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
     <style>
         
         .nav-dropdown {
@@ -235,14 +46,6 @@
 
     
 
-    <style>
-        
-        
-        
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-        }
-    </style>
 
     <script src="js/analytics.js" defer></script>
     <!-- Meta Pixel Code -->
@@ -271,54 +74,10 @@
   "@graph": [
     {
       "@type": "Product",
-      "@id": "https://indoeasyscent.com/collection.html#MUSK-WHITE",
-      "name": "Fragrance Musk White",
-      "sku": "FRG-MUSK-WHITE",
-      "description": "Fragrance Musk White dengan karakter powdery / bersih dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Indoeasy Scent"
-      },
-      "category": "Fragrance",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "url": "https://indoeasyscent.com/collection.html",
-        "price": "380000",
-        "priceCurrency": "IDR"
-      },
-      "image": [
-        "https://indoeasyscent.com/img/scent-musk-white.webp"
-      ]
-    },
-    {
-      "@type": "Product",
-      "@id": "https://indoeasyscent.com/collection.html#SODA-HIGH",
-      "name": "Fragrance Soda High",
-      "sku": "FRG-SODA-HIGH",
-      "description": "Fragrance Soda High dengan karakter effervescent / manis dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Indoeasy Scent"
-      },
-      "category": "Fragrance",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "url": "https://indoeasyscent.com/collection.html",
-        "price": "340000",
-        "priceCurrency": "IDR"
-      },
-      "image": [
-        "https://indoeasyscent.com/img/scent-soda-high.webp"
-      ]
-    },
-    {
-      "@type": "Product",
       "@id": "https://indoeasyscent.com/collection.html#LEMONGRASS",
       "name": "Fragrance Lemongrass",
-      "sku": "FRG-LEMONGRASS",
-      "description": "Fragrance Lemongrass dengan karakter citrus / botani dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "sku": "FRG-C01LG001",
+      "description": "Fragrance Lemongrass (C01LG001) dengan karakter citrus / herbal segar dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -332,15 +91,169 @@
         "priceCurrency": "IDR"
       },
       "image": [
-        "https://indoeasyscent.com/img/scent-lemongrass.webp"
+        "https://indoeasyscent.com/img/lemongrass.webp"
       ]
     },
     {
       "@type": "Product",
-      "@id": "https://indoeasyscent.com/collection.html#ROYAL-TULIP",
-      "name": "Fragrance Royal Tulip",
-      "sku": "FRG-ROYAL-TULIP",
-      "description": "Fragrance Royal Tulip dengan karakter floral / beludru dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "@id": "https://indoeasyscent.com/collection.html#SAKURA-PEACH",
+      "name": "Fragrance Sakura Peach",
+      "sku": "FRG-C02JP002",
+      "description": "Fragrance Sakura Peach (C02JP002) dengan karakter fruity floral / manis lembut dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "350000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/sakura-peach.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#FRUITY-DELIGHT",
+      "name": "Fragrance Fruity Delight",
+      "sku": "FRG-C03FG003",
+      "description": "Fragrance Fruity Delight (C03FG003) dengan karakter gourmand / manis berry dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "340000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/fruity-delight.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#OCEAN-BLISS",
+      "name": "Fragrance Ocean Bliss",
+      "sku": "FRG-C04SV004",
+      "description": "Fragrance Ocean Bliss (C04SV004) dengan karakter aquatic / segar tropis dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "360000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/ocean-bliss.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#SWEET-DREAMS",
+      "name": "Fragrance Sweet Dreams",
+      "sku": "FRG-C05SD005",
+      "description": "Fragrance Sweet Dreams (C05SD005) dengan karakter powdery / menenangkan dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "350000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/sweet-dreams.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#WHITE-TUBEROSE",
+      "name": "Fragrance White Tuberose",
+      "sku": "FRG-C06TB006",
+      "description": "Fragrance White Tuberose (C06TB006) dengan karakter floral / sedap malam mewah dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "380000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/white-tuberose.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#ALOE-SERENITY",
+      "name": "Fragrance Aloe Serenity",
+      "sku": "FRG-C07AS007",
+      "description": "Fragrance Aloe Serenity (C07AS007) dengan karakter green / segar alami dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "340000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/aloe-serenity.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#TIMELESS",
+      "name": "Fragrance Timeless",
+      "sku": "FRG-C08TL008",
+      "description": "Fragrance Timeless (C08TL008) dengan karakter citrus floral / klasik abadi dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Indoeasy Scent"
+      },
+      "category": "Fragrance",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://indoeasyscent.com/collection.html",
+        "price": "390000",
+        "priceCurrency": "IDR"
+      },
+      "image": [
+        "https://indoeasyscent.com/img/Timeless.webp"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://indoeasyscent.com/collection.html#MIDNIGHT-BLOSSOM",
+      "name": "Fragrance Midnight Blossom",
+      "sku": "FRG-C09SB009",
+      "description": "Fragrance Midnight Blossom (C09SB009) dengan karakter warm floral / sensual malam dari koleksi eksklusif Indoeasy Scent untuk hotel, butik, dan kantor.",
       "brand": {
         "@type": "Brand",
         "name": "Indoeasy Scent"
@@ -354,7 +267,7 @@
         "priceCurrency": "IDR"
       },
       "image": [
-        "https://indoeasyscent.com/img/scent-royal-tulip.webp"
+        "https://indoeasyscent.com/img/midnight-blossom.webp"
       ]
     },
     {
@@ -391,32 +304,30 @@
             </a>
         </div>
         <div class="hidden md:flex gap-10 items-center">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Beranda</a>
             
             <!-- Menu About Dropdown -->
             <div class="relative group py-2">
-                <a class="nav-link" href="about.html">
-                    About
-                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
+                <a class="nav-link" href="about.html">Tentang Kami<svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
                 </a>
                 <div class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
                     <a href="about.html#cerita-kami" class="nav-dropdown-item block px-5 py-2.5">Cerita Kami</a>
-                    <a href="about.html#layanan-kami" class="nav-dropdown-item block px-5 py-2.5">Our Services</a>
-                    <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Our Core Business</a>
+                    <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Bisnis Utama</a>
                     <a href="about.html#cara-bekerja" class="nav-dropdown-item block px-5 py-2.5">Cara Kami Bekerja</a>
                 </div>
             </div>
 
+            <!-- Menu Layanan Sewa -->
+            <a class="nav-link" href="services.html">Layanan</a>
+
             <!-- Menu Products Dropdown -->
             <div class="relative group py-2">
-                <a class="nav-link active" href="products.html">
-                    Products
-                    <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
+                <a class="nav-link active" href="products.html">Produk<svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0" viewBox="0 0 10 7" fill="none"><path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor"/></svg>
                 </a>
                 <div class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
                     <a href="products.html" class="nav-dropdown-item block px-5 py-2.5">Semua Produk</a>
-                    <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Scenting Diffuser</a>
-                    <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Fragrance Collection</a>
+                    <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Mesin Diffuser</a>
+                    <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Koleksi Wewangian</a>
                 </div>
             </div>
 
@@ -435,7 +346,7 @@
                 </div>
             </div>
             <a class="nav-link" href="artikel.html">Artikel</a>
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">Kontak</a>
         </div>
         <div class="flex items-center gap-6">
             <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden cursor-pointer text-[#0D2A1D] p-2 hover:bg-black/5 rounded-lg transition-colors">
@@ -480,15 +391,7 @@
                      wewangian premium / fragrance oil serta Reed Diffuser
                      estetis) -- bukan tambahan yang mengarang. -->
                 <div class="col-span-12 md:col-span-8 pb-6 font-sans">
-                    <!-- Categori & penggunaan. Frasa "fragrance oil", "minyak
-                     wewangian", dan "reed diffuser" tidak pernah muncul di
-                     halaman ini sebelumnya, padahal itu istilah pencarian
-                     utama kategori wewangian. Sumber: about.html
-                     ("Wewangian & Reed Diffuser" -- penjualan minyak
-                     wewangian premium / fragrance oil serta Reed Diffuser
-                     untukAROMA Genes). Bukan tambahan yang mengarang. -->
-                <div class="col-span-12 md:col-span-8 pb-6 font-sans">
-                    <p class="text-body-lg text-on-surface-variant leading-relaxed max-w-3xl">Empat aroma dalam koleksi ini adalah fragrance oil premium yang dapat dipilih sebagai Signature Scent untuk hotel, kantor, butik, dan retail. Aroma yang sama dapat dipasang dengan cold-air micro-diffusion agar menyairi ruangan tanpa asap, atau diisi ke dalam Reed Diffuser untuk area personal dan residential.</p>
+                    <p class="text-body-lg text-on-surface-variant leading-relaxed max-w-3xl">Sembilan aroma pilihan dalam koleksi ini adalah <i>fragrance oil</i> konsentrat premium yang dapat dipilih sebagai <b>Signature Scent</b> untuk hotel, kantor, butik, lounge, dan retail. Setiap aroma diracik presisi dengan piramida notes olfaktori lengkap (Top, Middle, Base) untuk menghadirkan konsistensi wewangian mewah dengan teknologi <i>cold-air micro-diffusion</i> atau diffuser estetik.</p>
                 </div>
             </div>
         </div>
@@ -497,107 +400,311 @@
     <!-- Scent Library List -->
     <section class="mb-section-gap">
         <div class="border-t border-charcoal/10" id="scent-list-container">
-            
-            <!-- Scent 1: Musk White -->
-            <div class="scent-row relative group grid grid-cols-12 gap-gutter py-14 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/scent-musk-white.webp">
-                <div class="col-span-1 flex items-start pt-2">
-                    <span class="font-label-caps text-label-caps text-gold/60">01</span>
+            <!-- Scent 01: Lemongrass -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/lemongrass.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">01</span>
                 </div>
-                <div class="col-span-4">
-                    <h2 class="font-serif text-4xl text-charcoal group-hover:text-gold transition-colors">Musk White (Musk Putih)</h2>
-                    <div class="flex items-center gap-2 mt-4 font-sans">
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C01LG001</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Lemongrass</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
                         <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Powdery / Bersih</span>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Citrus / Herbal Segar</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">crisp lemongrass, fresh kaffir lime leaf, sparkling ginger</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">calming green tea, subtle white jasmine, citronella blossom</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">smooth vetiver, warm cedarwood, soft white musk</span></p>
                     </div>
                 </div>
-                <div class="col-span-5 flex items-center">
-                    <p class="font-sans text-body-lg text-on-surface-variant italic font-light">Pelukan linen lembut transparan yang menyuarakan kemurnian dan keheningan.</p>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Kejernihan herbal segar tajam dengan perpaduan serai tropis, daun jeruk purut, dan jahe hangat yang membangkitkan energi serta kesegaran ruang.</p>
                 </div>
-                <div class="col-span-2 flex flex-col justify-center items-end pr-4 z-20">
-                    <span class="font-sans font-bold text-charcoal mb-2">Rp 380.000</span>
-                    <a href="contact.html" class="border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2 px-4 transition-colors font-bold tracking-widest uppercase block text-center">SELENGKAPNYA</a>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 320.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20LEMONGRASS%20(C01LG001)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance LEMONGRASS')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
                 </div>
                 <!-- Floating Scent Image -->
-                <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-musk-white.webp" alt="Aroma Fragrance Musk White"/>
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/lemongrass.webp" alt="Aroma Fragrance Lemongrass Indoeasy Scent"/>
                 </div>
             </div>
 
-            <!-- Scent 2: Soda High -->
-            <div class="scent-row relative group grid grid-cols-12 gap-gutter py-14 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/scent-soda-high.webp">
-                <div class="col-span-1 flex items-start pt-2">
-                    <span class="font-label-caps text-label-caps text-gold/60">02</span>
+            <!-- Scent 02: Sakura Peach -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/sakura-peach.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">02</span>
                 </div>
-                <div class="col-span-4">
-                    <h2 class="font-serif text-4xl text-charcoal group-hover:text-gold transition-colors">Soda High</h2>
-                    <div class="flex items-center gap-2 mt-4 font-sans">
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C02JP002</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Sakura Peach</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
                         <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Effervescent / Manis</span>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Fruity Floral / Manis Lembut</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">juicy peach, fresh fruity, light citrus</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">soft peach blossom, sweet floral, fresh airy notes</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">cozy vanilla, light musk, soft sandalwood</span></p>
                     </div>
                 </div>
-                <div class="col-span-5 flex items-center">
-                    <p class="font-sans text-body-lg text-on-surface-variant italic font-light">Kesegaran jeruk bergelembung dipadukan dengan vanila effervescence yang nostalgia.</p>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Keharuman manis buah persik ranum berpadu bunga sakura mekar dan sentuhan lembut vanila musk yang memikat suasana hati.</p>
                 </div>
-                <div class="col-span-2 flex flex-col justify-center items-end pr-4 z-20">
-                    <span class="font-sans font-bold text-charcoal mb-2">Rp 340.000</span>
-                    <a href="contact.html" class="border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2 px-4 transition-colors font-bold tracking-widest uppercase block text-center">SELENGKAPNYA</a>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 350.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20SAKURA%20PEACH%20(C02JP002)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance SAKURA PEACH')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
                 </div>
                 <!-- Floating Scent Image -->
-                <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-soda-high.webp" alt="Aroma Fragrance Soda High"/>
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/sakura-peach.webp" alt="Aroma Fragrance Sakura Peach Indoeasy Scent"/>
                 </div>
             </div>
 
-            <!-- Scent 3: Lemongrass -->
-            <div class="scent-row relative group grid grid-cols-12 gap-gutter py-14 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/scent-lemongrass.webp">
-                <div class="col-span-1 flex items-start pt-2">
-                    <span class="font-label-caps text-label-caps text-gold/60">03</span>
+            <!-- Scent 03: Fruity Delight -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/fruity-delight.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">03</span>
                 </div>
-                <div class="col-span-4">
-                    <h2 class="font-serif text-4xl text-charcoal group-hover:text-gold transition-colors">Lemongrass (Serai)</h2>
-                    <div class="flex items-center gap-2 mt-4 font-sans">
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C03FG003</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Fruity Delight</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
                         <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Citrus / Botani</span>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Gourmand / Manis Berry</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">sweet berry, juicy fruits, dessert accord</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">creamy vanilla, caramel, sweet sugar</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">warm gourmand, amber, creamy sandalwood</span></p>
                     </div>
                 </div>
-                <div class="col-span-5 flex items-center">
-                    <p class="font-sans text-body-lg text-on-surface-variant italic font-light">Kejernihan herbal tajam yang berasal dari padang rumput tropis yang disinari matahari.</p>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Sensasi manis ceria paduan buah beri segar, karamel kental, dan kayu cendana lembut bernuansa dessert patisserie mewah.</p>
                 </div>
-                <div class="col-span-2 flex flex-col justify-center items-end pr-4 z-20">
-                    <span class="font-sans font-bold text-charcoal mb-2">Rp 320.000</span>
-                    <a href="contact.html" class="border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2 px-4 transition-colors font-bold tracking-widest uppercase block text-center">SELENGKAPNYA</a>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 340.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20FRUITY%20DELIGHT%20(C03FG003)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance FRUITY DELIGHT')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
                 </div>
                 <!-- Floating Scent Image -->
-                <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-lemongrass.webp" alt="Aroma Fragrance Lemongrass"/>
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/fruity-delight.webp" alt="Aroma Fragrance Fruity Delight Indoeasy Scent"/>
                 </div>
             </div>
 
-            <!-- Scent 4: Royal Tulip -->
-            <div class="scent-row relative group grid grid-cols-12 gap-gutter py-14 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/scent-royal-tulip.webp">
-                <div class="col-span-1 flex items-start pt-2">
-                    <span class="font-label-caps text-label-caps text-gold/60">04</span>
+            <!-- Scent 04: Ocean Bliss -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/ocean-bliss.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">04</span>
                 </div>
-                <div class="col-span-4">
-                    <h2 class="font-serif text-4xl text-charcoal group-hover:text-gold transition-colors">Royal Tulip</h2>
-                    <div class="flex items-center gap-2 mt-4 font-sans">
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C04SV004</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Ocean Bliss</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
                         <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Floral / Beludru</span>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Aquatic / Segar Tropis</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">tropical fruits, citrus burst, fresh aquatic</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">light floral, ocean breeze, cheerful ozone</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">clean musk, sunny driftwood, soft amber</span></p>
                     </div>
                 </div>
-                <div class="col-span-5 flex items-center">
-                    <p class="font-sans text-body-lg text-on-surface-variant italic font-light">Inti kelopak bunga tulip yang mekar anggun dan tanah musim semi yang basah.</p>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Hembusan angin pesisir tropis dengan ledakan citrus segar, semilir ozon laut, serta kehangatan kayu pantai dan amber lembut.</p>
                 </div>
-                <div class="col-span-2 flex flex-col justify-center items-end pr-4 z-20">
-                    <span class="font-sans font-bold text-charcoal mb-2">Rp 420.000</span>
-                    <a href="contact.html" class="border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2 px-4 transition-colors font-bold tracking-widest uppercase block text-center">SELENGKAPNYA</a>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 360.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20OCEAN%20BLISS%20(C04SV004)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance OCEAN BLISS')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
                 </div>
                 <!-- Floating Scent Image -->
-                <div class="scent-image overflow-hidden rounded-md">
-                    <img class="w-full h-full object-cover" src="img/scent-royal-tulip.webp" alt="Aroma Fragrance Royal Tulip"/>
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/ocean-bliss.webp" alt="Aroma Fragrance Ocean Bliss Indoeasy Scent"/>
                 </div>
             </div>
-            
+
+            <!-- Scent 05: Sweet Dreams -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/sweet-dreams.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">05</span>
+                </div>
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C05SD005</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Sweet Dreams</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Powdery / Menenangkan</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">light fruity notes, soft lavender, fresh air</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">soft floral, comforting powdery notes, sweet vanilla</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">calming musk, cozy amber, warm sandalwood</span></p>
+                    </div>
+                </div>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Sentuhan lavender lembut dan aroma bedak nyaman yang menenangkan pikiran, sempurna untuk relaksasi dan kualitas istirahat prima.</p>
+                </div>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 350.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20SWEET%20DREAMS%20(C05SD005)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance SWEET DREAMS')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
+                </div>
+                <!-- Floating Scent Image -->
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/sweet-dreams.webp" alt="Aroma Fragrance Sweet Dreams Indoeasy Scent"/>
+                </div>
+            </div>
+
+            <!-- Scent 06: White Tuberose -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/white-tuberose.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">06</span>
+                </div>
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C06TB006</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">White Tuberose</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Floral / Sedap Malam Mewah</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">fresh white floral, subtle green notes</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">rich tuberose, jasmine, creamy floral</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">elegant wood, warm amber, luxurious musk</span></p>
+                    </div>
+                </div>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Pesona bunga sedap malam putih yang semerbak anggun, diperkaya melati sensual dan kayu amber bernuansa hotel bintang lima.</p>
+                </div>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 380.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20WHITE%20TUBEROSE%20(C06TB006)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance WHITE TUBEROSE')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
+                </div>
+                <!-- Floating Scent Image -->
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/white-tuberose.webp" alt="Aroma Fragrance White Tuberose Indoeasy Scent"/>
+                </div>
+            </div>
+
+            <!-- Scent 07: Aloe Serenity -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/aloe-serenity.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">07</span>
+                </div>
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C07AS007</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Aloe Serenity</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Green / Segar Alami</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">crisp cucumber, dewy green leaves, fresh bergamot</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">soothing aloe vera gel, white tea, transparent lotus</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">clean white musk, light cedarwood, crisp mineral accord</span></p>
+                    </div>
+                </div>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Kesegaran embun mentimun dan gel lidah buaya yang jernih menyejukkan, dipadu teh putih untuk atmosfer tenang, sejuk, dan higienis.</p>
+                </div>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 340.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20ALOE%20SERENITY%20(C07AS007)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance ALOE SERENITY')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
+                </div>
+                <!-- Floating Scent Image -->
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/aloe-serenity.webp" alt="Aroma Fragrance Aloe Serenity Indoeasy Scent"/>
+                </div>
+            </div>
+
+            <!-- Scent 08: Timeless -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/Timeless.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">08</span>
+                </div>
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C08TL008</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Timeless</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Citrus Floral / Klasik Abadi</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">Bergamot, Lemon, Grapefruit, Aldehydes, Lime, Orange</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">Ozone, Rose, Bergamot, Palmarosa, Litsea Cubeba</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">Musk, Amber, Cedarwood, Benzoin</span></p>
+                    </div>
+                </div>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Harmoni klasik citrus cerah bergamot dan lemon dipadu mawar mewah serta palmarosa elegan, memancarkan wibawa dan karisma abadi.</p>
+                </div>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 390.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20TIMELESS%20(C08TL008)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance TIMELESS')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
+                </div>
+                <!-- Floating Scent Image -->
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/Timeless.webp" alt="Aroma Fragrance Timeless Indoeasy Scent"/>
+                </div>
+            </div>
+
+            <!-- Scent 09: Midnight Blossom -->
+            <div class="scent-row relative group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-gutter py-8 md:py-12 border-b border-charcoal/10 cursor-default transition-all hover:bg-white/50" data-image-url="img/midnight-blossom.webp">
+                <div class="col-span-1 flex items-start pt-1 md:pt-2">
+                    <span class="font-label-caps text-label-caps text-gold/60 font-bold">09</span>
+                </div>
+                <div class="col-span-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-block bg-[#C9A24B] text-[#0D2A1D] text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-sm">C09SB009</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal group-hover:text-gold transition-colors">Midnight Blossom</h2>
+                    <div class="flex items-center gap-2 mt-2.5 font-sans">
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                        <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] font-semibold">Warm Floral / Sensual Malam</span>
+                    </div>
+                    <!-- Notes Accord/Snippet -->
+                    <div class="mt-3.5 text-xs text-charcoal/80 space-y-1 font-sans bg-black/[0.02] p-3 rounded border border-charcoal/5">
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Top notes:</span> <span class="italic text-charcoal/85">sparkling bergamot, aldehydic breeze, pink pepper</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Middle notes:</span> <span class="italic text-charcoal/85">french lavender, damask rose, soft iris</span></p>
+                        <p><span class="font-bold text-[#0D2A1D] uppercase text-[10px] tracking-wider block sm:inline">Base notes:</span> <span class="italic text-charcoal/85">rich amber, creamy sandalwood, velvet oakmoss</span></p>
+                    </div>
+                </div>
+                <div class="col-span-4 flex items-center">
+                    <p class="font-sans text-sm md:text-base text-on-surface-variant italic font-light leading-relaxed">Kemewahan magis damask rose dan french lavender berbalut pink pepper pedas lembut serta kayu oakmoss beludru yang memikat dan misterius.</p>
+                </div>
+                <div class="col-span-2 flex flex-col justify-center items-start md:items-end pr-0 md:pr-4 z-20">
+                    <span class="font-sans font-bold text-base md:text-lg text-charcoal mb-2">Rp 420.000</span>
+                    <a href="https://wa.me/6281287804396?text=Halo%20Indoeasy%20Scent%2C%20saya%20tertarik%20dengan%20koleksi%20wewangian%20Fragrance%20MIDNIGHT%20BLOSSOM%20(C09SB009)%2C%20boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppLead('Fragrance MIDNIGHT BLOSSOM')" class="w-full md:w-auto border border-[#0D2A1D]/20 hover:border-[#0D2A1D] hover:bg-[#0D2A1D] hover:text-white text-charcoal text-[10px] font-label-caps py-2.5 px-4 transition-all duration-300 font-bold tracking-widest uppercase block text-center shadow-sm">KONSULTASI</a>
+                </div>
+                <!-- Floating Scent Image -->
+                <div class="scent-image overflow-hidden rounded-md shadow-2xl">
+                    <img class="w-full h-full object-cover" src="img/midnight-blossom.webp" alt="Aroma Fragrance Midnight Blossom Indoeasy Scent"/>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -809,7 +916,7 @@
 
         <!-- Copyright -->
         <div class="border-t border-[#C9A24B]/15 pt-5 flex flex-col md:flex-row justify-between items-center opacity-85">
-            <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">© 2026 Indoeasy Scent. All Rights Reserved.</p>
+            <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">&copy; 2026 Indoeasy Scent. Hak Cipta Dilindungi.</p>
             <div class="flex gap-4 text-xs sm:text-sm">
                 <span class="text-[#C9A24B] italic">Minimalisme Sensorik.</span>
                 <span class="text-[#F7F3EC]/80">Jakarta / Global</span>
@@ -847,32 +954,34 @@
 
         <!-- Drawer Menu Links -->
         <div class="p-6 overflow-y-auto space-y-4 flex-1">
-            <a href="index.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Home</a>
+            <a href="index.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Beranda</a>
             
-            <!-- Mobile Accordion: About -->
+            <!-- Mobile Accordion: Tentang Kami -->
             <div class="border-b border-charcoal/5 py-2">
                 <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                    <span>About</span>
+                    <span>Tentang Kami</span>
                     <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
                 </button>
                 <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
                     <a href="about.html#cerita-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cerita Kami</a>
-                    <a href="about.html#layanan-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Services</a>
-                    <a href="about.html#keahlian" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Core Business</a>
+                    <a href="about.html#keahlian" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bisnis Utama</a>
                     <a href="about.html#cara-bekerja" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cara Kami Bekerja</a>
                 </div>
             </div>
 
-            <!-- Mobile Accordion: Products -->
+            <!-- Mobile Layanan -->
+            <a href="services.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Layanan</a>
+
+            <!-- Mobile Accordion: Produk -->
             <div class="border-b border-charcoal/5 py-2">
                 <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                    <span>Products</span>
+                    <span>Produk</span>
                     <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
                 </button>
                 <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
                     <a href="products.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Produk</a>
-                    <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Scenting Diffuser</a>
-                    <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Fragrance Collection</a>
+                    <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Mesin Diffuser</a>
+                    <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Koleksi Wewangian</a>
                 </div>
             </div>
 
@@ -892,7 +1001,7 @@
             </div>
 
             <a href="artikel.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Artikel &amp; Panduan</a>
-            <a href="contact.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Contact</a>
+            <a href="contact.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Kontak</a>
         </div>
 
         <!-- Drawer Footer CTA -->
@@ -906,5 +1015,47 @@
     </div>
 </div>
 
+<script>
+// Mobile Drawer & Accordion Functionality
+(function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerPanel = document.getElementById('mobile-drawer-panel');
+    const closeBtn = document.getElementById('mobile-drawer-close');
+
+    if (menuBtn && drawer && drawerPanel) {
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawerPanel.classList.remove('translate-x-full');
+        });
+    }
+
+    if (closeBtn && drawer && drawerPanel) {
+        closeBtn.addEventListener('click', () => {
+            drawer.classList.add('opacity-0', 'pointer-events-none');
+            drawerPanel.classList.add('translate-x-full');
+        });
+        drawer.addEventListener('click', (e) => {
+            if (e.target === drawer) {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawerPanel.classList.add('translate-x-full');
+            }
+        });
+    }
+
+    document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.material-symbols-outlined');
+            if (content) {
+                content.classList.toggle('hidden');
+            }
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+})();
+</script>
 </body>
 </html>

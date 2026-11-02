@@ -31,3 +31,20 @@
   s.setAttribute('data-host-url', HOST_URL);
   document.head.appendChild(s);
 })();
+// Global lead tracking helper for WhatsApp & consultation buttons
+window.trackWhatsAppLead = function(label) {
+  try {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: label || 'WhatsApp Inquiry' });
+    }
+  } catch (e) {
+    console.debug('Meta Pixel lead track error:', e);
+  }
+  try {
+    if (window.umami && typeof window.umami.track === 'function') {
+      window.umami.track('whatsapp_lead', { source: label || 'general' });
+    }
+  } catch (e) {
+    console.debug('Umami track error:', e);
+  }
+};

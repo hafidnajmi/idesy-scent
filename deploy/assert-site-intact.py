@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # error_page and marks it internal, so it is never fetched by URL directly.
 PAGES = [
     "index.html",
+    "services.html",
     "products.html",
     "collection.html",
     "checkout.html",

@@ -29,7 +29,9 @@
     <link rel="icon" href="img/favicon-48.png" type="image/png" sizes="48x48" />
     <link rel="apple-touch-icon" href="img/favicon-512.png" />
     <meta name="theme-color" content="#0D2A1D" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Production Compiled & Minified Stylesheet -->
+    <link rel="preload" as="style" href="css/style.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,193 +39,8 @@
         rel="stylesheet" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- Konfigurasi Tailwind -->
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "forest-green": "#0D2A1D",
-                        "deep-forest": "#0D2A1D",
-                        "antique-gold": "#C9A24B",
-                        "warm-ivory": "#F7F3EC",
-                        "soft-stone": "#EDE6D8",
-                        "charcoal": "#1F1F1D",
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "section-gap-sm": "80px",
-                        "margin-desktop": "64px",
-                        "section-gap-lg": "120px",
-                        "gutter": "24px",
-                        "margin-mobile": "20px",
-                    },
-                    "fontFamily": {
-                        "sans": ["'Nunito'", "'Inter'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-                        "serif": ["'Libre Caslon Display'", "Georgia", "serif"],
-                        "display": ["'Libre Caslon Display'", "Georgia", "serif"],
-                        "body": ["'Nunito'", "'Inter'", "sans-serif"],
-                        "nav": ["'Nunito'", "sans-serif"],
-                        "body-md": ["'Nunito'", "sans-serif"],
-                        "display-lg-mobile": ["'Libre Caslon Display'", "serif"],
-                        "label-caps": ["'Nunito'", "sans-serif"],
-                        "display-lg": ["'Libre Caslon Display'", "serif"],
-                        "headline-sm": ["'Libre Caslon Display'", "serif"],
-                        "headline-md": ["'Libre Caslon Display'", "serif"],
-                        "body-lg": ["'Nunito'", "sans-serif"]
-                    }
-                },
-            },
-        }
-    </script>
-    <style>
-        /* Typography & Navbar Style from indoeasyholiday.com */
-        :root {
-            --font-primary: 'Libre Caslon Display', Georgia, serif;
-            --font-secondary: 'Nunito', 'Inter', sans-serif;
-            --nav-link-font-family: 'Nunito', sans-serif;
-            --nav-link-font-size: 16px;
-            --nav-link-font-weight: 400;
-            --nav-link-text-color: #1F1F1D;
-        }
-
-        body {
-            background-color: #F7F3EC;
-            color: #1A1C1B;
-            font-family: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-        }
-
-        /* Editorial hero headings */
-        h1,
-        h2.font-serif,
-        .font-serif,
-        .font-display {
-            font-family: 'Libre Caslon Display', Georgia, serif;
-        }
-
-        /* Product names, badges, specs & cards use standard sans-serif (Nunito) like navbar */
-        .product-card h3,
-        .product-card h4,
-        .product-card h5,
-        .diffuser-card h3,
-        .diffuser-card h4,
-        .diffuser-card h5,
-        .fragrance-card h3,
-        .fragrance-card h4,
-        .fragrance-card h5,
-        .product-title,
-        .product-name,
-        h3.font-sans,
-        h4,
-        h5,
-        h6,
-        .font-sans,
-        .font-label-caps {
-            font-family: 'Nunito', 'Inter', sans-serif !important;
-        }
-
-        /* Navbar Links matching indoeasyholiday.com reference */
-        .nav-link {
-            font-family: 'Nunito', sans-serif !important;
-            font-size: 16px !important;
-            font-weight: 400 !important;
-            color: #1F1F1D !important;
-            text-decoration: none !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            padding: 4px 0 !important;
-            transition: color 0.2s ease, text-decoration 0.2s ease !important;
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            color: #1F1F1D !important;
-            text-decoration: underline !important;
-            text-underline-offset: 7px !important;
-            text-decoration-thickness: 1.5px !important;
-        }
-
-        .nav-link.active,
-        .nav-link--active {
-            color: #1F1F1D !important;
-            text-decoration: underline !important;
-            text-underline-offset: 7px !important;
-            text-decoration-thickness: 1.5px !important;
-            font-weight: 500 !important;
-        }
-
-        .nav-dropdown-item {
-            font-family: 'Nunito', sans-serif !important;
-            font-size: 14px !important;
-            color: #1F1F1D !important;
-            text-transform: none !important;
-            letter-spacing: normal !important;
-            font-weight: 400 !important;
-            transition: all 0.2s ease !important;
-        }
-
-        .nav-dropdown-item:hover {
-            background-color: rgba(201, 162, 75, 0.1) !important;
-            color: #C9A24B !important;
-            padding-left: 24px !important;
-        }
-
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-            font-weight: normal;
-            font-style: normal;
-            font-size: 24px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-smoothing: antialiased;
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-dropdown {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s cubic-bezier(0.21, 0.6, 0.35, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .nav-dropdown {
-            opacity: 0;
-            visibility: hidden;
-        }
-    </style>
     <script src="js/transitions.js" defer></script>
 
-    <style>
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-        }
-    </style>
 
     <script src="js/analytics.js" defer></script>
     <!-- Meta Pixel Code -->
@@ -302,13 +119,11 @@
                 </a>
             </div>
             <div class="hidden md:flex gap-10 items-center">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Beranda</a>
 
                 <!-- Menu About Dropdown -->
                 <div class="relative group py-2">
-                    <a class="nav-link active" href="about.html">
-                        About
-                        <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0"
+                    <a class="nav-link active" href="about.html">Tentang Kami<svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0"
                             viewBox="0 0 10 7" fill="none">
                             <path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor" />
                         </svg>
@@ -316,18 +131,18 @@
                     <div
                         class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
                         <a href="about.html#cerita-kami" class="nav-dropdown-item block px-5 py-2.5">Cerita Kami</a>
-                        <a href="about.html#layanan-kami" class="nav-dropdown-item block px-5 py-2.5">Our Services</a>
-                        <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Our Core Business</a>
+                        <a href="about.html#keahlian" class="nav-dropdown-item block px-5 py-2.5">Bisnis Utama</a>
                         <a href="about.html#cara-bekerja" class="nav-dropdown-item block px-5 py-2.5">Cara Kami
                             Bekerja</a>
                     </div>
                 </div>
 
+            <!-- Menu Layanan Sewa -->
+            <a class="nav-link" href="services.html">Layanan</a>
+
                 <!-- Menu Products Dropdown -->
                 <div class="relative group py-2">
-                    <a class="nav-link" href="products.html">
-                        Products
-                        <svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0"
+                    <a class="nav-link" href="products.html">Produk<svg class="w-[9px] h-[6px] ml-1.5 transition-transform duration-300 group-hover:rotate-180 flex-shrink-0"
                             viewBox="0 0 10 7" fill="none">
                             <path d="M5 6.5L0.669873 0.5L9.33013 0.5L5 6.5Z" fill="currentColor" />
                         </svg>
@@ -335,10 +150,8 @@
                     <div
                         class="nav-dropdown absolute left-0 mt-2 w-60 bg-[#F7F3EC] border border-[#1F1F1D]/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 rounded-sm">
                         <a href="products.html" class="nav-dropdown-item block px-5 py-2.5">Semua Produk</a>
-                        <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Scenting
-                            Diffuser</a>
-                        <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Fragrance
-                            Collection</a>
+                        <a href="products.html#section-diffuser" class="nav-dropdown-item block px-5 py-2.5">Mesin Diffuser</a>
+                        <a href="products.html#section-fragrance" class="nav-dropdown-item block px-5 py-2.5">Koleksi Wewangian</a>
                     </div>
                 </div>
 
@@ -357,7 +170,7 @@
                     </div>
                 </div>
                 <a class="nav-link" href="artikel.html">Artikel</a>
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="contact.html">Kontak</a>
             </div>
             <div class="flex items-center gap-6">
                 <button id="mobile-menu-btn" aria-label="Open Navigation Menu"
@@ -400,13 +213,8 @@
 
             <!-- Centered Header Text -->
             <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
-                <span
-                    class="font-label-caps text-[#C9A24B] text-xs font-bold uppercase tracking-[0.3em] block mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Profil
-                    &amp; Dedikasi Perusahaan</span>
-                <h1
-                    class="font-sans text-3xl md:text-5xl font-bold text-white uppercase tracking-wider mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                    TENTANG KAMI
-                </h1>
+                <span class="font-label-caps text-[#C9A24B] text-xs sm:text-sm font-bold uppercase tracking-[0.25em] block mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">PROFIL &amp; DEDIKASI KAMI</span>
+                <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal leading-[1.15] mb-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">Tentang Indoeasy Scent</h1>
                 <p
                     class="font-serif italic text-sm md:text-lg text-[#F7F3EC] font-medium max-w-xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                     "Create Your Signature Scent"
@@ -427,13 +235,9 @@
 
                 <!-- Column 2: Content Right (7 cols) -->
                 <div class="lg:col-span-7 flex flex-col justify-center">
-                    <span
-                        class="font-label-caps text-xs md:text-sm text-[#C9A24B] font-bold uppercase tracking-widest block mb-2">About
-                        Us</span>
-
-                    <h2
-                        class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D2A1D] leading-tight mb-6 tracking-tight">
-                        Who We Are
+                    <span class="font-label-caps text-[#C9A24B] font-bold text-xs uppercase tracking-[0.25em] block mb-2">CERITA KAMI</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#0D2A1D] leading-tight mb-6">
+                        Menciptakan Atmosfer Berkelas Melalui Sentuhan Aroma
                     </h2>
 
                     <div class="space-y-4 text-xs md:text-sm text-[#1F1F1D]/80 leading-relaxed mb-8 font-sans">
@@ -457,7 +261,7 @@
                     <div>
                         <a href="products.html"
                             class="inline-block bg-[#0D2A1D] hover:bg-[#C9A24B] text-white hover:text-[#0D2A1D] font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-none transition-all duration-300 shadow-md hover:shadow-xl">
-                            DISCOVER MORE
+                            JELAJAHI PRODUK KAMI →
                         </a>
                     </div>
                 </div>
@@ -471,11 +275,8 @@
 
                 <!-- Header (Centered) -->
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="font-serif italic text-base md:text-lg text-[#C9A24B] mb-2 block">Our Core
-                        Business</span>
-                    <h2 class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D2A1D] tracking-tight">
-                        Scent Diffuser Solution
-                    </h2>
+                    <span class="font-label-caps text-[#C9A24B] font-bold text-xs uppercase tracking-[0.25em] block mb-2">FOKUS BISNIS UTAMA</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#0D2A1D] leading-snug">Solusi Diffuser &amp; Scenting Terpadu</h2>
                 </div>
 
                 <!-- 3 Core Business Cards Grid -->
@@ -491,7 +292,7 @@
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none" />
                             </div>
                             <div class="p-6 md:p-8 text-center">
-                                <h3 class="font-sans text-xl font-bold text-[#0D2A1D] mb-3">Personal Use</h3>
+                                <h3 class="font-sans text-lg md:text-xl font-bold text-[#0D2A1D] mb-3">Penggunaan Personal</h3>
                                 <p class="font-sans text-xs md:text-sm text-[#1F1F1D]/75 leading-relaxed">
                                     Indoeasy Scent menyediakan solusi scent diffuser untuk kebutuhan pribadi yang
                                     dirancang untuk menciptakan suasana nyaman dan menyegarkan di rumah, mobil, atau
@@ -511,7 +312,7 @@
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none" />
                             </div>
                             <div class="p-6 md:p-8 text-center">
-                                <h3 class="font-sans text-xl font-bold text-[#0D2A1D] mb-3">Commercial Use</h3>
+                                <h3 class="font-sans text-lg md:text-xl font-bold text-[#0D2A1D] mb-3">Kebutuhan Komersial</h3>
                                 <p class="font-sans text-xs md:text-sm text-[#1F1F1D]/75 leading-relaxed">
                                     Untuk bisnis, Indoeasy Scent menawarkan scent diffuser dengan cakupan luas yang
                                     dirancang khusus untuk ruang komersial seperti hotel, restoran, spa, pusat
@@ -531,7 +332,7 @@
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none" />
                             </div>
                             <div class="p-6 md:p-8 text-center">
-                                <h3 class="font-sans text-xl font-bold text-[#0D2A1D] mb-3">Consumables</h3>
+                                <h3 class="font-sans text-lg md:text-xl font-bold text-[#0D2A1D] mb-3">Wewangian &amp; Refill</h3>
                                 <p class="font-sans text-xs md:text-sm text-[#1F1F1D]/75 leading-relaxed">
                                     Indoeasy Scent menyediakan rangkaian minyak wewangian premium dan Reed Diffuser
                                     berkualitas tinggi untuk kebutuhan personal maupun komersial. Dikembangkan dari
@@ -546,153 +347,7 @@
             </div>
         </section>
 
-        <!-- LAYANAN KAMI SECTION (Simple 2-Column Split Layout matching reference image) -->
-        <section id="layanan-kami"
-            class="py-16 md:py-24 px-6 md:px-16 bg-[#0D2A1D] text-[#F7F3EC] font-sans relative overflow-hidden">
-            <!-- Background Leaf Accent Watermark -->
-            <div class="absolute -right-16 -bottom-16 w-96 h-96 opacity-10 pointer-events-none text-[#C9A24B]">
-                <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M 180,20 C 140,60 90,90 20,170" stroke-linecap="round" />
-                    <path d="M 125,75 C 95,100 80,130 105,105 C 117,92 125,75 125,75 Z" fill="currentColor"
-                        opacity="0.8" />
-                    <path d="M 75,135 C 45,160 30,190 55,162 C 67,148 75,135 75,135 Z" fill="currentColor"
-                        opacity="0.8" />
-                </svg>
-            </div>
-
-            <div class="max-w-[1360px] mx-auto relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-
-                    <!-- Left Column: Title & Description -->
-                    <div class="lg:col-span-5 flex flex-col justify-center">
-                        <span
-                            class="font-label-caps text-[#C9A24B] font-bold text-xs md:text-sm uppercase tracking-[0.25em] block mb-3">PROFESSIONAL
-                            SERVICES</span>
-                        <h2
-                            class="font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
-                            Our Services
-                        </h2>
-                        <p
-                            class="font-sans text-xs sm:text-sm md:text-base text-[#F7F3EC]/85 leading-relaxed font-light mb-8">
-                            Kami menyediakan solusi <i>commercial scenting</i> terpadu yang dirancang untuk menghadirkan
-                            suasana eksklusif dan nyaman bagi pelanggan Anda. Melalui rangkaian perangkat <i>cold-air
-                                diffuser</i> presisi serta kurasi wewangian berstandar internasional, kami mendukung
-                            berbagai kebutuhan bisnis mulai dari perhotelan, retail, hingga perkantoran dengan kualitas
-                            dan konsistensi aroma yang terjaga.
-                        </p>
-                        <div>
-                            <a href="contact.html"
-                                class="inline-flex items-center gap-3 bg-[#C9A24B] hover:bg-[#D4AF57] text-[#0D2A1D] font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-none transition-all duration-300 shadow-lg hover:shadow-2xl">
-                                <span>KONSULTASI SEKARANG</span>
-                                <span class="text-sm">→</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: 2x2 White Cards Grid -->
-                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-                        <!-- Card 1: Scent Branding -->
-                        <div
-                            class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-white/20 text-[#0D2A1D] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
-                            <div>
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-[#F4F1EA] text-[#0D2A1D] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                                    <svg class="w-6 h-6 text-[#0D2A1D]" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path
-                                            d="M12 2C8 2 5 5 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5 16 2 12 2Z" />
-                                        <circle cx="12" cy="9" r="3" />
-                                    </svg>
-                                </div>
-                                <h3 class="font-sans text-base sm:text-lg font-bold text-[#0D2A1D] leading-snug mb-3">
-                                    Wewangian &amp; Reed Diffuser
-                                </h3>
-                                <p class="font-sans text-xs sm:text-sm text-[#1F1F1D]/75 leading-relaxed font-light">
-                                    Penjualan minyak wewangian premium (fragrance oil) serta Reed Diffuser estetis untuk
-                                    melengkapi aroma ruang bisnis dan hunian Anda.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 2: Sewa & Instalasi Alat -->
-                        <div
-                            class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-white/20 text-[#0D2A1D] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
-                            <div>
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-[#F4F1EA] text-[#0D2A1D] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                                    <svg class="w-6 h-6 text-[#0D2A1D]" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <rect x="4" y="4" width="16" height="16" rx="2" />
-                                        <path d="M9 9H15" />
-                                        <path d="M9 12H15" />
-                                        <path d="M9 15H12" />
-                                    </svg>
-                                </div>
-                                <h3 class="font-sans text-base sm:text-lg font-bold text-[#0D2A1D] leading-snug mb-3">
-                                    Sewa &amp; Instalasi Diffuser Presisi
-                                </h3>
-                                <p class="font-sans text-xs sm:text-sm text-[#1F1F1D]/75 leading-relaxed font-light">
-                                    Pemasangan gratis perangkat <i>cold-air micro-diffusion</i> secara rapi dan estetis
-                                    oleh teknisi berpengalaman.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 3: Refill & Maintenance -->
-                        <div
-                            class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-white/20 text-[#0D2A1D] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
-                            <div>
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-[#F4F1EA] text-[#0D2A1D] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                                    <svg class="w-6 h-6 text-[#0D2A1D]" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21.5 2v6h-6M2.5 22v-6h6" />
-                                        <path
-                                            d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8M2.5 16l1.2 1.3a10 10 0 0 0 18.8-4.3" />
-                                    </svg>
-                                </div>
-                                <h3 class="font-sans text-base sm:text-lg font-bold text-[#0D2A1D] leading-snug mb-3">
-                                    Refill &amp; Maintenance Berkala
-                                </h3>
-                                <p class="font-sans text-xs sm:text-sm text-[#1F1F1D]/75 leading-relaxed font-light">
-                                    Layanan rutin pengisian aroma, kalibrasi sistem, dan perawatan otomatis setiap bulan
-                                    tanpa mengganggu operasional.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 4: Trial & Sampel Gratis -->
-                        <div
-                            class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-white/20 text-[#0D2A1D] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
-                            <div>
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-[#F4F1EA] text-[#0D2A1D] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                                    <svg class="w-6 h-6 text-[#0D2A1D]" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                </div>
-                                <h3 class="font-sans text-base sm:text-lg font-bold text-[#0D2A1D] leading-snug mb-3">
-                                    Trial &amp; Sampel Aroma Gratis
-                                </h3>
-                                <p class="font-sans text-xs sm:text-sm text-[#1F1F1D]/75 leading-relaxed font-light">
-                                    Uji coba unit diffuser dan pengiriman sampel wewangian langsung ke lokasi bisnis
-                                    Anda secara gratis.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        
 
         <!-- CARA KAMI BEKERJA (5-Step Sequential Process Workflow with Exact Reference Line Icons) -->
         <section id="cara-bekerja"
@@ -701,9 +356,8 @@
 
                 <!-- Header (Centered) -->
                 <div class="text-center max-w-2xl mx-auto mb-16">
-                    <h2 class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D2A1D] tracking-tight mb-2">
-                        Cara Kami Bekerja
-                    </h2>
+                    <span class="font-label-caps text-[#C9A24B] font-bold text-xs uppercase tracking-[0.25em] block mb-2">WORKFLOW &amp; LAYANAN</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#0D2A1D] leading-snug mb-2">Cara Kami Bekerja</h2>
                     <p class="font-sans text-xs md:text-sm text-[#1F1F1D]/75">
                         Langkah sederhana menuju solusi <em>commercial scenting</em> terbaik yang efisien dan berdampak
                         nyata bagi bisnis Anda.
@@ -1073,7 +727,7 @@
             <!-- Copyright -->
             <div
                 class="border-t border-[#C9A24B]/15 pt-5 flex flex-col md:flex-row justify-between items-center opacity-85">
-                <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">© 2026 Indoeasy Scent. All Rights Reserved.
+                <p class="text-xs sm:text-sm text-[#F7F3EC]/80 mb-2 md:mb-0">&copy; 2026 Indoeasy Scent. Hak Cipta Dilindungi.
                 </p>
                 <div class="flex gap-4 text-xs sm:text-sm">
                     <span class="text-[#C9A24B] italic">Minimalisme Sensorik.</span>
@@ -1175,69 +829,55 @@
 
             <!-- Drawer Menu Links -->
             <div class="p-6 overflow-y-auto space-y-4 flex-1">
-                <a href="index.html"
-                    class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Home</a>
-
-                <!-- Mobile Accordion: About -->
-                <div class="border-b border-charcoal/5 py-2">
-                    <button
-                        class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                        <span>About</span>
-                        <span
-                            class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
-                    </button>
-                    <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
-                        <a href="about.html#cerita-kami"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cerita Kami</a>
-                        <a href="about.html#layanan-kami"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Services</a>
-                        <a href="about.html#keahlian"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Our Core Business</a>
-                        <a href="about.html#cara-bekerja"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cara Kami Bekerja</a>
-                    </div>
+            <a href="index.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Beranda</a>
+            
+            <!-- Mobile Accordion: Tentang Kami -->
+            <div class="border-b border-charcoal/5 py-2">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
+                    <span>Tentang Kami</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
+                </button>
+                <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
+                    <a href="about.html#cerita-kami" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cerita Kami</a>
+                    <a href="about.html#keahlian" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bisnis Utama</a>
+                    <a href="about.html#cara-bekerja" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Cara Kami Bekerja</a>
                 </div>
-
-                <!-- Mobile Accordion: Products -->
-                <div class="border-b border-charcoal/5 py-2">
-                    <button
-                        class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                        <span>Products</span>
-                        <span
-                            class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
-                    </button>
-                    <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
-                        <a href="products.html"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Produk</a>
-                        <a href="products.html#section-diffuser"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Scenting Diffuser</a>
-                        <a href="products.html#section-fragrance"
-                            class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Fragrance
-                            Collection</a>
-                    </div>
-                </div>
-
-                <!-- Mobile Accordion: Area Layanan -->
-                <div class="border-b border-charcoal/5 py-2">
-                    <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
-                        <span>Area Layanan</span>
-                        <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
-                    </button>
-                    <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
-                        <a href="area-layanan.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Area Layanan</a>
-                        <a href="area-layanan.html#koridor-industri" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bekasi, Cikarang &amp; Karawang</a>
-                        <a href="area-layanan.html#koridor-jakarta" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">DKI Jakarta</a>
-                        <a href="area-layanan.html#koridor-bandung" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bandung &amp; Lembang</a>
-                        <a href="area-layanan.html#koridor-bodetabek" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bogor, Depok &amp; Tangerang</a>
-                    </div>
-                </div>
-
-                <a href="artikel.html"
-                    class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Artikel
-                    &amp; Panduan</a>
-                <a href="contact.html"
-                    class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Contact</a>
             </div>
+
+            <!-- Mobile Layanan -->
+            <a href="services.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Layanan</a>
+
+            <!-- Mobile Accordion: Produk -->
+            <div class="border-b border-charcoal/5 py-2">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
+                    <span>Produk</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
+                </button>
+                <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
+                    <a href="products.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Produk</a>
+                    <a href="products.html#section-diffuser" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Mesin Diffuser</a>
+                    <a href="products.html#section-fragrance" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Koleksi Wewangian</a>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion: Area Layanan -->
+            <div class="border-b border-charcoal/5 py-2">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between font-sans text-base font-semibold text-[#0D2A1D] hover:text-[#C9A24B] transition-colors">
+                    <span>Area Layanan</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300">expand_more</span>
+                </button>
+                <div class="mobile-accordion-content hidden pl-4 pt-3 space-y-2.5">
+                    <a href="area-layanan.html" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Semua Area Layanan</a>
+                    <a href="area-layanan.html#koridor-industri" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bekasi, Cikarang &amp; Karawang</a>
+                    <a href="area-layanan.html#koridor-jakarta" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">DKI Jakarta</a>
+                    <a href="area-layanan.html#koridor-bandung" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bandung &amp; Lembang</a>
+                    <a href="area-layanan.html#koridor-bodetabek" class="block font-sans text-sm text-charcoal/80 hover:text-[#C9A24B]">Bogor, Depok &amp; Tangerang</a>
+                </div>
+            </div>
+
+            <a href="artikel.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Artikel &amp; Panduan</a>
+            <a href="contact.html" class="block font-sans text-base font-semibold text-[#0D2A1D] py-2 border-b border-charcoal/5 hover:text-[#C9A24B] transition-colors">Kontak</a>
+        </div>
 
             <!-- Drawer Footer CTA -->
             <div class="p-6 bg-[#F4F1EA] border-t border-charcoal/10">
@@ -1255,6 +895,48 @@
         </div>
     </div>
 
+<script>
+// Mobile Drawer & Accordion Functionality
+(function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerPanel = document.getElementById('mobile-drawer-panel');
+    const closeBtn = document.getElementById('mobile-drawer-close');
+
+    if (menuBtn && drawer && drawerPanel) {
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawerPanel.classList.remove('translate-x-full');
+        });
+    }
+
+    if (closeBtn && drawer && drawerPanel) {
+        closeBtn.addEventListener('click', () => {
+            drawer.classList.add('opacity-0', 'pointer-events-none');
+            drawerPanel.classList.add('translate-x-full');
+        });
+        drawer.addEventListener('click', (e) => {
+            if (e.target === drawer) {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawerPanel.classList.add('translate-x-full');
+            }
+        });
+    }
+
+    document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.material-symbols-outlined');
+            if (content) {
+                content.classList.toggle('hidden');
+            }
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>

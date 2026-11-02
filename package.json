@@ -4,7 +4,9 @@
   "private": true,
   "description": "Official Indoeasy Scent Website — static site, deployed to a personal VPS via rsync",
   "scripts": {
-    "build": "echo 'Static Site Ready'",
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/style.min.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./css/style.min.css --watch",
+    "build": "npm run build:css && echo 'Static Site Ready'",
     "seo:inject": "python3 deploy/seo-inject.py",
     "seo:check": "python3 deploy/seo-inject.py --check",
     "seo:validate": "python3 deploy/validate-jsonld.py",
@@ -22,5 +24,13 @@
     "deploy:dry": "rsync -avzn --rsync-path=\"sudo -n rsync\" --delete --exclude '.git' --exclude '.well-known' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude 'img/ads' --exclude '__pycache__' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'index.js' --exclude 'CNAME' --exclude '_headers' --exclude '.assetsignore' --exclude 'wrangler.toml' ./ idesys-vps:/home/admin/web/indoeasyscent.com/public_html/",
     "deploy:live": "rsync -avz --rsync-path=\"sudo -n rsync\" --delete --exclude '.git' --exclude '.well-known' --exclude 'node_modules' --exclude '.wrangler' --exclude 'docs' --exclude 'deploy' --exclude 'img/ads' --exclude '__pycache__' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'index.js' --exclude 'CNAME' --exclude '_headers' --exclude '.assetsignore' --exclude 'wrangler.toml' ./ idesys-vps:/home/admin/web/indoeasyscent.com/public_html/ && ssh idesys-vps 'sudo chown -R admin:admin /home/admin/web/indoeasyscent.com/public_html && find /home/admin/web/indoeasyscent.com/public_html -type d -exec chmod 755 {} + && find /home/admin/web/indoeasyscent.com/public_html -type f -exec chmod 644 {} +'"
   },
-  "comment": "Deploy lewat SSH alias 'idesys-vps' di ~/.ssh/config (user pandeandhika, key ~/.ssh/id_ed25519_vps). Ganti alias kalau hostname/user berubah. Selalu deploy:dry dulu."
+  "comment": "Deploy lewat SSH alias 'idesys-vps' di ~/.ssh/config (user pandeandhika, key ~/.ssh/id_ed25519_vps). Ganti alias kalau hostname/user berubah. Selalu deploy:dry dulu.",
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "autoprefixer": "^10.6.2",
+    "cssnano": "^9.9.0",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.17"
+  }
 }

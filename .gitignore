@@ -22,3 +22,4 @@ deploy/secrets.env
 # Dokumen internal (berita acara, laporan) — isinya data privat
 # (IP server, detail rotasi kredensial). Jangan pernah masuk repo.
 /berita-acara-*.pdf
+node_modules/
