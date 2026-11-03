@@ -197,3 +197,16 @@
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
 }
+
+  /* FAQ Touch Optimization */
+  details summary {
+    list-style: none !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  details summary::-webkit-details-marker {
+    display: none !important;
+  }
+  details[open] summary .material-symbols-outlined {
+    transform: rotate(180deg) !important;
+  }
