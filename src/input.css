@@ -98,6 +98,21 @@
     font-weight: 500 !important;
   }
 
+  .nav-dropdown.dropdown-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-link.dropdown-open svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .mobile-accordion-btn {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .nav-dropdown {
     opacity: 0;
     visibility: hidden;

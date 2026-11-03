@@ -837,18 +837,6 @@
         });
     }
 
-    // Accordions
-    document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('.material-symbols-outlined');
-            content.classList.toggle('hidden');
-            if (icon) {
-                icon.classList.toggle('rotate-180');
-            }
-        });
-    });
-
     function toggleWaPopup(forceState) {
         const card = document.getElementById('wa-popup-card');
         if (!card) return;

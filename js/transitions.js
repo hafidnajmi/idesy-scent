@@ -1,6 +1,7 @@
 /**
- * Indoeasy Scent — Smooth Page Transition
+ * Indoeasy Scent — Smooth Page Transition & Responsive Navigation
  * Keeps Navbar stable & frozen while <main> content smoothly fades in / fades out.
+ * Provides touch-friendly, highly sensitive dropdown toggles on mobile, tablet & desktop.
  * 100% compatible with native HTML page layouts, Tailwind, and scripts.
  */
 (function () {
@@ -30,6 +31,18 @@
         document.addEventListener('click', function (e) {
             var link = e.target.closest('a[href]');
             if (!link) return;
+
+            // If this is a parent dropdown trigger link, let dropdown toggle handle it
+            var parentGroup = link.closest('.relative.group');
+            if (parentGroup) {
+                var dropdown = parentGroup.querySelector('.nav-dropdown');
+                if (dropdown && link === parentGroup.querySelector('.nav-link')) {
+                    // Check if it's a mobile/touch tap intending to toggle dropdown
+                    if (!dropdown.classList.contains('dropdown-open')) {
+                        return; // Do not navigate! Dropdown click handler will open it
+                    }
+                }
+            }
 
             var href = link.getAttribute('href');
             if (!href) return;
@@ -64,7 +77,57 @@
         });
     }
 
-    // Mobile Drawer Navigation System
+    // Desktop & Tablet Navbar Dropdowns (Touch & Click Support)
+    function initDesktopDropdowns() {
+        var dropdownGroups = document.querySelectorAll('.relative.group');
+
+        dropdownGroups.forEach(function (group) {
+            var triggerLink = group.querySelector('.nav-link');
+            var dropdownMenu = group.querySelector('.nav-dropdown');
+
+            if (!triggerLink || !dropdownMenu) return;
+
+            triggerLink.addEventListener('click', function (e) {
+                var isOpen = dropdownMenu.classList.contains('dropdown-open');
+
+                if (!isOpen) {
+                    // First click / tap: Open dropdown and prevent navigating away
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Close any other open desktop dropdowns first
+                    document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(function (d) {
+                        d.classList.remove('dropdown-open');
+                        var parentLink = d.parentElement.querySelector('.nav-link');
+                        if (parentLink) parentLink.classList.remove('dropdown-open');
+                    });
+
+                    // Open this dropdown
+                    dropdownMenu.classList.add('dropdown-open');
+                    triggerLink.classList.add('dropdown-open');
+                } else {
+                    // Second click / tap: Toggle close if tapped again
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdownMenu.classList.remove('dropdown-open');
+                    triggerLink.classList.remove('dropdown-open');
+                }
+            });
+        });
+
+        // Close dropdown when tapping anywhere outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.relative.group')) {
+                document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(function (d) {
+                    d.classList.remove('dropdown-open');
+                    var parentLink = d.parentElement.querySelector('.nav-link');
+                    if (parentLink) parentLink.classList.remove('dropdown-open');
+                });
+            }
+        });
+    }
+
+    // Mobile Drawer Navigation System (Ultra-Sensitive & Touch-Optimized)
     function initMobileDrawer() {
         var menuBtn = document.getElementById('mobile-menu-btn');
         var drawer = document.getElementById('mobile-drawer');
@@ -73,7 +136,11 @@
 
         if (!menuBtn || !drawer || !panel) return;
 
-        function openDrawer() {
+        function openDrawer(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
             drawer.classList.remove('opacity-0', 'pointer-events-none');
             drawer.classList.add('opacity-100');
             panel.classList.remove('translate-x-full');
@@ -81,7 +148,11 @@
             document.body.style.overflow = 'hidden';
         }
 
-        function closeDrawer() {
+        function closeDrawer(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
             drawer.classList.remove('opacity-100');
             drawer.classList.add('opacity-0', 'pointer-events-none');
             panel.classList.remove('translate-x-0');
@@ -93,23 +164,31 @@
         if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
 
         drawer.addEventListener('click', function (e) {
-            if (e.target === drawer) closeDrawer();
+            if (e.target === drawer) closeDrawer(e);
         });
 
-        // Mobile Accordion Toggle for PRODUK & TENTANG KAMI
+        // Mobile Accordion Toggle for TENTANG KAMI, PRODUK, AREA LAYANAN
         var accordionBtns = drawer.querySelectorAll('.mobile-accordion-btn');
         accordionBtns.forEach(function (btn) {
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
                 var content = this.nextElementSibling;
                 var icon = this.querySelector('.material-symbols-outlined');
                 if (!content) return;
 
-                if (content.classList.contains('hidden')) {
+                var isHidden = content.classList.contains('hidden');
+                if (isHidden) {
                     content.classList.remove('hidden');
-                    if (icon) icon.style.transform = 'rotate(180deg)';
+                    if (icon) {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
                 } else {
                     content.classList.add('hidden');
-                    if (icon) icon.style.transform = 'rotate(0deg)';
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
                 }
             });
         });
@@ -119,12 +198,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             initPageFadeIn();
             attachLinkTransitions();
+            initDesktopDropdowns();
             initMobileDrawer();
         });
     } else {
         initPageFadeIn();
         attachLinkTransitions();
+        initDesktopDropdowns();
         initMobileDrawer();
     }
 })();
-
